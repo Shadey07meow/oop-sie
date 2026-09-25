@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="1080.0" maxWidth="1920.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.PrimaryController">
+   <children>
+      <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/OOPsie%202.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="621.0" layoutY="104.0" prefHeight="714.0" prefWidth="464.0" rotate="-10.6" spacing="40.0" AnchorPane.bottomAnchor="-103.20000000000005" AnchorPane.rightAnchor="200.20000000000005" AnchorPane.topAnchor="104.0">
+         <children>
+            <Button fx:id="primaryButton" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Start" />
+            <Button fx:id="primaryButton1" layoutX="166.0" layoutY="376.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Help" />
+            <Button fx:id="primaryButton11" layoutX="166.0" layoutY="399.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Credits" />
+            <Button fx:id="primaryButton111" layoutX="166.0" layoutY="422.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Quit" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
