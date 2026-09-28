@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane maxHeight="1080.0" maxWidth="1920.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.PrimaryController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.PrimaryController">
    <children>
-      <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="738.0" fitWidth="1296.0" layoutX="-2.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.2000000000000455" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-12.399999999999864" AnchorPane.topAnchor="-6.0">
          <image>
             <Image url="@images/OOPsie%202.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="621.0" layoutY="104.0" prefHeight="714.0" prefWidth="464.0" rotate="-10.6" spacing="40.0" AnchorPane.bottomAnchor="-103.20000000000005" AnchorPane.rightAnchor="200.20000000000005" AnchorPane.topAnchor="104.0">
+      <VBox alignment="CENTER" layoutX="599.0" layoutY="104.0" prefHeight="714.0" prefWidth="464.0" rotate="-10.6" spacing="40.0" AnchorPane.bottomAnchor="-103.20000000000005" AnchorPane.rightAnchor="217.80000000000018" AnchorPane.topAnchor="104.0">
          <children>
             <Button fx:id="primaryButton" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Start" />
             <Button fx:id="primaryButton1" layoutX="166.0" layoutY="376.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Help" />
