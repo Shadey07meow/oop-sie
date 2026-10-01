@@ -14,11 +14,20 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Scene scene;
+    private static int maxWindowHeight = 720;
+    private static int maxWindowWidth = 1280;
+
+
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("primary"), maxWindowWidth, maxWindowHeight);
         stage.setScene(scene);
+        stage.setMaxHeight(maxWindowHeight);
+        stage.setMaxWidth(maxWindowWidth);
+        stage.setMinWidth(maxWindowWidth);
+        stage.setMinHeight(maxWindowHeight);
+        stage.setResizable(false);
         stage.show();
     }
 

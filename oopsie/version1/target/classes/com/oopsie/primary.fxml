@@ -7,20 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.PrimaryController">
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.PrimaryController">
    <children>
       <ImageView fitHeight="738.0" fitWidth="1296.0" layoutX="-2.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.2000000000000455" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-12.399999999999864" AnchorPane.topAnchor="-6.0">
          <image>
             <Image url="@images/OOPsie%202.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="599.0" layoutY="104.0" prefHeight="714.0" prefWidth="464.0" rotate="-10.6" spacing="40.0" AnchorPane.bottomAnchor="-103.20000000000005" AnchorPane.rightAnchor="217.80000000000018" AnchorPane.topAnchor="104.0">
+      <VBox alignment="CENTER" layoutX="622.0" layoutY="96.0" prefHeight="714.0" prefWidth="464.0" rotate="-10.6" spacing="40.0" AnchorPane.bottomAnchor="-94.39999999999998" AnchorPane.rightAnchor="196.4000000000001" AnchorPane.topAnchor="96.0">
          <children>
-            <Button fx:id="primaryButton" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Start" />
-            <Button fx:id="primaryButton1" layoutX="166.0" layoutY="376.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Help" />
-            <Button fx:id="primaryButton11" layoutX="166.0" layoutY="399.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Credits" />
-            <Button fx:id="primaryButton111" layoutX="166.0" layoutY="422.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Quit" />
+            <Button fx:id="startButton" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Start" />
+            <Button fx:id="helpButton" layoutX="166.0" layoutY="376.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Help" />
+            <Button fx:id="creditsButton" layoutX="166.0" layoutY="399.0" onAction="#switchToSecondary" prefHeight="50.0" prefWidth="300.0" text="Credits" />
+            <Button fx:id="quitButton" layoutX="166.0" layoutY="422.0" onAction="#quitGame" prefHeight="50.0" prefWidth="300.0" text="Quit" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
