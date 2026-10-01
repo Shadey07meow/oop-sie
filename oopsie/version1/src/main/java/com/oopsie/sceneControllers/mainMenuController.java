@@ -11,7 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.util.Duration;
 import javafx.fxml.FXML;
 
-public class PrimaryController {
+public class mainMenuController {
 
 
     @FXML 
@@ -32,19 +32,28 @@ public class PrimaryController {
     @FXML
     public void initialize()
     {
-
+        addHoverAnimation(startButton);
+        addHoverAnimation(helpButton);
+        addHoverAnimation(creditsButton);
+        addHoverAnimation(quitButton);
         
 
-        ScaleTransition scaleUp = new ScaleTransition(Duration.millis(150), startButton);
+    }
+
+
+    private void addHoverAnimation(Button curBut)
+    {
+        
+        ScaleTransition scaleUp = new ScaleTransition(Duration.millis(150), curBut);
         scaleUp.setToX(1.1); 
         scaleUp.setToY(1.1); 
 
 
-        ScaleTransition scaleDown = new ScaleTransition(Duration.millis(150), startButton);
+        ScaleTransition scaleDown = new ScaleTransition(Duration.millis(150), curBut);
         scaleDown.setToX(1.0); 
         scaleDown.setToY(1.0); 
 
-        startButton.hoverProperty().addListener((observable, oldValue, isHovered) -> {
+        curBut.hoverProperty().addListener((observable, oldValue, isHovered) -> {
             if (isHovered) {
                 scaleDown.stop();       // Stop shrinking if it was in the middle of it
                 scaleUp.playFromStart(); // Start growing smoothly
@@ -53,6 +62,7 @@ public class PrimaryController {
                 scaleDown.playFromStart(); // Start shrinking smoothly
             }
         });
+
     }
 
     @FXML
