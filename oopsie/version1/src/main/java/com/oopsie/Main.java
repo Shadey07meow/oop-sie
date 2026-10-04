@@ -22,6 +22,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("mainMenu"), maxWindowWidth, maxWindowHeight);
+        
         stage.setScene(scene);
         stage.setMaxHeight(maxWindowHeight);
         stage.setMaxWidth(maxWindowWidth);
