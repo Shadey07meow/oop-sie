@@ -6,10 +6,10 @@ import com.oopsie.Main;
 
 import javafx.fxml.FXML;
 
-public class SecondaryController {
+public class uiController {
 
     @FXML
-    private void switchToPrimary() throws IOException {
-        Main.changeRoot("primary");
+    private void switchToMain() throws IOException {
+        Main.changeRoot("mainMenu");
     }
 }

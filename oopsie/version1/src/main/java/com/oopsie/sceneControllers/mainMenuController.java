@@ -63,9 +63,17 @@ public class mainMenuController {
     }
 
     @FXML
-    private void switchToSecondary() throws IOException {
-        Main.changeRoot("secondary");
+    private void switchToCredits() throws IOException {
+        Main.changeRoot("creditScreen");
     }
+
+    @FXML
+    private void switchToHelp() throws IOException {
+        Main.changeRoot("helpScreen");
+    }
+
+
+
 
     @FXML 
     private void quitGame()
