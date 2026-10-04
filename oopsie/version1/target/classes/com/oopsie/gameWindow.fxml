@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
@@ -36,11 +37,11 @@
                                  <center>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <ScrollPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="132.8" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="997.5999999999999" AnchorPane.topAnchor="0.0">
-                                            <content>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                                            </content>
-                                          </ScrollPane>
+                                          <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" promptText="asdf" text="asdfsdasdf&#10;asdf&#10;asdf&#10;asdf&#10;sadf&#10;asdf&#10;asdf&#10;asdf&#10;asd&#10;fas&#10;dfas&#10;dfas&#10;fas&#10;fas&#10;f&#10;asf&#10;sad&#10;asf&#10;sdzf&#10;sd" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </TextArea>
                                        </children>
                                     </AnchorPane>
                                  </center>
