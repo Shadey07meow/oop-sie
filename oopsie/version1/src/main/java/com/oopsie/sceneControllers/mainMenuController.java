@@ -43,11 +43,9 @@ public class mainMenuController {
 
     private void addHoverAnimation(Button curBut)
     {
-        
         ScaleTransition scaleUp = new ScaleTransition(Duration.millis(150), curBut);
         scaleUp.setToX(1.1); 
         scaleUp.setToY(1.1); 
-
 
         ScaleTransition scaleDown = new ScaleTransition(Duration.millis(150), curBut);
         scaleDown.setToX(1.0); 
@@ -62,7 +60,6 @@ public class mainMenuController {
                 scaleDown.playFromStart(); // Start shrinking smoothly
             }
         });
-
     }
 
     @FXML
