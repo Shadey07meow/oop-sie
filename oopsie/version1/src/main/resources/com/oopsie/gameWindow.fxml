@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.gameWindowController">
    <children>
       <BorderPane>
          <center>
@@ -37,7 +36,7 @@
                                  <center>
                                     <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" promptText="asdf" text="asdfsdasdf&#10;asdf&#10;asdf&#10;asdf&#10;sadf&#10;asdf&#10;asdf&#10;asdf&#10;asd&#10;fas&#10;dfas&#10;dfas&#10;fas&#10;fas&#10;f&#10;asf&#10;sad&#10;asf&#10;sdzf&#10;sd" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <TextArea fx:id="questionTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="asdf" text="asdfsdasdf&#10;asdf&#10;asdf&#10;asdf&#10;sadf&#10;asdf&#10;asdf&#10;asdf&#10;asd&#10;fas&#10;dfas&#10;dfas&#10;fas&#10;fas&#10;f&#10;asf&#10;sad&#10;asf&#10;sdzf&#10;sd" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <font>
                                                 <Font size="21.0" />
                                              </font>
@@ -67,7 +66,7 @@
                                                    <children>
                                                       <ScrollPane prefHeight="238.0" prefWidth="702.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <content>
-                                                            <VBox spacing="5.0" />
+                                                            <VBox fx:id="terminalVBox" spacing="5.0" />
                                                          </content>
                                                       </ScrollPane>
                                                    </children>

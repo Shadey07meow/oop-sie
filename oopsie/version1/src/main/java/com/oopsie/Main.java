@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import com.oopsie.logic.*;
 
 /**
  * JavaFX App
@@ -25,6 +26,7 @@ public class Main extends Application {
         
         stage.setScene(scene);
         stage.show();
+        gameplayLoop.init();
 
         double ratio = (float)(maxWindowWidth) / (float)(maxHeight);
 

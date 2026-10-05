@@ -2,6 +2,7 @@ package com.oopsie.sceneControllers;
 
 import java.io.IOException;
 import com.oopsie.Main;
+import com.oopsie.logic.*;
 
 
 import javafx.scene.control.*;
@@ -75,6 +76,8 @@ public class mainMenuController {
         @FXML
     private void switchToGame() throws IOException {
         Main.changeRoot("gameWindow");
+        gameplayLoop.setIsRunning(true);
+
     }
 
 
