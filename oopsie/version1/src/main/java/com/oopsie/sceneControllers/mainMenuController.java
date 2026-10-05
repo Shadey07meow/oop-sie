@@ -72,6 +72,11 @@ public class mainMenuController {
         Main.changeRoot("helpScreen");
     }
 
+        @FXML
+    private void switchToGame() throws IOException {
+        Main.changeRoot("gameWindow");
+    }
+
 
 
 
