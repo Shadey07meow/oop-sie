@@ -14,22 +14,24 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Scene scene;
-    private static int maxWindowHeight = 720;
-    private static int maxWindowWidth = 1280;
+    private static double  maxWindowWidth = 1280;
+    private static double  maxHeight = 720;
 
 
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("mainMenu"), maxWindowWidth, maxWindowHeight);
+        scene = new Scene(loadFXML("mainMenu"), maxWindowWidth, maxHeight);
         
         stage.setScene(scene);
-        stage.setMaxHeight(maxWindowHeight);
-        stage.setMaxWidth(maxWindowWidth);
-        stage.setMinWidth(maxWindowWidth);
-        stage.setMinHeight(maxWindowHeight);
-        stage.setResizable(false);
         stage.show();
+
+        double ratio = (float)(maxWindowWidth) / (float)(maxHeight);
+
+        double decorationValWidth = stage.getWidth() - scene.getWidth() ;
+        double decorationValHeight = stage.getHeight() - scene.getHeight();
+
+        stage.setResizable(false);
     }
 
     static void setRoot(String fxml) throws IOException {

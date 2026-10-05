@@ -14,6 +14,8 @@ public class sceneManager {
         screenHolder.setPrefSize(maxWindowWidth, maxWindowHeight);
         screenHolder.setMaxSize(maxWindowWidth, maxWindowHeight);
 
+        // stage.setResizable(false);
+
         // Will work on this later (resizing)
     }
 
