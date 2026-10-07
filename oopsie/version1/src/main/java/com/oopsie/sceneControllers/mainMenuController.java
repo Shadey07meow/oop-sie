@@ -1,18 +1,28 @@
 package com.oopsie.sceneControllers;
 
 import java.io.IOException;
+
 import com.oopsie.Main;
 
-
-import javafx.scene.control.*;
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.util.Duration;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 public class mainMenuController {
-
+    
+    // images
+    private Image startNormal;
+    private Image startPressed;
+    private Image creditsNormal;
+    private Image creditsPressed;
+    private Image helpNormal;
+    private Image helpPressed;
+    private Image exitNormal;
+    private Image exitPressed;
 
     @FXML 
     private Button startButton;
@@ -32,6 +42,24 @@ public class mainMenuController {
     @FXML
     public void initialize()
     {
+
+        startNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/StartButton.png"));
+        startPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/StartButtonPressed.png"));
+
+        creditsNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/CreditsButton.png"));
+        creditsPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/CreditsButtonPressed.png"));
+
+        helpNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/HelpButton.png"));
+        helpPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/HelpButtonPressed.png"));
+
+        exitNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButton.png"));
+        exitPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButtonPressed.png"));
+
+        setupButtonHover(creditsButton, creditsNormal, creditsPressed);
+        setupButtonHover(helpButton, helpNormal, helpPressed);
+        setupButtonHover(quitButton, exitNormal, exitPressed);
+        setupButtonHover(startButton, startNormal, startPressed);
+
         addHoverAnimation(startButton);
         addHoverAnimation(helpButton);
         addHoverAnimation(creditsButton);
@@ -40,9 +68,24 @@ public class mainMenuController {
 
     }
 
+    private void setupButtonHover(Button button, Image normalImage, Image hoverImage) {
+        addHoverAnimation(button);
 
-    private void addHoverAnimation(Button curBut)
-    {
+        ImageView buttonImageView = (ImageView) button.getGraphic();
+
+        if (buttonImageView != null) {
+            button.hoverProperty().addListener((obs, oldValue, isHovered) -> {
+                if (isHovered) {
+                    buttonImageView.setImage(hoverImage);
+                } else {
+                    buttonImageView.setImage(normalImage);
+                }
+            });
+        }
+    }
+
+
+    private void addHoverAnimation(Button curBut) {
         ScaleTransition scaleUp = new ScaleTransition(Duration.millis(150), curBut);
         scaleUp.setToX(1.1); 
         scaleUp.setToY(1.1); 

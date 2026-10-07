@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,16 +13,42 @@
             <Image url="@images/OOPsie%202.png" />
          </image>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="622.0" layoutY="96.0" prefHeight="714.0" prefWidth="464.0" rotate="-10.6" spacing="40.0" AnchorPane.bottomAnchor="-94.39999999999998" AnchorPane.rightAnchor="196.4000000000001" AnchorPane.topAnchor="96.0">
+      <VBox alignment="CENTER" layoutX="589.0" layoutY="115.0" prefHeight="697.0" prefWidth="528.0" rotate="-13.9" spacing="-40" AnchorPane.bottomAnchor="-91.79999999999995" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="115.0">
          <children>
-            <Button fx:id="startButton" onAction="#switchToGame" prefHeight="50.0" prefWidth="300.0" text="Start" />
-            <Button fx:id="helpButton" layoutX="166.0" layoutY="376.0" onAction="#switchToHelp" prefHeight="50.0" prefWidth="300.0" text="Help" />
-            <Button fx:id="creditsButton" layoutX="166.0" layoutY="399.0" onAction="#switchToCredits" prefHeight="50.0" prefWidth="300.0" text="Credits" />
-            <Button fx:id="quitButton" layoutX="166.0" layoutY="422.0" onAction="#quitGame" prefHeight="50.0" prefWidth="300.0" text="Quit" />
+            <Button fx:id="startButton" onAction="#switchToGame" prefHeight="83.0" prefWidth="363.0" style="-fx-background-color: transparent;">
+   <graphic>
+      <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+         <image>
+            <Image url="@images/buttons/StartButton.png" />
+         </image>
+      </ImageView>
+   </graphic>
+</Button>
+            <Button fx:id="helpButton" layoutX="166.0" layoutY="376.0" onAction="#switchToHelp" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Help" textFill="TRANSPARENT">
+               <graphic>
+                  <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+                     <image>
+                        <Image url="@images/buttons/CreditsButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="creditsButton" layoutX="166.0" layoutY="399.0" onAction="#switchToCredits" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Credits" textFill="TRANSPARENT">
+               <graphic>
+                  <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+                     <image>
+                        <Image url="@images/buttons/HelpButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="quitButton" layoutX="166.0" layoutY="422.0" onAction="#quitGame" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Quit" textFill="TRANSPARENT">
+               <graphic>
+                  <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+                     <image>
+                        <Image url="@images/buttons/ExitButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
       </VBox>
    </children>
 </AnchorPane>
