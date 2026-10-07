@@ -75,9 +75,9 @@ public class mainMenuController {
 
         @FXML
     private void switchToGame() throws IOException {
-        Main.changeRoot("gameWindow");
         gameplayLoop.setIsRunning(true);
 
+        Main.changeRoot("gameWindow");
     }
 
 
@@ -88,6 +88,7 @@ public class mainMenuController {
     {
         Platform.exit();
         System.exit(0);
+        
     }
 
 

@@ -26,6 +26,12 @@ public class gameplayLoop {
         }
     }
 
+
+    public static boolean getIsRunning()
+    {
+        return isRunning;
+    }
+
     private static void startGame()
     {
         currentLevel = 0;
@@ -38,13 +44,9 @@ public class gameplayLoop {
 
     public static void init()
     {
-        gameQuestion q1 = new gameQuestion("This is test question 1", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 1);
-        gameQuestion q2 = new gameQuestion("This is test question 2", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 1);
-        gameQuestion q3 = new gameQuestion("This is test question 3", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 1);
 
-        selectedQuestions[0] = q1;
-        selectedQuestions[1] = q2;
-        selectedQuestions[2] = q3;
+        debugInit();
+
     }
 
     public static void wonLevel()
@@ -56,6 +58,29 @@ public class gameplayLoop {
     public static void lostLevel()
     {
         // Something here
+    }
+
+    public static void debugInit()
+    {
+        gameQuestion q1 = new gameQuestion("This is test question 1", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 1);
+        gameQuestion q2 = new gameQuestion("This is test question 2", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 1);
+        gameQuestion q3 = new gameQuestion("This is test question 3", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 1);
+
+        selectedQuestions[0] = q1;
+        selectedQuestions[1] = q2;
+        selectedQuestions[2] = q3;
+    }
+    
+    public static gameQuestion getSelectedQuestion()
+    {
+        if (currentLevel >= 0 && currentLevel < 100)
+        {
+            return selectedQuestions[currentLevel];
+        } else
+        {
+            System.err.println("Selected level index is out of bounds");
+            return null;
+        }
     }
 
 
