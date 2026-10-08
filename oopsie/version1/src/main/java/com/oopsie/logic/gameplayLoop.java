@@ -70,6 +70,12 @@ public class gameplayLoop {
         selectedQuestions[1] = q2;
         selectedQuestions[2] = q3;
     }
+
+
+    public static boolean checkIfCorrectAnswer(int value)
+    {
+        return selectedQuestions[currentLevel].isCorrectAnswer(value);
+    }
     
     public static gameQuestion getSelectedQuestion()
     {
