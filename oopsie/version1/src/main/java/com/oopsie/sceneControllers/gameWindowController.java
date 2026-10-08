@@ -56,6 +56,9 @@ public class gameWindowController {
             return;
         }
         questionTextArea.setText(curQuestion.getQuestionString());
+
+        terminalVBox.getChildren().add(new Label("========================================="));
+        terminalVBox.getChildren().add(new Label("Choices :"));
         for (int i = 0; i < 4; i++)
         {
             Button newButton = new Button("> " + curQuestion.getChoiceString(i));
@@ -74,8 +77,10 @@ public class gameWindowController {
                         questionTextArea.setText("Correct answer Yippe");
                         gameplayLoop.wonLevel();
                         Label victoryLabel = new Label("> Correct Answer");
+                        Label newLineLabel = new Label(" ");
 
                         terminalVBox.getChildren().add(victoryLabel);
+                        terminalVBox.getChildren().add(newLineLabel);
                         updateDisplay();
 
 
