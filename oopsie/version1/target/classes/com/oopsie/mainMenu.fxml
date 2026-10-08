@@ -28,7 +28,7 @@
                <graphic>
                   <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
                      <image>
-                        <Image url="@images/buttons/CreditsButton.png" />
+                        <Image url="@images/buttons/HelpButton.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -36,7 +36,7 @@
                <graphic>
                   <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
                      <image>
-                        <Image url="@images/buttons/HelpButton.png" />
+                        <Image url="@images/buttons/CreditsButton.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
