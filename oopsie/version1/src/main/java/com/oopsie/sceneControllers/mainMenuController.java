@@ -38,6 +38,10 @@ public class mainMenuController {
     @FXML 
     private Button quitButton;
 
+    @FXML 
+    private Button homeButton;
+
+
 
     @FXML
     public void initialize()
@@ -118,6 +122,16 @@ public class mainMenuController {
         @FXML
     private void switchToGame() throws IOException {
         Main.changeRoot("gameWindow");
+    }
+
+    @FXML
+    private void switchToPrimary() throws IOException {
+        Main.changeRoot("mainMenu");
+    }
+
+       @FXML
+    private void switchToTitle() throws IOException {
+        Main.changeRoot("mainMenu");
     }
 
 

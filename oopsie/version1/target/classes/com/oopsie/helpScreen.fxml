@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.SecondaryController">
-    <children>
-        <Label text="Secondary View" />
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Switch to Primary View" />
-    </children>
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-</VBox>
+<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.mainMenuController">
+   <children>
+      <ImageView fitHeight="738.0" fitWidth="1296.0" layoutX="-2.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.2000000000000455" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-12.399999999999864" AnchorPane.topAnchor="-6.0">
+         <image>
+            <Image url="@images/HelpScreen.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="130.0" prefHeight="527.0" prefWidth="1190.0" style="-fx-background-color: transparent;">
+         <children>
+            <TextArea blendMode="MULTIPLY" editable="false" layoutX="84.0" layoutY="-4.0" prefHeight="511.0" prefWidth="1106.0" promptText="sadasd" style="-fx-background-color: blue;" text="FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;&#10;&#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER " wrapText="true">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+            </TextArea>
+         </children>
+      </AnchorPane>
+      <Button fx:id="homeButton" layoutX="1096.0" layoutY="67.0" mnemonicParsing="false" onAction="#switchToTitle" prefHeight="42.0" prefWidth="88.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="70.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/buttons/smallExitButton.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+   </children>
+</AnchorPane>
