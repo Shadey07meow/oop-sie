@@ -11,7 +11,7 @@ public class gameQuestion {
         this.questionString = questionString;
         choicesString[0] = q1.trim();
         choicesString[1] = q2.trim();
-        choicesString[2] = q2.trim();
+        choicesString[2] = q3.trim();
         choicesString[3] = q4.trim();
         this.correctAnswer = correctAnswer;
     }

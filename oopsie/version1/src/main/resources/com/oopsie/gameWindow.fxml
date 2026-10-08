@@ -108,7 +108,7 @@
          <bottom>
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="BASELINE_RIGHT" prefHeight="22.0" prefWidth="878.0" text="POINTS : 99999" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label fx:id="pointsLabel" alignment="BASELINE_RIGHT" prefHeight="22.0" prefWidth="878.0" text="POINTS : 99999" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="Consolas" size="24.0" />
                      </font>
