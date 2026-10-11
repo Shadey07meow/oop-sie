@@ -3,6 +3,7 @@ package com.oopsie.sceneControllers;
 import java.io.IOException;
 
 import com.oopsie.Main;
+import com.oopsie.logic.*;
 
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
@@ -121,6 +122,8 @@ public class mainMenuController {
 
         @FXML
     private void switchToGame() throws IOException {
+        gameplayLoop.setIsRunning(true);
+
         Main.changeRoot("gameWindow");
     }
 
@@ -142,6 +145,7 @@ public class mainMenuController {
     {
         Platform.exit();
         System.exit(0);
+        
     }
 
 
