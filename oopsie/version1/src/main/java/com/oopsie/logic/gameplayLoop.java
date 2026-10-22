@@ -1,5 +1,10 @@
 package com.oopsie.logic;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Random;
+
 public class gameplayLoop {
     private static boolean isRunning = false;
 
@@ -7,12 +12,15 @@ public class gameplayLoop {
     private static int currentPoints = 0;
     private static int pointIncrease = 10;
 
-    private static gameQuestion[] maintenanceTierQuestions;
-    private static gameQuestion[] technicianTierQuestions;
-    private static gameQuestion[] systemsEngineerTierQuestions;
-    private static gameQuestion[] adminTierQuestions;
+    private static ArrayList<Integer> completedIndexes = new ArrayList<>();
+    private static ArrayList<gameQuestion> choicesQuestions = new ArrayList<>();
 
-    private static gameQuestion[] selectedQuestions = new gameQuestion[100];
+    private static ArrayList<gameQuestion> easyQuestions = new ArrayList<>(); // MaintenanceTierQuestions
+    private static ArrayList<gameQuestion> mediumQuestions = new ArrayList<>(); // Technician Tier Questions
+    private static ArrayList<gameQuestion> hardQuestions = new ArrayList<>(); // System Engineer Tier Questions
+    private static ArrayList<gameQuestion> difficultQuestions = new ArrayList<>(); // Admin Tier Questions
+
+    private static gameQuestion[] selectedQuestions = new gameQuestion[4];
 
  
     public static void setIsRunning(boolean val)
@@ -48,9 +56,7 @@ public class gameplayLoop {
 
     public static void init()
     {
-
         debugInit();
-
     }
 
     public static void wonLevel()
@@ -67,45 +73,68 @@ public class gameplayLoop {
 
     public static void debugInit()
     {
-        gameQuestion q1 = new gameQuestion("What is the capital of France?", "London", "fParis", "Berlin", "Rome", 1);
-        gameQuestion q2 = new gameQuestion("Which planet is known as the Red Planet?", "Earth", "Mars", "Jupiter", "Saturn", 1);
-        gameQuestion q3 = new gameQuestion("What is the largest ocean on Earth?", "Atlantic", "Pacific", "Indian", "Arctic", 1);
-        gameQuestion q4 = new gameQuestion("How many bones are in an adult human body?", "106", "206", "306", "406", 1);
-        gameQuestion q5 = new gameQuestion("Which element has the chemical symbol 'O'?", "Gold", "Oxygen", "Osmium", "Silver", 1);
-        gameQuestion q6 = new gameQuestion("Who painted the Mona Lisa?", "Van Gogh", "Leonardo da Vinci", "Picasso", "Monet", 1);
-        gameQuestion q7 = new gameQuestion("What is the hardest natural substance on Earth?", "Gold", "Diamond", "Iron", "Platinum", 1);
-        gameQuestion q8 = new gameQuestion("Which country is home to the kangaroo?", "Africa", "Australia", "Peru", "India", 1);
-        gameQuestion q9 = new gameQuestion("What is the freezing point of water in Celsius?", "100°C", "0°C", "-10°C", "32°C", 1);
-        gameQuestion q10 = new gameQuestion("How many continents are there on Earth?", "5", "7", "6", "8", 1);
+        String separator = ",";
+        System.out.println("I am being called");
+        boolean readFirst = false;
 
-        selectedQuestions[0] = q1;
-        selectedQuestions[1] = q2;
-        selectedQuestions[2] = q3;
-        selectedQuestions[3] = q4;
-        selectedQuestions[4] = q5;
-        selectedQuestions[5] = q6;
-        selectedQuestions[6] = q7;
-        selectedQuestions[7] = q8;
-        selectedQuestions[8] = q9;
-        selectedQuestions[9] = q10;
+        try (BufferedReader br = new BufferedReader(new FileReader("oopsie/version1/src/main/java/com/oopsie/gameQuestions.csv")))
+        {
+            
+            String line;
+            
+            while((line = br.readLine()) != null)
+            {
+                if (!readFirst) {
+                    readFirst = true;
+                    continue;
+                }
+
+                String[] lineSeparated = line.split(separator);
+                easyQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));
+            }
+
+
+
+
+        } catch (Exception exception)
+        {
+
+        }
+    
+    }
+
+    public static void addToCompletedIndexes(int val)
+    {
+        completedIndexes.add(val);
+    }
+
+    public static void resetCompletedIndexes()
+    {
+        completedIndexes.clear();
     }
 
 
-    public static boolean checkIfCorrectAnswer(int value)
+
+    public static boolean checkIfCorrectAnswer(int value, gameQuestion question)
     {
-        return selectedQuestions[currentLevel].isCorrectAnswer(value);
+        return question.isCorrectAnswer(value);
+    }
+
+    public static void selectQuestions()
+    {
+
+        for(int i = 0; i < 4; i++)
+        {
+            Random rand = new Random();
+            int val = rand.nextInt(easyQuestions.size());
+            selectedQuestions[i] = easyQuestions.get(val);
+            System.out.println(val);
+        }
     }
     
-    public static gameQuestion getSelectedQuestion()
+    public static gameQuestion[] getSelectedQuestions()
     {
-        if (currentLevel >= 0 && currentLevel < 100)
-        {
-            return selectedQuestions[currentLevel];
-        } else
-        {
-            System.err.println("Selected level index is out of bounds");
-            return null;
-        }
+        return selectedQuestions;
     }
 
     public static int getCurrentPoints()
