@@ -1,0 +1,166 @@
+/* ===== Palette (sampled from the README screen) ===== */
+.root {
+    -oop-cream: #e8d0b0;
+    -oop-cream-light: #f1e0c6;
+    -oop-brown: #684422; 
+    -oop-red: #a04a32;
+    -oop-orange: #f0b06a;
+    -oop-gray: #8a8480;
+    -oop-slate: #363e55;
+
+    /*Better definitions of color*/
+    -computer-outerframe: #000000;
+
+    -fx-background-color: -oop-slate;
+    -fx-font-family: "Comic Sans MS", "Comic Neue", sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+
+
+
+
+
+
+
+/* ===== Layout containers ===== */
+.stack-pane {
+    -fx-background-color: -oop-slate;
+}
+
+.border-pane {
+    -fx-background-color: -oop-cream;
+}
+
+.anchor-pane {
+    -fx-background-color: transparent;
+}
+
+/* ===== SplitPane ===== */
+.split-pane {
+    -fx-background-color: -oop-cream;
+    -fx-border-color: -oop-brown;
+    -fx-border-width: 3;
+    -fx-padding: 0;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: -oop-brown;
+    -fx-padding: 0 1 0 1;
+}
+
+/* ===== Labels ===== */
+.label {
+    -fx-text-fill: -oop-red;
+    -fx-font-weight: bold;
+}
+
+/* Optional: add this class to the big "Difficulty Level" heading */
+.heading {
+    -fx-font-size: 28px;
+    -fx-font-style: normal;
+    -fx-font-weight: bold;
+    -fx-text-fill: -oop-red;
+}
+
+/* ===== TextArea (question box) ===== */
+.text-area {
+    -fx-control-inner-background: -oop-cream-light;
+    -fx-background-color: -oop-brown, -oop-cream-light;
+    -fx-background-insets: 0, 3;
+    -fx-text-fill: -oop-red;
+    -fx-highlight-fill: -oop-orange;
+    -fx-highlight-text-fill: -oop-brown;
+}
+
+.cream-bg{
+    -fx-background-color: -oop-cream-light;
+}
+
+.text-area .content {
+    -fx-background-color: -oop-cream-light;
+    -fx-padding: 40 40 10 40;
+    -fx-text-alignment: center;
+}
+
+/* ===== Buttons (Exception Handler, Recompile...) ===== */
+.button {
+    -fx-background-color: -oop-brown, -oop-orange;
+    -fx-background-insets: 0, 0;
+    -fx-background-radius: 0, 0;
+    -fx-text-fill: -oop-brown;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: -oop-brown, derive(-oop-orange, 20%);
+}
+
+.button:pressed {
+    -fx-background-color: -oop-brown, derive(-oop-orange, -15%);
+}
+
+/* ===== ListView (console choices) ===== */
+.list-view {
+    -fx-background-color: -oop-brown, -oop-cream-light;
+    -fx-background-insets: 0, 3;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -oop-red;
+}
+
+.list-cell:selected, .list-cell:hover {
+    -fx-background-color: -oop-orange;
+    -fx-text-fill: -oop-brown;
+}
+
+/* ===== Scrollbars ===== */
+.scroll-bar {
+    -fx-background-color: -oop-cream;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: -oop-brown;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: -oop-cream;
+}
+
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow {
+    -fx-background-color: -oop-brown;
+}
+
+/* ===== Tabs (matching the orange README tabs) ===== */
+.tab-pane .tab {
+    -fx-background-color: -oop-orange;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: -oop-red;
+    -fx-font-weight: bold;
+}
+
+.tab-pane > .tab-content-area {
+    -fx-background-color: -oop-cream;
+}
+
+* {
+    -fx-opacity: 1;
+    -fx-effect: null;
+}
+
+.vbox {
+    -fx-border-color: #6b2f22;
+    -fx-border-width: 3;
+}
+
+.no-border {
+    -fx-border-width: 0;
+}
