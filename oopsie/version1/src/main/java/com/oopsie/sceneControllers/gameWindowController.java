@@ -123,6 +123,7 @@ public class gameWindowController {
     {
         // Chose the wrong answer
 
+        // Check if there are lifelines left
 
 
     }

@@ -8,6 +8,9 @@ import java.util.Random;
 public class gameplayLoop {
     private static boolean isRunning = false;
 
+
+    private playerStats curPlayer = null;
+
     private static int currentLevel = -1;
     private static int currentPoints = 0;
     private static int pointIncrease = 10;
