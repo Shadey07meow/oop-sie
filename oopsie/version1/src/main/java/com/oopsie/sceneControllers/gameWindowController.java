@@ -10,6 +10,7 @@ import com.oopsie.logic.gameQuestion;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 
@@ -26,7 +27,7 @@ public class gameWindowController {
     @FXML Label pointsLabel;
     @FXML VBox terminalVBox;
     @FXML TextArea questionTextArea;
-
+    @FXML ScrollPane terminalScrollbox;
 
 
     public void updateDisplay()
@@ -41,7 +42,9 @@ public class gameWindowController {
         // Get 4 choices
         
         gameplayLoop.selectQuestions();
-        terminalVBox.getChildren().add(new Label("========================================="));
+        questionTextArea.setText("Choose Topic");
+
+        terminalVBox.getChildren().add(new Label("\n========================================="));
         terminalVBox.getChildren().add(new Label("Choose a Topic:"));
         
         gameQuestion[] selectedQuestions = gameplayLoop.getSelectedQuestions();
@@ -61,11 +64,12 @@ public class gameWindowController {
                     terminalButtonsToLabels();
                     gameQuestion selectedQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
                     questionTextArea.setText(selectedQuestion.getQuestionString());
+                    terminalVBox.getChildren().add(new Label("\n========================================="));
+                    terminalVBox.getChildren().add(new Label("Choices:"));
 
                     // Creates 4 new buttons
                     for(int j= 0; j < 4; j++)
                     {
-                                    
                         Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
 
                         // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
@@ -87,13 +91,15 @@ public class gameWindowController {
                                     terminalVBox.getChildren().add(victoryLabel);
                                     terminalVBox.getChildren().add(newLineLabel);
                                     updateDisplay();
-
-
+                                    
+                                    
+                                    terminalScrollbox.setVvalue(1.0);
                                 } else
                                 {
                                     // Wrong answer logic
                                 }
-                
+                                
+                                terminalScrollbox.setVvalue(1.0);
 
                         });
                         terminalVBox.getChildren().add(newButton2);
@@ -103,6 +109,7 @@ public class gameWindowController {
             );        
             // presentButtons.add(newButton);
             terminalVBox.getChildren().add(newButton);
+            terminalScrollbox.setVvalue(1.0);
         }
 
 

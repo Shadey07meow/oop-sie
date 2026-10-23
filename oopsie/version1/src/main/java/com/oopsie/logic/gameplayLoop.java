@@ -73,7 +73,7 @@ public class gameplayLoop {
 
     public static void debugInit()
     {
-        String separator = ",";
+        String separator = " -- ";
         System.out.println("I am being called");
         boolean readFirst = false;
 

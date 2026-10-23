@@ -30,6 +30,7 @@ public class mainMenuController {
     private Button quitButton;
 
 
+
     @FXML
     public void initialize()
     {
