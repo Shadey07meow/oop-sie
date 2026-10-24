@@ -16,136 +16,145 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@styles/main-theme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.gameWindowController">
    <children>
-      <ImageView fitHeight="724.0" fitWidth="1288.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="724.0" fitWidth="1288.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/OOPsie3.png" />
          </image>
       </ImageView>
       <BorderPane>
+         <StackPane.margin>
+            <Insets bottom="30.0" left="30.0" right="40.0" top="40.0" />
+         </StackPane.margin>
          <center>
-            <SplitPane dividerPositions="0.6606896551724136" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
-              <items>
-                  <BorderPane>
-                     <center>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                           <padding>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </padding>
-                           <top>
-                              <Label text="Difficultly Level" BorderPane.alignment="CENTER">
-                                 <font>
-                                    <Font size="42.0" />
-                                 </font>
-                              </Label>
-                           </top>
+            <BorderPane styleClass="thin-border">
+               <center>
+                  <SplitPane dividerPositions="0.6606896551724136" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                    <items>
+                        <BorderPane>
                            <center>
                               <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <top>
+                                    <Label text="Difficultly Level" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font size="42.0" />
+                                       </font>
+                                    </Label>
+                                 </top>
                                  <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                       <children>
-                                          <TextArea fx:id="questionTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="asdf" text="asdfsdasdf&#10;asdf&#10;asdf&#10;asdf&#10;sadf&#10;asdf&#10;asdf&#10;asdf&#10;asd&#10;fas&#10;dfas&#10;dfas&#10;fas&#10;fas&#10;f&#10;asf&#10;sad&#10;asf&#10;sdzf&#10;sd" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </TextArea>
-                                       </children>
-                                    </AnchorPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <center>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="console-background" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <TextArea fx:id="questionTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="asdf" styleClass="console-background" text="&#10;hello" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </TextArea>
+                                             </children>
+                                          </AnchorPane>
+                                       </center>
+                                    </BorderPane>
                                  </center>
                               </BorderPane>
                            </center>
+                           <padding>
+                              <Insets left="10.0" right="60.0" />
+                           </padding>
                         </BorderPane>
-                     </center>
-                     <padding>
-                        <Insets left="10.0" right="60.0" />
-                     </padding>
-                  </BorderPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                     <children>
-                        <SplitPane dividerPositions="0.6379251700680273" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                          <items>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                                 <children>
-                                    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <padding>
-                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                       </padding>
-                                       <center>
-                                          <BorderPane prefHeight="200.0" prefWidth="846.0" BorderPane.alignment="CENTER">
-                                             <center>
-                                                <AnchorPane BorderPane.alignment="CENTER">
-                                                   <children>
-                                                      <ScrollPane fx:id="terminalScrollbox" prefHeight="238.0" prefWidth="702.0" vvalue="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
-                                                         <content>
-                                                            <VBox fx:id="terminalVBox" prefWidth="1000.0" spacing="5.0" styleClass="cream-bg" />
-                                                         </content>
-                                                      </ScrollPane>
-                                                   </children>
-                                                </AnchorPane>
-                                             </center>
-                                             <top>
-                                                <Label alignment="BASELINE_LEFT" text="CONSOLE" BorderPane.alignment="TOP_LEFT">
-                                                   <font>
-                                                      <Font size="22.0" />
-                                                   </font>
-                                                   <padding>
-                                                      <Insets left="40.0" />
-                                                   </padding>
-                                                </Label>
-                                             </top>
-                                          </BorderPane>
-                                       </center>
-                                    </BorderPane>
-                                 </children>
-                              </AnchorPane>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="286.0">
-                                 <children>
-                                    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <center>
-                                          <VBox alignment="CENTER" prefHeight="259.0" prefWidth="490.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <SplitPane dividerPositions="0.6379251700680273" prefHeight="160.0" prefWidth="200.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                              <children>
-                                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
-                                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
-                                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Debug" />
+                                                <BorderPane prefHeight="174.0" prefWidth="734.0" AnchorPane.bottomAnchor="-27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                   <center>
+                                                      <AnchorPane BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <ScrollPane fx:id="terminalScrollbox" layoutX="-3.2" prefHeight="133.0" prefWidth="727.0" styleClass="console-background" vvalue="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <content>
+                                                                  <VBox fx:id="terminalVBox" prefWidth="1000.0" spacing="5.0" styleClass="console-background" />
+                                                               </content>
+                                                            </ScrollPane>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </center>
+                                                </BorderPane>
                                              </children>
-                                          </VBox>
-                                       </center>
-                                       <padding>
-                                          <Insets bottom="10.0" left="30.0" right="50.0" />
-                                       </padding>
-                                       <top>
-                                          <Label alignment="BASELINE_LEFT" text="EXECUTE" BorderPane.alignment="TOP_LEFT">
-                                             <font>
-                                                <Font size="22.0" />
-                                             </font>
-                                          </Label>
-                                       </top>
-                                    </BorderPane>
-                                 </children>
-                              </AnchorPane>
-                          </items>
-                        </SplitPane>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="286.0">
+                                             <children>
+                                                <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <center>
+                                                      <VBox alignment="CENTER" prefHeight="259.0" prefWidth="490.0">
+                                                         <children>
+                                                            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
+                                                            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
+                                                            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Debug" />
+                                                         </children>
+                                                      </VBox>
+                                                   </center>
+                                                   <padding>
+                                                      <Insets bottom="10.0" />
+                                                   </padding>
+                                                </BorderPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                 </center>
+                                 <top>
+                                    <SplitPane dividerPositions="0.5" prefHeight="38.0" prefWidth="1178.0" BorderPane.alignment="CENTER">
+                                       <items>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="header-bar-label">
+                                             <left>
+                                                <Label styleClass="header-bar-label" text="Console" BorderPane.alignment="CENTER" />
+                                             </left>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </BorderPane>
+                                          <BorderPane prefHeight="37.0" prefWidth="825.0" styleClass="header-bar-label">
+                                             <left>
+                                                <Label text="Label" BorderPane.alignment="CENTER" />
+                                             </left>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </BorderPane>
+                                       </items>
+                                    </SplitPane>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </center>
+               <bottom>
+                  <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="pointsLabel" alignment="BASELINE_RIGHT" prefHeight="22.0" prefWidth="878.0" styleClass="border-pane" text="POINTS : 99999" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Consolas" size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" right="50.0" top="5.0" />
+                           </padding>
+                        </Label>
                      </children>
                   </AnchorPane>
-              </items>
-            </SplitPane>
+               </bottom>
+            </BorderPane>
          </center>
-         <StackPane.margin>
-            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
-         </StackPane.margin>
-         <bottom>
-            <AnchorPane BorderPane.alignment="CENTER">
-               <children>
-                  <Label fx:id="pointsLabel" alignment="BASELINE_RIGHT" prefHeight="22.0" prefWidth="878.0" text="POINTS : 99999" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <font>
-                        <Font name="Consolas" size="24.0" />
-                     </font>
-                     <padding>
-                        <Insets bottom="5.0" right="50.0" top="5.0" />
-                     </padding>
-                  </Label>
-               </children>
-            </AnchorPane>
-         </bottom>
       </BorderPane>
    </children>
 </StackPane>

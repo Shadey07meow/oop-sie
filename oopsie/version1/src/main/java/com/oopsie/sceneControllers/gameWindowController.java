@@ -9,6 +9,7 @@ import com.oopsie.logic.gameQuestion;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -56,6 +57,8 @@ public class gameWindowController {
 
             Button newButton = new Button("> " + selectedQuestions[i].getTopic());
             newButton.setUserData(i);
+            newButton.setPrefWidth(100000);
+            newButton.setAlignment(Pos.CENTER_LEFT);
 
             newButton.setOnAction(e -> 
                 {
@@ -75,6 +78,9 @@ public class gameWindowController {
 
                         // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
                         newButton2.setUserData(j);
+                        newButton2.setPrefWidth(100000);
+                        newButton2.setAlignment(Pos.CENTER_LEFT);
+
 
                         newButton2.setOnAction(z -> 
                             {
@@ -93,10 +99,14 @@ public class gameWindowController {
                         terminalVBox.getChildren().add(newButton2);
 
                     }
+                    Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
+
                 }
             );        
             // presentButtons.add(newButton);
             terminalVBox.getChildren().add(newButton);
+            Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
+
         }
 
         Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
@@ -113,6 +123,8 @@ public class gameWindowController {
 
         terminalVBox.getChildren().add(victoryLabel);
         terminalVBox.getChildren().add(newLineLabel);
+        Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
+
         updateDisplay();
         
 
@@ -134,7 +146,7 @@ public class gameWindowController {
             if(terminalVBox.getChildren().get(i) instanceof  Button)
             {
                 Button b = (Button)(terminalVBox.getChildren().get(i));
-                Label l = new Label(b.getText());
+                Label l = new Label(" " + b.getText());
 
                 terminalVBox.getChildren().set(i, l);
             }
@@ -150,4 +162,5 @@ public class gameWindowController {
      
 
 }    
+
 
