@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.gameWindowController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@styles/main-theme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.gameWindowController">
    <children>
-      <ImageView fitHeight="724.0" fitWidth="1288.0" opacity="0.07" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="724.0" fitWidth="1288.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/OOPsie3.png" />
          </image>
       </ImageView>
-      <BorderPane blendMode="MULTIPLY">
+      <BorderPane>
          <center>
             <SplitPane dividerPositions="0.6606896551724136" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
               <items>
@@ -74,9 +74,9 @@
                                              <center>
                                                 <AnchorPane BorderPane.alignment="CENTER">
                                                    <children>
-                                                      <ScrollPane fx:id="terminalScrollbox" prefHeight="238.0" prefWidth="702.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                                      <ScrollPane fx:id="terminalScrollbox" prefHeight="238.0" prefWidth="702.0" vvalue="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                                          <content>
-                                                            <VBox fx:id="terminalVBox" spacing="5.0" />
+                                                            <VBox fx:id="terminalVBox" prefWidth="1000.0" spacing="5.0" styleClass="cream-bg" />
                                                          </content>
                                                       </ScrollPane>
                                                    </children>
@@ -105,7 +105,7 @@
                                              <children>
                                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
                                                 <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
-                                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
+                                                <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Debug" />
                                              </children>
                                           </VBox>
                                        </center>

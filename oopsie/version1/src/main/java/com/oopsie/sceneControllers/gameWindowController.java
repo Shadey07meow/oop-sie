@@ -7,6 +7,7 @@ import com.oopsie.Main;
 import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.gameQuestion;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -82,24 +83,11 @@ public class gameWindowController {
                                 boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, selectedQuestion);
                                 if (checkAnswer)
                                 {
-                                    // correctAnswerLogic
-                                    questionTextArea.setText("Correct answer Yippe");
-                                    gameplayLoop.wonLevel();
-                                    Label victoryLabel = new Label("> Correct Answer");
-                                    Label newLineLabel = new Label(" ");
-
-                                    terminalVBox.getChildren().add(victoryLabel);
-                                    terminalVBox.getChildren().add(newLineLabel);
-                                    updateDisplay();
-                                    
-                                    
-                                    terminalScrollbox.setVvalue(1.0);
+                                    choseRight();
                                 } else
                                 {
-                                    // Wrong answer logic
+                                    choseWrong();
                                 }
-                                
-                                terminalScrollbox.setVvalue(1.0);
 
                         });
                         terminalVBox.getChildren().add(newButton2);
@@ -109,70 +97,33 @@ public class gameWindowController {
             );        
             // presentButtons.add(newButton);
             terminalVBox.getChildren().add(newButton);
-            terminalScrollbox.setVvalue(1.0);
         }
 
-
-        // Once user selects a choice, the other choices become labels
-        // The program displays the question and 4 choices 
-
-
-
-        // gameQuestion curQuestion = gameplayLoop.getSelectedQuestion();
-        
-
-        // if (curQuestion == null)
-        // {
-        //     // The question list has ended and is notw empty
-        //     // This is where yuou finish the thing
-        //     return;
-        // }
-        // questionTextArea.setText(curQuestion.getQuestionString());
-
-        // terminalVBox.getChildren().add(new Label("========================================="));
-        // terminalVBox.getChildren().add(new Label("Choices :"));
-        // for (int i = 0; i < 4; i++)
-        // {
-        //     Button newButton = new Button("> " + curQuestion.getChoiceString(i));
-
-        //     // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
-        //     newButton.setUserData(i);
-
-        //     newButton.setOnAction(e -> 
-        //         {
-        //             Button btnSource = (Button)e.getSource();
-        //             int index = (int)btnSource.getUserData();
-        //             boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index);
-        //             if (checkAnswer)
-        //             {
-        //                 // correctAnswerLogic
-        //                 questionTextArea.setText("Correct answer Yippe");
-        //                 gameplayLoop.wonLevel();
-        //                 Label victoryLabel = new Label("> Correct Answer");
-        //                 Label newLineLabel = new Label(" ");
-
-        //                 terminalVBox.getChildren().add(victoryLabel);
-        //                 terminalVBox.getChildren().add(newLineLabel);
-        //                 updateDisplay();
-
-
-        //             } else
-        //             {
-        //                 // Wrong answer logic
-        //             }
-
-        //         }
-        //     );
-
-        //     presentButtons[i] = newButton;
-
-
-        //     terminalVBox.getChildren().add(newButton);
-        // }
+        Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
     }
 
-    public static void choiceButton(int val)
+
+    public void choseRight()
     {
+        // Chose the correct answer
+        questionTextArea.setText("Correct answer Yippe");
+        gameplayLoop.wonLevel();
+        Label victoryLabel = new Label("> Correct Answer");
+        Label newLineLabel = new Label(" ");
+
+        terminalVBox.getChildren().add(victoryLabel);
+        terminalVBox.getChildren().add(newLineLabel);
+        updateDisplay();
+        
+
+    }
+
+    public void choseWrong()
+    {
+        // Chose the wrong answer
+
+        // Check if there are lifelines left
+
 
     }
 
