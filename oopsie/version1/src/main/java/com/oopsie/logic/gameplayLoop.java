@@ -93,7 +93,8 @@ public class gameplayLoop {
                 }
 
                 String[] lineSeparated = line.split(separator);
-                easyQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));
+                lineSeparated[0] = lineSeparated[0].replace("\\n", "\n");
+                //easyQuestions.add(new gameQuestion(lineSeparated[0].replace("\\n", "\n"), lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));
                 if(lineSeparated[7].equals("Easy"))
                 {
                     easyQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));

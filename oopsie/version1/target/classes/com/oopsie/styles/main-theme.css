@@ -8,9 +8,6 @@
     -oop-gray: #8a8480;
     -oop-slate: #363e55;
 
-    /*Better definitions of color*/
-    -computer-outerframe: #000000;
-
     -fx-background-color: -oop-slate;
     -fx-font-family: "Comic Sans MS", "Comic Neue", sans-serif;
     -fx-font-size: 14px;
@@ -86,7 +83,7 @@
 
 /* ===== Buttons (Exception Handler, Recompile...) ===== */
 .button {
-    -fx-background-color: -oop-brown, -oop-orange;
+    -fx-background-color: -oop-cream;
     -fx-background-insets: 0, 0;
     -fx-background-radius: 0, 0;
     -fx-text-fill: -oop-brown;
@@ -95,7 +92,7 @@
 }
 
 .button:hover {
-    -fx-background-color: -oop-brown, derive(-oop-orange, 20%);
+    -fx-background-color: -oop-brown, -oop-orange;
 }
 
 .button:pressed {

@@ -74,9 +74,9 @@
                                              <center>
                                                 <AnchorPane BorderPane.alignment="CENTER">
                                                    <children>
-                                                      <ScrollPane fx:id="terminalScrollbox" prefHeight="238.0" prefWidth="702.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                                      <ScrollPane fx:id="terminalScrollbox" prefHeight="238.0" prefWidth="702.0" vvalue="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                                          <content>
-                                                            <VBox fx:id="terminalVBox" spacing="5.0" styleClass="cream-bg" />
+                                                            <VBox fx:id="terminalVBox" prefWidth="1000.0" spacing="5.0" styleClass="cream-bg" />
                                                          </content>
                                                       </ScrollPane>
                                                    </children>

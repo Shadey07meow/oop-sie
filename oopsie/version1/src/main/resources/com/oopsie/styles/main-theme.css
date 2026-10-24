@@ -83,7 +83,7 @@
 
 /* ===== Buttons (Exception Handler, Recompile...) ===== */
 .button {
-    -fx-background-color: -oop-brown, -oop-orange;
+    -fx-background-color: -oop-cream;
     -fx-background-insets: 0, 0;
     -fx-background-radius: 0, 0;
     -fx-text-fill: -oop-brown;
@@ -92,7 +92,7 @@
 }
 
 .button:hover {
-    -fx-background-color: -oop-brown, derive(-oop-orange, 20%);
+    -fx-background-color: -oop-brown, -oop-orange;
 }
 
 .button:pressed {

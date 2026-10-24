@@ -88,7 +88,6 @@ public class gameWindowController {
                                 {
                                     choseWrong();
                                 }
-                                terminalScrollbox.setVvalue(1.0);
 
                         });
                         terminalVBox.getChildren().add(newButton2);
@@ -98,8 +97,9 @@ public class gameWindowController {
             );        
             // presentButtons.add(newButton);
             terminalVBox.getChildren().add(newButton);
-            terminalScrollbox.setVvalue(1.0);
         }
+
+        Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
     }
 
 
@@ -116,7 +116,6 @@ public class gameWindowController {
         updateDisplay();
         
 
-        Platform.runLater(() -> terminalScrollbox.setVvalue(1.0));
     }
 
     public void choseWrong()
