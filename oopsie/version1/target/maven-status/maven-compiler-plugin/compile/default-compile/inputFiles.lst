@@ -1,4 +1,10 @@
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\module-info.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\Main.java
-c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\PrimaryController.java
-c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\SecondaryController.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneManager.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\mainMenuController.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\gameplayLoop.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\uiController.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\gameQuestion.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\playerStats.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\gameWindowController.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\helpScreenController.java

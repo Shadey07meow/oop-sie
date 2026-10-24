@@ -11,9 +11,11 @@ public class gameplayLoop {
 
     private playerStats curPlayer = null;
 
-    private static int currentLevel = -1;
+    private static int currentLevel = 0;
     private static int currentPoints = 0;
     private static int pointIncrease = 10;
+    private static difficulty currentDifficulty;
+
 
     private static ArrayList<Integer> completedIndexes = new ArrayList<>();
     private static ArrayList<gameQuestion> choicesQuestions = new ArrayList<>();
@@ -25,6 +27,14 @@ public class gameplayLoop {
 
     private static gameQuestion[] selectedQuestions = new gameQuestion[4];
 
+    public enum difficulty
+    {
+        EASY,
+        MEDIUM,
+        HARD,
+        DIFFICULT,
+        
+    }
  
     public static void setIsRunning(boolean val)
     {
@@ -48,7 +58,9 @@ public class gameplayLoop {
     private static void startGame()
     {
         currentPoints = 0;
-        currentLevel = 0;
+        currentLevel = 1;
+        checkDifficulty();
+
     }
 
     private static void endgame()
@@ -66,6 +78,28 @@ public class gameplayLoop {
     {
         currentPoints += pointIncrease;
         currentLevel++;
+        checkDifficulty();
+    }
+
+    public static void checkDifficulty()
+    {
+        if(currentLevel <= 10)
+        {
+            currentDifficulty = difficulty.EASY;
+            return;
+        } else if(currentLevel <= 20)
+        {
+            currentDifficulty = difficulty.MEDIUM;
+            return;
+        } else if(currentLevel <= 30)
+        {
+            currentDifficulty = difficulty.HARD;
+            return;
+        } if(currentLevel <= 40)
+        {
+            currentDifficulty = difficulty.DIFFICULT;
+            return;
+        }
     }
 
 
@@ -93,7 +127,11 @@ public class gameplayLoop {
                 }
 
                 String[] lineSeparated = line.split(separator);
-                lineSeparated[0] = lineSeparated[0].replace("\\n", "\n");
+                lineSeparated[0] = lineSeparated[0].replace("\\n", "\n  ");
+                lineSeparated[1] = lineSeparated[1].replace("\\n", "\n  ");
+                lineSeparated[2] = lineSeparated[2].replace("\\n", "\n  ");
+                lineSeparated[3] = lineSeparated[3].replace("\\n", "\n  ");
+                lineSeparated[4] = lineSeparated[4].replace("\\n", "\n  ");
                 //easyQuestions.add(new gameQuestion(lineSeparated[0].replace("\\n", "\n"), lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));
                 if(lineSeparated[7].equals("Easy"))
                 {
@@ -101,12 +139,12 @@ public class gameplayLoop {
                 } else if (lineSeparated[7].equals("Medium"))
                 {
                     mediumQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
-                } else if (lineSeparated[7].equals( "Hard"))
+                } else if (lineSeparated[7].equals("Hard"))
                 {
                     hardQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
                 } else if (lineSeparated[7].equals("Difficult"))
                 {
-                    hardQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
+                    difficultQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
                 } 
 
                 
@@ -141,11 +179,36 @@ public class gameplayLoop {
     {
 
         for(int i = 0; i < 4; i++)
-        {
+        {   
             Random rand = new Random();
-            int val = rand.nextInt(easyQuestions.size());
-            selectedQuestions[i] = easyQuestions.get(val);
-            System.out.println(val);
+            switch (currentDifficulty) {
+                case EASY:{
+                    int val = rand.nextInt(easyQuestions.size());
+                    selectedQuestions[i] = easyQuestions.get(val);
+                    System.out.println(val);
+                        break;
+                    }
+                case MEDIUM:{
+                    int val = rand.nextInt(mediumQuestions.size());
+                    selectedQuestions[i] = mediumQuestions.get(val);
+                    System.out.println(val);
+                        break;
+                    }
+                case HARD:{
+                    int val = rand.nextInt(hardQuestions.size());
+                    selectedQuestions[i] = hardQuestions.get(val);
+                    System.out.println(val);
+                        break;
+                    }
+                case DIFFICULT:{
+                    int val = rand.nextInt(difficultQuestions.size());
+                    selectedQuestions[i] = difficultQuestions.get(val);
+                    System.out.println(val);
+                        break;
+                    }
+                default:
+                    break;
+            }
         }
     }
     
@@ -157,6 +220,31 @@ public class gameplayLoop {
     public static int getCurrentPoints()
     {
         return currentPoints;
+    }
+
+    public static int getCurrentLevel() {
+        return currentLevel;
+    }
+
+    public static String getDifficultyString()
+    {
+        switch (currentDifficulty) {
+                case EASY:{
+                        return "EASY";
+                    }
+                case MEDIUM:{
+                        return "MEDIUM";
+                    }
+                case HARD:{
+                        return "HARD";
+                    }
+                case DIFFICULT:{
+                        return "thing";
+                    }
+                default:
+                    return "null";
+            }
+
     }
 
 

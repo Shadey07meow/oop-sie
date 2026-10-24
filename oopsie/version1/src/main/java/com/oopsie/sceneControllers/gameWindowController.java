@@ -8,6 +8,7 @@ import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.gameQuestion;
 
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -27,6 +28,8 @@ public class gameWindowController {
     
 
     @FXML Label pointsLabel;
+    @FXML Label diffLabel;
+    @FXML Label questionNumber;
     @FXML VBox terminalVBox;
     @FXML TextArea questionTextArea;
     @FXML ScrollPane terminalScrollbox;
@@ -38,18 +41,21 @@ public class gameWindowController {
         pointsLabel.setText("POINTS : " + gameplayLoop.getCurrentPoints());
         // If there are previous buttons in the scene, turn them into labels
         terminalButtonsToLabels();
-
-
-
+        
+        
+        
         // Get 4 choices
         
         gameplayLoop.selectQuestions();
+        questionNumber.setText("Q"+gameplayLoop.getCurrentLevel());
+        diffLabel.setText(gameplayLoop.getDifficultyString());
         questionTextArea.setText("Choose Topic");
-
+        
         terminalVBox.getChildren().add(new Label("\n========================================="));
         terminalVBox.getChildren().add(new Label("Choose a Topic:"));
         
         gameQuestion[] selectedQuestions = gameplayLoop.getSelectedQuestions();
+        
         for (int i = 0; i < 4; i++)
         {
             // Turn pre-existing buttons into labels
@@ -61,55 +67,59 @@ public class gameWindowController {
             newButton.setAlignment(Pos.CENTER_LEFT);
 
             newButton.setOnAction(e -> 
-                {
-                    // Selected the button
-                    
-                    Button choiceBtnSource = (Button)e.getSource();
-                    terminalButtonsToLabels();
-                    gameQuestion selectedQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
-                    questionTextArea.setText(selectedQuestion.getQuestionString());
-                    terminalVBox.getChildren().add(new Label("\n========================================="));
-                    terminalVBox.getChildren().add(new Label("Choices:"));
-
-                    // Creates 4 new buttons
-                    for(int j= 0; j < 4; j++)
-                    {
-                        Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
-
-                        // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
-                        newButton2.setUserData(j);
-                        newButton2.setPrefWidth(100000);
-                        newButton2.setAlignment(Pos.CENTER_LEFT);
-
-
-                        newButton2.setOnAction(z -> 
-                            {
-                                Button btnSource = (Button)z.getSource();
-                                int index = (int)btnSource.getUserData();
-                                boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, selectedQuestion);
-                                if (checkAnswer)
-                                {
-                                    choseRight();
-                                } else
-                                {
-                                    choseWrong();
-                                }
-
-                        });
-                        terminalVBox.getChildren().add(newButton2);
-
-                    }
-                    Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
-
-                }
+                showSelectedQuestion(e)
             );        
             // presentButtons.add(newButton);
             terminalVBox.getChildren().add(newButton);
-            Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
+            Platform.runLater(() -> terminalScrollbox.setVvalue(1.0));
 
         }
 
-        Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
+    }
+
+    public void showSelectedQuestion(ActionEvent e)
+    {
+        // Selected the button
+        gameQuestion[] selectedQuestions = gameplayLoop.getSelectedQuestions();
+
+        
+        Button choiceBtnSource = (Button)e.getSource();
+        terminalButtonsToLabels();
+        gameQuestion selectedQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
+        questionTextArea.setText(selectedQuestion.getQuestionString());
+        terminalVBox.getChildren().add(new Label("\n========================================="));
+        terminalVBox.getChildren().add(new Label("Choices:"));
+
+        // Creates 4 new buttons
+        for(int j= 0; j < 4; j++)
+        {
+            Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
+
+            // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
+            newButton2.setUserData(j);
+            newButton2.setPrefWidth(100000);
+            newButton2.setAlignment(Pos.CENTER_LEFT);
+
+
+            newButton2.setOnAction(z -> checkAnswer(z, selectedQuestion));
+            terminalVBox.getChildren().add(newButton2);
+            terminalScrollbox.setVvalue(1.0);
+        }
+    }
+
+    public void checkAnswer(ActionEvent z, gameQuestion selectedQuestion)
+    {
+        Button btnSource = (Button)z.getSource();
+        int index = (int)btnSource.getUserData();
+        boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, selectedQuestion);
+        if (checkAnswer)
+        {
+            choseRight();
+        } else
+        {
+            choseWrong();
+        }
+
     }
 
 
@@ -123,7 +133,7 @@ public class gameWindowController {
 
         terminalVBox.getChildren().add(victoryLabel);
         terminalVBox.getChildren().add(newLineLabel);
-        Platform.runLater(() -> {terminalScrollbox.setVvalue(1.0);});
+        terminalScrollbox.setVvalue(1.0);
 
         updateDisplay();
         
