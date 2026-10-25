@@ -1,7 +1,13 @@
 package com.oopsie.logic;
 
+import com.oopsie.logic.supervisors.Supervisor;
+
+
+
 public class playerStats {
     String name;
+    Supervisor selectedDSupervisor = null;
+
     int points;
     boolean hasExceptionHandler = true;
     boolean hasRecompile = true;
@@ -22,6 +28,15 @@ public class playerStats {
         this.hasDebug = v;
     }
     
+    public void setSupervisor(Supervisor v)
+    {   
+        this.selectedDSupervisor = v;
+    }
+
+    public Supervisor getSupervisor()
+    {   
+        return this.selectedDSupervisor;
+    }
     
     public boolean getHasExceptionHandler()
     {

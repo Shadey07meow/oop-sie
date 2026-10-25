@@ -66,3 +66,11 @@
     -fx-background-color: -brown-main-color;
     -fx-text-fill: -orange-light-color;
 }
+
+/*Supervisor Selection*/
+.select-slot{
+    -fx-background-image: url("../images/supervisorScreen/ID_Template.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}

@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import com.oopsie.animations.ButtonAnimations;
+
 import javafx.util.Duration;
 
 public class mainMenuController {
@@ -61,57 +63,19 @@ public class mainMenuController {
         exitNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButton.png"));
         exitPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButtonPressed.png"));
 
-        setupButtonHover(creditsButton, creditsNormal, creditsPressed);
-        setupButtonHover(helpButton, helpNormal, helpPressed);
-        setupButtonHover(quitButton, exitNormal, exitPressed);
-        setupButtonHover(startButton, startNormal, startPressed);
+        ButtonAnimations.addHoverImage(creditsButton, creditsNormal, creditsPressed);
+        ButtonAnimations.addHoverImage(helpButton, helpNormal, helpPressed);
+        ButtonAnimations.addHoverImage(quitButton, exitNormal, exitPressed);
+        ButtonAnimations.addHoverImage(startButton, startNormal, startPressed);
 
-        addHoverAnimation(startButton);
-        addHoverAnimation(helpButton);
-        addHoverAnimation(creditsButton);
-        addHoverAnimation(quitButton);
+        ButtonAnimations.addHoverAnimation(startButton);
+        ButtonAnimations.addHoverAnimation(helpButton);
+        ButtonAnimations.addHoverAnimation(creditsButton);
+        ButtonAnimations.addHoverAnimation(quitButton);
         
 
     }
 
-    private void setupButtonHover(Button button, Image normalImage, Image hoverImage) {
-        addHoverAnimation(button);
-
-        ImageView buttonImageView = (ImageView) button.getGraphic();
-
-        if (buttonImageView != null) {
-            button.hoverProperty().addListener((obs, oldValue, isHovered) -> {
-                if (isHovered) {
-                    buttonImageView.setImage(hoverImage);
-                } else {
-                    buttonImageView.setImage(normalImage);
-                }
-            });
-        }
-    }
-
-    
-
-
-    private void addHoverAnimation(Button curBut) {
-        ScaleTransition scaleUp = new ScaleTransition(Duration.millis(150), curBut);
-        scaleUp.setToX(1.1); 
-        scaleUp.setToY(1.1); 
-
-        ScaleTransition scaleDown = new ScaleTransition(Duration.millis(150), curBut);
-        scaleDown.setToX(1.0); 
-        scaleDown.setToY(1.0); 
-
-        curBut.hoverProperty().addListener((observable, oldValue, isHovered) -> {
-            if (isHovered) {
-                scaleDown.stop();       // Stop shrinking if it was in the middle of it
-                scaleUp.playFromStart(); // Start growing smoothly
-            } else {
-                scaleUp.stop();         // Stop growing if it was in the middle of it
-                scaleDown.playFromStart(); // Start shrinking smoothly
-            }
-        });
-    }
 
     @FXML
     private void switchToCredits() throws IOException {
