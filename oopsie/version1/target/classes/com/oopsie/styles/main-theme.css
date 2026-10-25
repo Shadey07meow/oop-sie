@@ -1,0 +1,115 @@
+/* ===== Palette (sampled from the README screen) ===== */
+.root {
+    /*UI Elements color*/
+    -outer-pane-color: #403e44; 
+    -inner-pane-color: #827d7d; 
+    -orange-main-color: #e7ab72; 
+    -orange-light-color: #e1ac7a; 
+    -brown-main-color: #663426; 
+    -brown-light-color: #b68169; 
+
+
+    /*UI Text Color*/
+    -text-color: #9d4d36;
+    -text-color-hovered: #9d4d36;
+
+    -text-background-color:#e5cdb1;
+    -text-background-hovered-color:#663326;
+
+
+    -fx-font-family: "Comic Sans MS", "Comic Neue", sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+
+.stack-pane {
+    -fx-background-color: -outer-pane-color;
+}
+
+.border-pane {
+    -fx-background-color: -inner-pane-color;
+}
+
+.overlay { 
+    -fx-mouse-transparent: true; 
+}
+
+.header-bar-label{
+    -fx-text-fill: -brown-main-color;
+    -fx-background-color: -orange-main-color;
+
+}
+
+.split-pane{
+    -fx-background-color: -inner-pane-color;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: #ffffff00 ;
+}
+
+.thin-border{
+    -fx-border-color: -brown-main-color;
+    -fx-border-width: 5;
+    -fx-border-style: solid;
+}
+
+.thick-border{
+    -fx-border-color: -brown-main-color;
+    -fx-border-width: 10;
+    -fx-border-style: solid;
+}
+
+
+.question-number{
+    -fx-text-fill: -brown-main-color;
+    -fx-background-color: -orange-main-color;
+    -fx-border-color: -brown-main-color;
+    -fx-font-size: 64px;
+    -fx-font-weight: bold;
+    -fx-border-width: 10;
+    -fx-border-style: solid;
+}
+
+.console-background{
+    -fx-background-color: -text-background-color;
+    -fx-background-color: -text-background-color;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: -text-background-color;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+}
+
+/*Text Area Properties*/
+.text-area {
+    -fx-text-fill: -text-color;
+}
+
+.text-area .content {
+    -fx-background-color: -text-background-color;
+    -fx-background-radius: 6;
+}
+
+.text-area .viewport {
+    -fx-background-color: -text-background-color;
+}
+
+/*Button Text*/
+.button {
+    -fx-background-color: -text-background-color;
+    -fx-padding: 0;
+    -fx-border-radius: 0;
+}
+
+.button:hover {
+    -fx-background-color: -brown-main-color;
+    -fx-text-fill: -orange-light-color;
+}

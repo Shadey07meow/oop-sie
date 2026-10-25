@@ -44,6 +44,7 @@ public class mainMenuController {
 
 
 
+
     @FXML
     public void initialize()
     {
@@ -88,6 +89,8 @@ public class mainMenuController {
             });
         }
     }
+
+    
 
 
     private void addHoverAnimation(Button curBut) {
@@ -138,7 +141,7 @@ public class mainMenuController {
     }
 
 
-
+    
 
     @FXML 
     private void quitGame()
