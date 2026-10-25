@@ -77,10 +77,14 @@
 .console-background{
     -fx-background-color: -text-background-color;
     -fx-background-color: -text-background-color;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
 .scroll-pane > .viewport {
     -fx-background-color: -text-background-color;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 
 }
 

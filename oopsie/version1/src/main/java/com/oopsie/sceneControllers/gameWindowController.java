@@ -125,6 +125,8 @@ public class gameWindowController {
 
     public void choseRight()
     {
+
+
         // Chose the correct answer
         questionTextArea.setText("Correct answer Yippe");
         gameplayLoop.wonLevel();
@@ -136,16 +138,44 @@ public class gameWindowController {
         terminalScrollbox.setVvalue(1.0);
 
         updateDisplay();
+
+        if(gameplayLoop.getCurrentLevel() > 40)
+        {
+            try {
+                Main.changeRoot("gameWin");
+                
+            } catch (Exception e) {
+                System.out.println("The scene for game over is invalid");
+            }
+    
+        }
         
 
     }
 
-    public void choseWrong()
+    public void choseWrong() 
     {
         // Chose the wrong answer
 
         // Check if there are lifelines left
+        System.out.println("You chose wrong");
 
+        if (!gameplayLoop.getCurPlayerStats().hasLifelines())
+        {
+            try {
+                Main.changeRoot("gameOver");
+                
+            } catch (Exception e) {
+                System.out.println("The scene for game over is invalid");
+            }
+        } else
+        {
+            terminalButtonsToLabels();
+            Label wrongAnswerLabel = new Label("=================\n> Wrong answer");
+            Label chooseLabel = new Label("> Choose a Lifeline");
+            terminalVBox.getChildren().add(wrongAnswerLabel);
+            terminalVBox.getChildren().add(chooseLabel);
+        }
 
     }
 
@@ -169,7 +199,26 @@ public class gameWindowController {
         instance = this;
         updateDisplay();
     }
-     
+
+    @FXML 
+    public void doExceptionHandler()
+    {
+        gameplayLoop.getCurPlayerStats().setHasExceptionHandler(false);
+        System.out.println(Boolean.toString(gameplayLoop.getCurPlayerStats().getHasExceptionHandler()));
+    }
+    
+    @FXML 
+    public void doRecompile()
+    {
+        gameplayLoop.getCurPlayerStats().setHasRecompile(false);
+    }
+
+    @FXML 
+    public void doDebug()
+    {
+
+        gameplayLoop.getCurPlayerStats().setHasDebug(false);
+    }
 
 }    
 

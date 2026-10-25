@@ -9,7 +9,7 @@ public class gameplayLoop {
     private static boolean isRunning = false;
 
 
-    private playerStats curPlayer = null;
+    private static playerStats curPlayer = null;
 
     private static int currentLevel = 0;
     private static int currentPoints = 0;
@@ -26,6 +26,8 @@ public class gameplayLoop {
     private static ArrayList<gameQuestion> difficultQuestions = new ArrayList<>(); // Admin Tier Questions
 
     private static gameQuestion[] selectedQuestions = new gameQuestion[4];
+
+    private static boolean wonRun = false;
 
     public enum difficulty
     {
@@ -59,6 +61,7 @@ public class gameplayLoop {
     {
         currentPoints = 0;
         currentLevel = 1;
+        
         checkDifficulty();
 
     }
@@ -71,13 +74,20 @@ public class gameplayLoop {
 
     public static void init()
     {
-        debugInit();
+        curPlayer = new playerStats();
+
+        readFile();
     }
 
     public static void wonLevel()
     {
         currentPoints += pointIncrease;
         currentLevel++;
+
+        if(currentLevel > 40)
+        {
+            wonRun = true;
+        }
         checkDifficulty();
     }
 
@@ -95,7 +105,7 @@ public class gameplayLoop {
         {
             currentDifficulty = difficulty.HARD;
             return;
-        } if(currentLevel <= 40)
+        } else if(currentLevel <= 40)
         {
             currentDifficulty = difficulty.DIFFICULT;
             return;
@@ -108,7 +118,7 @@ public class gameplayLoop {
         // Something here
     }
 
-    public static void debugInit()
+    public static void readFile()
     {
         String separator = " -- ";
         System.out.println("I am being called");
@@ -145,11 +155,7 @@ public class gameplayLoop {
                 } else if (lineSeparated[7].equals("Difficult"))
                 {
                     difficultQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
-                } 
-
-                
-            
-                
+                }     
             }
         } catch (Exception exception)
         {
@@ -239,7 +245,7 @@ public class gameplayLoop {
                         return "HARD";
                     }
                 case DIFFICULT:{
-                        return "thing";
+                        return "DIFFICULT";
                     }
                 default:
                     return "null";
@@ -247,7 +253,15 @@ public class gameplayLoop {
 
     }
 
+    public static playerStats getCurPlayerStats()
+    {
+        return curPlayer;
+    }
 
+    public static boolean hasWonRun()
+    {
+        return wonRun;
+    }
     
 
 

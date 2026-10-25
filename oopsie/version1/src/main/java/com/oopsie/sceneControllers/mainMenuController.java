@@ -90,6 +90,8 @@ public class mainMenuController {
         }
     }
 
+    
+
 
     private void addHoverAnimation(Button curBut) {
         ScaleTransition scaleUp = new ScaleTransition(Duration.millis(150), curBut);
@@ -139,7 +141,7 @@ public class mainMenuController {
     }
 
 
-
+    
 
     @FXML 
     private void quitGame()

@@ -1,12 +1,15 @@
 package com.oopsie;
 
 import java.io.IOException;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import com.oopsie.logic.*;
@@ -35,12 +38,26 @@ public class Main extends Application {
         double decorationValWidth = stage.getWidth() - scene.getWidth() ;
         double decorationValHeight = stage.getHeight() - scene.getHeight();
 
+        Rectangle2D screen = Screen.getPrimary().getVisualBounds();
+        
+        stage.setMaxWidth(screen.getWidth());
+        stage.setMaxHeight(screen.getHeight());
+
         stage.setResizable(false);
+        stage.xProperty().addListener((obs, oldX, newX) -> {
+            double x = Math.max(screen.getMinX(),
+            Math.min(newX.doubleValue(), screen.getMaxX() - stage.getWidth()));
+            if (x != newX.doubleValue()) stage.setX(x);
+        });
+
+        stage.yProperty().addListener((obs, oldY, newY) -> {
+            double y = Math.max(screen.getMinY(),
+            Math.min(newY.doubleValue(), screen.getMaxY() - stage.getHeight()));
+            if (y != newY.doubleValue()) stage.setY(y);
+        });
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
+
 
     public static void changeRoot(String fxml) throws IOException
     {

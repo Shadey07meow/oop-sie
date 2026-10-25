@@ -113,9 +113,9 @@
                                                          <center>
                                                             <VBox alignment="CENTER" prefHeight="120.0" prefWidth="394.0" styleClass="console-background">
                                                                <children>
-                                                                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
-                                                                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
-                                                                  <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Debug" />
+                                                                  <Button fx:id="exceptionButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doExceptionHandler" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
+                                                                  <Button fx:id="recompileButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doRecompile" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
+                                                                  <Button fx:id="debugButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doDebug" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Debug" />
                                                                </children>
                                                             </VBox>
                                                          </center>

@@ -4,51 +4,65 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.mainMenuController">
+
+<StackPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.mainMenuController">
    <children>
-      <ImageView fitHeight="738.0" fitWidth="1296.0" layoutX="-2.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.2000000000000455" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-12.399999999999864" AnchorPane.topAnchor="-6.0">
-         <image>
-            <Image url="@images/OOPsie%202.png" />
-         </image>
-      </ImageView>
-      <VBox alignment="CENTER" layoutX="589.0" layoutY="115.0" prefHeight="697.0" prefWidth="528.0" rotate="-13.9" spacing="-40" AnchorPane.bottomAnchor="-91.79999999999995" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="115.0">
+      <AnchorPane maxHeight="1080.0" maxWidth="1920.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0">
          <children>
-            <Button fx:id="startButton" onAction="#switchToGame" prefHeight="83.0" prefWidth="363.0" style="-fx-background-color: transparent;">
-   <graphic>
-      <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
-         <image>
-            <Image url="@images/buttons/StartButton.png" />
-         </image>
-      </ImageView>
-   </graphic>
-</Button>
-            <Button fx:id="helpButton" layoutX="166.0" layoutY="376.0" onAction="#switchToHelp" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Help" textFill="TRANSPARENT">
-               <graphic>
-                  <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+            <BorderPane maxHeight="1080.0" maxWidth="1920.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <ImageView fitHeight="738.0" fitWidth="1296.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/buttons/HelpButton.png" />
+                        <Image url="@images/OOPsie%202.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
-            <Button fx:id="creditsButton" layoutX="166.0" layoutY="399.0" onAction="#switchToCredits" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Credits" textFill="TRANSPARENT">
-               <graphic>
-                  <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
-                     <image>
-                        <Image url="@images/buttons/CreditsButton.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button fx:id="quitButton" layoutX="166.0" layoutY="422.0" onAction="#quitGame" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Quit" textFill="TRANSPARENT">
-               <graphic>
-                  <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
-                     <image>
-                        <Image url="@images/buttons/ExitButton.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
+               </center>
+            </BorderPane>
+            <VBox alignment="CENTER" layoutX="589.0" layoutY="115.0" prefHeight="697.0" prefWidth="528.0" rotate="-13.9" spacing="-40" AnchorPane.bottomAnchor="-91.79999999999995" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="115.0">
+               <children>
+                  <Button fx:id="startButton" onAction="#switchToGame" prefHeight="83.0" prefWidth="363.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+               <image>
+                  <Image url="@images/buttons/StartButton.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+                  <Button fx:id="helpButton" layoutX="166.0" layoutY="376.0" onAction="#switchToHelp" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Help" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+                           <image>
+                              <Image url="@images/buttons/HelpButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="creditsButton" layoutX="166.0" layoutY="399.0" onAction="#switchToCredits" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Credits" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+                           <image>
+                              <Image url="@images/buttons/CreditsButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="quitButton" layoutX="166.0" layoutY="422.0" onAction="#quitGame" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: transparent;" text="Quit" textFill="TRANSPARENT">
+                     <graphic>
+                        <ImageView fitHeight="143.0" fitWidth="383.0" preserveRatio="true">
+                           <image>
+                              <Image url="@images/buttons/ExitButton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
          </children>
-      </VBox>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>
