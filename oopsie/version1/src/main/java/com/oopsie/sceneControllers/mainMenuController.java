@@ -127,7 +127,7 @@ public class mainMenuController {
     private void switchToGame() throws IOException {
         gameplayLoop.setIsRunning(true);
 
-        Main.changeRoot("gameWindow");
+        Main.changeRoot("nameScreen");
     }
 
     @FXML
