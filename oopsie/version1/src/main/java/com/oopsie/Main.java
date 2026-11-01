@@ -1,6 +1,8 @@
 package com.oopsie;
 
+import java.io.File;
 import java.io.IOException;
+
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
 
@@ -12,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+
 import com.oopsie.logic.*;
 
 /**
@@ -55,6 +58,10 @@ public class Main extends Application {
             Math.min(newY.doubleValue(), screen.getMaxY() - stage.getHeight()));
             if (y != newY.doubleValue()) stage.setY(y);
         });
+
+        // File file = new File("oopsie/version1/target/classes/com/oopsie/soundResources/effects/mouse_hover.wav");
+        // System.out.println("URI for JavaFX: " + file.toURI() + " File Exists: " + file.exists());
+
     }
 
 

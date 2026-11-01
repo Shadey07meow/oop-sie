@@ -1,5 +1,7 @@
 package com.oopsie.animations;
 
+import com.oopsie.audio.AudioManager;
+
 import javafx.util.Duration;
 
 import javafx.animation.ScaleTransition;
@@ -12,6 +14,7 @@ public class ButtonAnimations {
 
     public static void addHoverAnimation(Node curNode) {
         if (curNode == null) return;
+
 
         ScaleTransition scaleUp = new ScaleTransition(Duration.millis(150), curNode);
         scaleUp.setToX(1.1); 
@@ -31,6 +34,9 @@ public class ButtonAnimations {
                 scaleDown.playFromStart();
             }
         });
+
+        addSoundToButton(curNode);
+
     }
 
     
@@ -46,6 +52,17 @@ public class ButtonAnimations {
                 }
             });
         }
+    }
+
+    public static void addSoundToButton(Node button)
+    {
+        button.hoverProperty().addListener((observable, oldValue, isHovered) -> 
+            {
+                if (isHovered) {
+                    AudioManager.playEffect(AudioManager.Effect.HoverButton);
+            } 
+            }
+        );
     }
 
 }

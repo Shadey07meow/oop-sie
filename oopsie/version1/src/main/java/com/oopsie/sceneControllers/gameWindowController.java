@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.oopsie.Main;
+import com.oopsie.animations.ButtonAnimations;
 import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.gameQuestion;
 
@@ -66,6 +67,7 @@ public class gameWindowController {
             newButton.setPrefWidth(100000);
             newButton.setAlignment(Pos.CENTER_LEFT);
 
+            ButtonAnimations.addSoundToButton(newButton);
             newButton.setOnAction(e -> 
                 showSelectedQuestion(e)
             );        
@@ -94,6 +96,7 @@ public class gameWindowController {
         for(int j= 0; j < 4; j++)
         {
             Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
+            ButtonAnimations.addSoundToButton(newButton2);
 
             // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
             newButton2.setUserData(j);
