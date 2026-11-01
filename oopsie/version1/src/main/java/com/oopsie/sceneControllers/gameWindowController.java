@@ -32,6 +32,8 @@ public class gameWindowController {
 
 
     private Dimension2D oopSize = new Dimension2D(512, 512);
+
+    // Images of OOP
     private enum OOPState
     {
         Happy(""),
@@ -65,6 +67,7 @@ public class gameWindowController {
         pointsLabel.setText("POINTS : " + gameplayLoop.getCurrentPoints());
         // If there are previous buttons in the scene, turn them into labels
         terminalButtonsToLabels();
+        OOPHolder.setVisible(false);
         
     
         // Get 4 choices
@@ -130,6 +133,9 @@ public class gameWindowController {
             terminalVBox.getChildren().add(newButton2);
             terminalScrollbox.setVvalue(1.0);
         }
+
+        terminalScrollbox.setVvalue(1.0);
+
     }
 
     public void checkAnswer(ActionEvent z, gameQuestion selectedQuestion)
@@ -201,6 +207,9 @@ public class gameWindowController {
             terminalVBox.getChildren().add(wrongAnswerLabel);
             terminalVBox.getChildren().add(chooseLabel);
         }
+
+        terminalScrollbox.setVvalue(1.0);
+
 
     }
 

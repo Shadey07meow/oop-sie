@@ -120,7 +120,7 @@ public class gameplayLoop {
 
     public static void readFile()
     {
-        String separator = " -- ";
+        String separator = ";;;";
         System.out.println("I am being called");
         boolean readFirst = false;
 
@@ -145,16 +145,16 @@ public class gameplayLoop {
                 //easyQuestions.add(new gameQuestion(lineSeparated[0].replace("\\n", "\n"), lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));
                 if(lineSeparated[7].equals("Easy"))
                 {
-                    easyQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));
+                    easyQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));
                 } else if (lineSeparated[7].equals("Medium"))
                 {
-                    mediumQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
+                    mediumQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));                    
                 } else if (lineSeparated[7].equals("Hard"))
                 {
-                    hardQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
+                    hardQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));                    
                 } else if (lineSeparated[7].equals("Difficult"))
                 {
-                    difficultQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));                    
+                    difficultQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));                    
                 }     
             }
         } catch (Exception exception)
