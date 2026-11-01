@@ -1,23 +1,30 @@
 package com.oopsie.sceneControllers;
 
+import javafx.scene.image.Image;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
 import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.gameQuestion;
 
+import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.util.Duration;
 
 
 public class gameWindowController {
@@ -30,15 +37,17 @@ public class gameWindowController {
 
 
 
-
-    private Dimension2D oopSize = new Dimension2D(512, 512);
+    private float scaleMultiplier = 1.2f;
+    private Dimension2D oopSize = new Dimension2D(128 * scaleMultiplier, 128 * scaleMultiplier);
+    private double oopShowDurationTime = 1f;
 
     // Images of OOP
-    private enum OOPState
+    public enum OOPState
     {
-        Happy(""),
-        QuestionMark(""),
-        Sad("");
+        Happy("OOP/OOP Happy.png"),
+        QuestionMark("OOP/OOP Question.png"),
+        Sad("OOP/OOP Sad.png"),
+        Loading("OOP/OOP Loading.gif");
 
         private String imageLocation;
         OOPState(String imageLocation)
@@ -60,14 +69,42 @@ public class gameWindowController {
     @FXML TextArea questionTextArea;
     @FXML ScrollPane terminalScrollbox;
     @FXML Pane OOPHolder;
+    Node OOPHolderParent;
+    Label CorrectAnswerLabel;
 
+    // OOP Region
+    ImageView OOPImage;
+    
+    @FXML 
+    public void initialize()
+    {
+        instance = this;
+
+        OOPImage = new ImageView();
+        OOPImage.setFitWidth(oopSize.getWidth());
+        OOPImage.setFitHeight(oopSize.getHeight());
+
+        OOPImage.setPreserveRatio(true);
+
+        
+
+        // Set OOP Image Here
+
+        OOPHolder.getChildren().add(OOPImage);
+        OOPHolderParent = OOPHolder.getParent();
+        
+        toggleOOP(false);
+        // showOOP(OOPState.Happy);
+
+
+        updateDisplay();
+    }
 
     public void updateDisplay()
     {
         pointsLabel.setText("POINTS : " + gameplayLoop.getCurrentPoints());
         // If there are previous buttons in the scene, turn them into labels
         terminalButtonsToLabels();
-        OOPHolder.setVisible(false);
         
     
         // Get 4 choices
@@ -164,11 +201,18 @@ public class gameWindowController {
         Label victoryLabel = new Label("> Correct Answer");
         Label newLineLabel = new Label(" ");
 
-        terminalVBox.getChildren().add(victoryLabel);
-        terminalVBox.getChildren().add(newLineLabel);
-        terminalScrollbox.setVvalue(1.0);
+        showOOP(OOPState.Happy);
+        PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
+        pause.setOnFinished(y -> 
+            {
+                toggleOOP(false);            
+                terminalVBox.getChildren().add(victoryLabel);
+                terminalVBox.getChildren().add(newLineLabel);
+                terminalScrollbox.setVvalue(1.0);
 
-        updateDisplay();
+                updateDisplay();
+            });
+        pause.play();
 
         if(gameplayLoop.getCurrentLevel() > 40)
         {
@@ -191,6 +235,9 @@ public class gameWindowController {
         // Check if there are lifelines left
         System.out.println("You chose wrong");
 
+
+
+
         if (!gameplayLoop.getCurPlayerStats().hasLifelines())
         {
             try {
@@ -202,11 +249,28 @@ public class gameWindowController {
         } else
         {
             terminalButtonsToLabels();
-            Label wrongAnswerLabel = new Label("=================\n> Wrong answer");
-            Label chooseLabel = new Label("> Choose a Lifeline");
-            terminalVBox.getChildren().add(wrongAnswerLabel);
-            terminalVBox.getChildren().add(chooseLabel);
-        }
+            Random rand = new Random();
+            if (rand.nextBoolean())
+            {
+                showOOP(OOPState.Sad);
+            } else
+            {
+                showOOP(OOPState.QuestionMark);
+            }
+            PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
+            pause.setOnFinished(y -> 
+                {
+                    toggleOOP(false);            
+                    terminalScrollbox.setVvalue(1.0);
+                });
+                
+                
+                Label wrongAnswerLabel = new Label("=================\n> Wrong answer");
+                Label chooseLabel = new Label("> Choose a Lifeline");
+                terminalVBox.getChildren().add(wrongAnswerLabel);
+                terminalVBox.getChildren().add(chooseLabel);
+                pause.play();
+            }
 
         terminalScrollbox.setVvalue(1.0);
 
@@ -227,20 +291,17 @@ public class gameWindowController {
         }
     }
 
-    @FXML 
-    public void initialize()
-    {
-        instance = this;
-        updateDisplay();
-    }
 
     @FXML 
     public void doExceptionHandler()
     {
         // Should Display OOP on the Bottom Right Console
-        // OOP Will say some snarky remark
-        // OOP Will Say the answer in his little console
+        showOOP(OOPState.Loading);
 
+        // OOP Will Say the answer in his little console
+        PauseTransition pause = new PauseTransition(new Duration(oopShowDurationTime));
+        
+        
 
         gameplayLoop.getCurPlayerStats().setHasExceptionHandler(false);
         System.out.println(Boolean.toString(gameplayLoop.getCurPlayerStats().getHasExceptionHandler()));
@@ -260,9 +321,27 @@ public class gameWindowController {
     }
 
 
-    public void showOOP(int OOPState)
-    {
 
+    public void toggleOOP()
+    {
+        // Toggles OOP on or off
+        toggleOOP(OOPHolder.isVisible());
+    }
+
+    public void toggleOOP(boolean value)
+    {
+        // Toggles OOP to the selected value
+        OOPHolderParent.setVisible(value);
+        System.out.println(OOPHolderParent.isVisible());
+        OOPHolder.setMouseTransparent(!value);
+        OOPHolderParent.setMouseTransparent(!value);
+    }
+
+    public void showOOP(OOPState state)
+    {
+        toggleOOP(true);
+        Image curImage = new Image(getClass().getResourceAsStream("/com/oopsie/images/" + state.getLocation()));
+        OOPImage.setImage(curImage);  
     }
 
 }    
