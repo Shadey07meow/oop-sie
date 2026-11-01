@@ -11,6 +11,7 @@ import com.oopsie.logic.gameQuestion;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Dimension2D;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,6 +27,28 @@ public class gameWindowController {
     
 
     private ArrayList<Button> presentButtons = new ArrayList<>();
+
+
+
+
+    private Dimension2D oopSize = new Dimension2D(512, 512);
+    private enum OOPState
+    {
+        Happy(""),
+        QuestionMark(""),
+        Sad("");
+
+        private String imageLocation;
+        OOPState(String imageLocation)
+        {
+            this.imageLocation = imageLocation;
+        }
+
+        public String getLocation()
+        {
+            return imageLocation;
+        }
+    }
     
 
     @FXML Label pointsLabel;
@@ -34,17 +57,16 @@ public class gameWindowController {
     @FXML VBox terminalVBox;
     @FXML TextArea questionTextArea;
     @FXML ScrollPane terminalScrollbox;
+    @FXML Pane OOPHolder;
 
 
     public void updateDisplay()
     {
-
         pointsLabel.setText("POINTS : " + gameplayLoop.getCurrentPoints());
         // If there are previous buttons in the scene, turn them into labels
         terminalButtonsToLabels();
         
-        
-        
+    
         // Get 4 choices
         
         gameplayLoop.selectQuestions();
@@ -206,6 +228,11 @@ public class gameWindowController {
     @FXML 
     public void doExceptionHandler()
     {
+        // Should Display OOP on the Bottom Right Console
+        // OOP Will say some snarky remark
+        // OOP Will Say the answer in his little console
+
+
         gameplayLoop.getCurPlayerStats().setHasExceptionHandler(false);
         System.out.println(Boolean.toString(gameplayLoop.getCurPlayerStats().getHasExceptionHandler()));
     }
@@ -221,6 +248,12 @@ public class gameWindowController {
     {
 
         gameplayLoop.getCurPlayerStats().setHasDebug(false);
+    }
+
+
+    public void showOOP(int OOPState)
+    {
+
     }
 
 }    

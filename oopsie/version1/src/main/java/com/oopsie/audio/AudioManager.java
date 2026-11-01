@@ -18,7 +18,7 @@ public class AudioManager {
 
     public enum Music{
         // Contains all the music files for the game starting from the classes path
-        MainMenuMusic("null", 0),
+        MainMenuMusic("music/LongingForAIR.mp3", 0),
         GameOverMusic("null", 0),
         GameWinMusic("null", 0);
 

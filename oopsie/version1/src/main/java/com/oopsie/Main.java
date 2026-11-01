@@ -15,6 +15,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.*;
 
 /**
@@ -58,7 +59,8 @@ public class Main extends Application {
             Math.min(newY.doubleValue(), screen.getMaxY() - stage.getHeight()));
             if (y != newY.doubleValue()) stage.setY(y);
         });
-
+        
+        AudioManager.playMusic(AudioManager.Music.MainMenuMusic);
         // File file = new File("oopsie/version1/target/classes/com/oopsie/soundResources/effects/mouse_hover.wav");
         // System.out.println("URI for JavaFX: " + file.toURI() + " File Exists: " + file.exists());
 
