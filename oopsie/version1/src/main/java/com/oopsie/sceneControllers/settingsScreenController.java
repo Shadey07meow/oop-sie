@@ -44,10 +44,12 @@ public class settingsScreenController {
         titleBar.setOnMouseDragged(event -> {
 
             settingsPanel.setTranslateX(
-                    event.getSceneX() - mouseX);
+                    event.getSceneX() - mouseX
+            );
 
             settingsPanel.setTranslateY(
-                    event.getSceneY() - mouseY);
+                    event.getSceneY() - mouseY
+            );
 
         });
 
@@ -56,13 +58,7 @@ public class settingsScreenController {
     @FXML
     private void closeSettings() {
 
-        settingsPanel.getScene()
-                .getRoot()
-                .setVisible(false);
-
-        settingsPanel.getScene()
-                .getRoot()
-                .setManaged(false);
+        Main.closeSettings();
 
     }
 
@@ -70,6 +66,8 @@ public class settingsScreenController {
     private void quitToMenu() throws IOException {
 
         Main.changeRoot("mainMenu");
+
+        Main.closeSettings();
 
     }
 

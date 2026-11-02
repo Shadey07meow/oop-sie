@@ -72,7 +72,5 @@
             </VBox>
          </children>
       </AnchorPane>
-      <fx:include fx:id="settingsOverlay"
-            source="settingsScreen.fxml"/>
    </children>
 </StackPane>
