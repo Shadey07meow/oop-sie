@@ -203,6 +203,7 @@
                         </TextArea>
                      </children>
                   </AnchorPane>
+                  <Button layoutX="1215.0" layoutY="419.0" mnemonicParsing="false" onAction="#toggleDialoguePane" text="  X  " />
                </children>
             </Pane>
          </children>

@@ -1,5 +1,10 @@
 package com.oopsie.logic.supervisors;
 
+
+import java.util.Random;
+
+import com.oopsie.logic.gameQuestion;
+
 import javafx.scene.image.Image;
 
 public class Supervisor {
@@ -17,6 +22,33 @@ public class Supervisor {
         this.image = image;
         this.pickedLine = pickedLine;
     }
+
+    public int getAnswer(gameQuestion question)
+    {
+        float chance = getCorrectChance(question.getTopic());
+
+        Random rand = new Random();
+        float rolled = rand.nextFloat();
+
+
+        if(rolled <= chance)
+        {
+            return question.getCorrectAnswer();
+        }else
+        {
+            boolean gottenRandomAnswer = false;
+            int gottenAnswer = 0;
+            while(!gottenRandomAnswer)
+            {
+                gottenAnswer = rand.nextInt(4);
+                if(gottenAnswer != question.getCorrectAnswer())
+                    gottenRandomAnswer = true;
+            }
+            return gottenAnswer;
+        }
+    }
+
+
 
     public float getCorrectChance(String topic)
     {
@@ -41,5 +73,10 @@ public class Supervisor {
     public Image getImage()
     {
         return this.image;
+    }
+
+    public String getLine()
+    {
+        return this.pickedLine;
     }
 }

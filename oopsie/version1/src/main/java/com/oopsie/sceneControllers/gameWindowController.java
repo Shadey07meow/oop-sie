@@ -34,7 +34,9 @@ public class gameWindowController {
     
 
     private ArrayList<Button> presentButtons = new ArrayList<>();
-    private ActionEvent selectedQuestion = null;
+    private gameQuestion selectedQuestion = null;
+    private ActionEvent selectedQuesionActionEvent = null;
+    
 
 
 
@@ -95,7 +97,7 @@ public class gameWindowController {
         OOPImage = new ImageView();
         OOPImage.setFitWidth(oopSize.getWidth());
         OOPImage.setFitHeight(oopSize.getHeight());
-
+        dialoguePane.setVisible(false);
         OOPImage.setPreserveRatio(true);
 
         
@@ -144,8 +146,8 @@ public class gameWindowController {
             ButtonAnimations.addSoundToButton(newButton);
             newButton.setOnAction(e -> 
                 {
-                    selectedQuestion = e;
-                    showSelectedQuestion(selectedQuestion);
+                    selectedQuesionActionEvent = e;
+                    showSelectedQuestion(selectedQuesionActionEvent);
                 }
 
             );        
@@ -165,17 +167,18 @@ public class gameWindowController {
         
         Button choiceBtnSource = (Button)e.getSource();
         terminalButtonsToLabels();
-        gameQuestion selectedQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
-        questionTextArea.setText(selectedQuestion.getQuestionString());
+        gameQuestion newQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
+        selectedQuestion = newQuestion;
+        questionTextArea.setText(newQuestion.getQuestionString());
         terminalVBox.getChildren().add(new Label("\n========================================="));
         terminalVBox.getChildren().add(new Label("Choices:"));
-        corrrectAnswer = selectedQuestion.getCorrectAnswer();
+        corrrectAnswer = newQuestion.getCorrectAnswer();
 
 
         // Creates 4 new buttons
         for(int j= 0; j < 4; j++)
         {
-            Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
+            Button newButton2 = new Button("> " + newQuestion.getChoiceString(j));
             ButtonAnimations.addSoundToButton(newButton2);
 
             // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
@@ -184,7 +187,7 @@ public class gameWindowController {
             newButton2.setAlignment(Pos.CENTER_LEFT);
 
 
-            newButton2.setOnAction(z -> checkAnswer(z, selectedQuestion));
+            newButton2.setOnAction(z -> checkAnswer(z, newQuestion));
             terminalVBox.getChildren().add(newButton2);
             terminalScrollbox.setVvalue(1.0);
         }
@@ -193,11 +196,11 @@ public class gameWindowController {
 
     }
 
-    public void checkAnswer(ActionEvent z, gameQuestion selectedQuestion)
+    public void checkAnswer(ActionEvent z, gameQuestion chosenQuestion)
     {
         Button btnSource = (Button)z.getSource();
         int index = (int)btnSource.getUserData();
-        boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, selectedQuestion);
+        boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, chosenQuestion);
         if (checkAnswer)
         {
             choseRight();
@@ -319,7 +322,7 @@ public class gameWindowController {
 
             PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
             pause.setOnFinished(e -> {
-                showSelectedQuestion(selectedQuestion);
+                showSelectedQuestion(selectedQuesionActionEvent);
                 // OOP Will Say the answer in his little console
                 
                 switch(corrrectAnswer)
@@ -361,7 +364,7 @@ public class gameWindowController {
 
             PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
             pause.setOnFinished(e -> {
-                showSelectedQuestion(selectedQuestion);
+                showSelectedQuestion(selectedQuesionActionEvent);
                 // OOP Will Say the answer in his little console
                 toggleOOP(false);
             }
@@ -378,7 +381,53 @@ public class gameWindowController {
     public void doDebug()
     {
 
-        gameplayLoop.getCurPlayerStats().setHasDebug(false);
+        if(gameplayLoop.getCurPlayerStats().getHasDebug())
+        {
+            // Show dialogue pane
+
+            if (!hasLost)
+            {
+
+                dialoguePane.setVisible(true);
+            }
+            else
+            {
+                dialoguePane.setVisible(true);
+                showSelectedQuestion(selectedQuesionActionEvent);
+            }
+
+            String resultString = "";
+
+            // Integer to string converter
+            switch (gameplayLoop.getCurPlayerStats().getSupervisor().getAnswer(selectedQuestion))
+            {
+                case 0:
+                    resultString = "A";
+                    showOOP(OOPState.A);
+                    break;
+                case 1:
+                    resultString = "B";
+                    showOOP(OOPState.B);
+                    break;
+                case 2:
+                    resultString = "C";
+                    showOOP(OOPState.C);
+                    break;
+                case 3:
+                    resultString = "D";
+                    showOOP(OOPState.D);
+                    break;
+                default:
+                    break;
+            }
+
+
+            // Supervisor tells you the answer
+            supervisorLines.setText(gameplayLoop.getCurPlayerStats().getSupervisor().getLine() + " " + resultString);
+
+            gameplayLoop.getCurPlayerStats().setHasDebug(false);
+            hasLost = false;
+        }
     }
 
 
@@ -396,6 +445,12 @@ public class gameWindowController {
         System.out.println(OOPHolderParent.isVisible());
         OOPHolder.setMouseTransparent(!value);
         OOPHolderParent.setMouseTransparent(!value);
+    }
+
+    @FXML 
+    public void toggleDialoguePane()
+    {
+        dialoguePane.setVisible(!dialoguePane.isVisible());
     }
 
     public void showOOP(OOPState state)

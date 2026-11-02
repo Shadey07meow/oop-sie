@@ -133,5 +133,5 @@
     -fx-background-image: url("../images/screens/DialougeBox.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    -fx-background-size: cover;
+    -fx-background-size: stretch;
 }
