@@ -1,22 +1,17 @@
 package com.oopsie;
 
-import java.io.File;
-import java.io.IOException;
-
-import javafx.geometry.Rectangle2D;
-import javafx.stage.Screen;
-
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
 import java.io.IOException;
 
 import com.oopsie.audio.AudioManager;
-import com.oopsie.logic.*;
+import com.oopsie.logic.gameplayLoop;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 /**
  * JavaFX App
