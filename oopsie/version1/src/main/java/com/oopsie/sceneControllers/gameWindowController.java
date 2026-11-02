@@ -80,6 +80,10 @@ public class gameWindowController {
     Node OOPHolderParent;
     Label CorrectAnswerLabel;
 
+    @FXML Pane dialoguePane;
+    @FXML ImageView supervisorDisplay;
+    @FXML TextArea supervisorLines;
+
     // OOP Region
     ImageView OOPImage;
     

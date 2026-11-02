@@ -114,3 +114,24 @@
     -fx-text-fill: -orange-light-color;
 }
 
+
+/*Custom Stuff*/
+.empty-screen{
+    -fx-background-image: url("../images/screens/screenEmpty.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
+
+}
+
+/*Dialogue Settings*/
+.transparent-background{
+    -fx-background-color: #0000002e;
+}
+
+.dialogue-pane{
+    -fx-background-image: url("../images/screens/DialougeBox.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: cover;
+}
