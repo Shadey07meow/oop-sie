@@ -61,5 +61,10 @@ public class playerStats {
         return (this.hasDebug || this.hasExceptionHandler || this.hasRecompile);
     }
     
+    public void setName(String name)
+    {
+        this.name = name;
+    } 
 
+    public String getName() {return this.name;}
 }

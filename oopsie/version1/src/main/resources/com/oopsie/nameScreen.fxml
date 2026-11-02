@@ -36,7 +36,7 @@
                                     <FlowPane prefHeight="38.0" prefWidth="434.0">
                                        <children>
                                           <Label text="Name :  " />
-                                          <TextField fx:id="playerName" text="Hello there" />
+                                          <TextField fx:id="playerName" promptText="Enter Name" />
                                        </children>
                                     </FlowPane>
                                     <FlowPane prefHeight="0.0" prefWidth="1000.0">

@@ -315,14 +315,14 @@ public class gameWindowController {
     @FXML 
     public void doExceptionHandler()
     {
-        if(gameplayLoop.getCurPlayerStats().getHasExceptionHandler() && hasLost)
+        if(gameplayLoop.getCurPlayerStats().getHasExceptionHandler() && !hasLost)
         {
             // Should Display OOP on the Bottom Right Console
             showOOP(OOPState.Loading);
 
             PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
             pause.setOnFinished(e -> {
-                showSelectedQuestion(selectedQuesionActionEvent);
+                // showSelectedQuestion(selectedQuesionActionEvent);
                 // OOP Will Say the answer in his little console
                 
                 switch(corrrectAnswer)
@@ -381,20 +381,14 @@ public class gameWindowController {
     public void doDebug()
     {
 
-        if(gameplayLoop.getCurPlayerStats().getHasDebug())
+        if(gameplayLoop.getCurPlayerStats().getHasDebug() && !hasLost)
         {
             // Show dialogue pane
 
-            if (!hasLost)
-            {
+   
 
-                dialoguePane.setVisible(true);
-            }
-            else
-            {
-                dialoguePane.setVisible(true);
-                showSelectedQuestion(selectedQuesionActionEvent);
-            }
+            dialoguePane.setVisible(true);
+
 
             String resultString = "";
 
