@@ -55,10 +55,7 @@ public class playerStats {
 
     public boolean hasLifelines()
     {
-        System.out.println(Boolean.toString(this.hasDebug));
-        System.out.println(Boolean.toString(this.hasExceptionHandler));
-        System.out.println(Boolean.toString(this.hasRecompile));
-        return (this.hasDebug || this.hasExceptionHandler || this.hasRecompile);
+        return (this.hasRecompile);
     }
     
     public void setName(String name)

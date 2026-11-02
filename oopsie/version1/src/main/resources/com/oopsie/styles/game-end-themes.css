@@ -1,0 +1,15 @@
+.invisible-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-effect: null;
+}
+
+.invisible-button:hover,
+.invisible-button:pressed,
+.invisible-button:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: transparent;
+}
+

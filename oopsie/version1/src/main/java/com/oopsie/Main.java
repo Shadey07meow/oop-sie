@@ -12,6 +12,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
@@ -134,6 +135,13 @@ public class Main extends Application {
                 stage.setY(y);
             }
         });
+
+
+        stage.getIcons().add(
+              new Image(Main.class.getResourceAsStream("/com/oopsie/images/screens/Logo Screen.png"))
+        );
+
+        stage.setTitle("OOP Terminal");
 
         AudioManager.playMusic(AudioManager.Music.MainMenuMusic);
     }
