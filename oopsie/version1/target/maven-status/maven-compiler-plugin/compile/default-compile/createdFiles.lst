@@ -1,6 +1,7 @@
 com\oopsie\sceneControllers\nameScreenController.class
 com\oopsie\logic\playerStats.class
 com\oopsie\Main.class
+com\oopsie\audio\AudioManager$Music.class
 com\oopsie\logic\supervisors\Supervisor.class
 com\oopsie\sceneControllers\supervisorChooser.class
 com\oopsie\animations\ButtonAnimations.class
@@ -8,10 +9,13 @@ com\oopsie\logic\gameQuestion.class
 com\oopsie\sceneControllers\helpScreenController.class
 com\oopsie\logic\gameplayLoop$difficulty.class
 com\oopsie\sceneControllers\mainMenuController.class
+com\oopsie\audio\AudioManager$Effect.class
 com\oopsie\sceneManager.class
+com\oopsie\sceneControllers\helpController.class
 com\oopsie\logic\supervisors\SupervisorManager.class
+com\oopsie\sceneControllers\gameWindowController$OOPState.class
 com\oopsie\audio\AudioManager.class
 module-info.class
-com\oopsie\sceneControllers\uiController.class
 com\oopsie\logic\gameplayLoop.class
 com\oopsie\sceneControllers\gameWindowController.class
+com\oopsie\sceneControllers\endGameController.class
