@@ -168,6 +168,7 @@ public class gameWindowController {
         Button choiceBtnSource = (Button)e.getSource();
         terminalButtonsToLabels();
         gameQuestion newQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
+        selectedQuestion = newQuestion;
         questionTextArea.setText(newQuestion.getQuestionString());
         terminalVBox.getChildren().add(new Label("\n========================================="));
         terminalVBox.getChildren().add(new Label("Choices:"));
@@ -186,7 +187,7 @@ public class gameWindowController {
             newButton2.setAlignment(Pos.CENTER_LEFT);
 
 
-            newButton2.setOnAction(z -> checkAnswer(z, selectedQuestion));
+            newButton2.setOnAction(z -> checkAnswer(z, newQuestion));
             terminalVBox.getChildren().add(newButton2);
             terminalScrollbox.setVvalue(1.0);
         }
@@ -197,7 +198,6 @@ public class gameWindowController {
 
     public void checkAnswer(ActionEvent z, gameQuestion chosenQuestion)
     {
-        selectedQuestion = chosenQuestion;
         Button btnSource = (Button)z.getSource();
         int index = (int)btnSource.getUserData();
         boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, chosenQuestion);
@@ -396,11 +396,34 @@ public class gameWindowController {
                 showSelectedQuestion(selectedQuesionActionEvent);
             }
 
+            String resultString = "";
 
+            // Integer to string converter
+            switch (gameplayLoop.getCurPlayerStats().getSupervisor().getAnswer(selectedQuestion))
+            {
+                case 0:
+                    resultString = "A";
+                    showOOP(OOPState.A);
+                    break;
+                case 1:
+                    resultString = "B";
+                    showOOP(OOPState.B);
+                    break;
+                case 2:
+                    resultString = "C";
+                    showOOP(OOPState.C);
+                    break;
+                case 3:
+                    resultString = "D";
+                    showOOP(OOPState.D);
+                    break;
+                default:
+                    break;
+            }
 
 
             // Supervisor tells you the answer
-            supervisorLines.setText(gameplayLoop.getCurPlayerStats().getSupervisor().getLine() + gameplayLoop.getCurPlayerStats().getSupervisor().getAnswer(selectedQuestion));
+            supervisorLines.setText(gameplayLoop.getCurPlayerStats().getSupervisor().getLine() + " " + resultString);
 
             gameplayLoop.getCurPlayerStats().setHasDebug(false);
             hasLost = false;
