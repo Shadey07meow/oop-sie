@@ -1,15 +1,12 @@
 package com.oopsie.sceneControllers;
 
-import javafx.scene.image.Image;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
-import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.gameQuestion;
+import com.oopsie.logic.gameplayLoop;
 
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
@@ -22,8 +19,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 

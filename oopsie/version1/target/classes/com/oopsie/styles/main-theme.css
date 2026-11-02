@@ -1,5 +1,5 @@
 /* ===== Palette (sampled from the README screen) ===== */
-.root {
+.root, .theme-root {
     /*UI Elements color*/
     -outer-pane-color: #403e44; 
     -inner-pane-color: #827d7d; 
