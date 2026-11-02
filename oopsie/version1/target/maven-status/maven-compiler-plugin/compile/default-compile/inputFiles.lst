@@ -1,16 +1,19 @@
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\nameScreenController.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\module-info.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\supervisorChooser.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneManager.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\mainMenuController.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\audio\AudioManager.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\gameplayLoop.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\supervisors\SupervisorManager.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\gameQuestion.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\Main.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\animations\ButtonAnimations.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\supervisors\Supervisor.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\uiController.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\playerStats.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\gameWindowController.java
-C:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\helpScreenController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\supervisors\Supervisor.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\nameScreenController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\helpScreenController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\module-info.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\gameWindowController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\leaderboardController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\playerStats.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\endGameController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\supervisors\SupervisorManager.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\Main.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\helpController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\animations\ButtonAnimations.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\gameplayLoop.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\audio\AudioManager.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\creditsController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\supervisorChooser.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\gameQuestion.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\mainMenuController.java
+C:\Users\linds\Desktop\TO ORGANIZE\CAL\Github\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneManager.java

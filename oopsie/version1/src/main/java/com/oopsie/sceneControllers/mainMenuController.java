@@ -3,17 +3,14 @@ package com.oopsie.sceneControllers;
 import java.io.IOException;
 
 import com.oopsie.Main;
-import com.oopsie.logic.*;
+import com.oopsie.animations.ButtonAnimations;
+import com.oopsie.logic.gameplayLoop;
 
-import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import com.oopsie.animations.ButtonAnimations;
-
-import javafx.util.Duration;
 
 public class mainMenuController {
     
@@ -26,6 +23,9 @@ public class mainMenuController {
     private Image helpPressed;
     private Image exitNormal;
     private Image exitPressed;
+    private Image leadButtonNormal;
+    private Image leadButtonPressed;
+
 
     @FXML 
     private Button startButton;
@@ -44,6 +44,8 @@ public class mainMenuController {
     @FXML 
     private Button homeButton;
 
+    @FXML
+    private Button leadButton;
 
 
 
@@ -63,15 +65,21 @@ public class mainMenuController {
         exitNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButton.png"));
         exitPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButtonPressed.png"));
 
+        leadButtonNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/LeaderboardButton.png"));
+        leadButtonPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/LeaderboardButtonPressed.png"));
+
+
         ButtonAnimations.addHoverImage(creditsButton, creditsNormal, creditsPressed);
         ButtonAnimations.addHoverImage(helpButton, helpNormal, helpPressed);
         ButtonAnimations.addHoverImage(quitButton, exitNormal, exitPressed);
         ButtonAnimations.addHoverImage(startButton, startNormal, startPressed);
+        ButtonAnimations.addHoverImage(leadButton, leadButtonNormal, leadButtonPressed);
 
         ButtonAnimations.addHoverAnimation(startButton);
         ButtonAnimations.addHoverAnimation(helpButton);
         ButtonAnimations.addHoverAnimation(creditsButton);
         ButtonAnimations.addHoverAnimation(quitButton);
+        ButtonAnimations.addHoverAnimation(leadButton);
         
 
     }
@@ -102,6 +110,11 @@ public class mainMenuController {
        @FXML
     private void switchToTitle() throws IOException {
         Main.changeRoot("mainMenu");
+    }
+
+    @FXML
+    private void switchToLeaderboard(ActionEvent event) throws IOException {
+        Main.changeRoot("leaderboard");
     }
 
 

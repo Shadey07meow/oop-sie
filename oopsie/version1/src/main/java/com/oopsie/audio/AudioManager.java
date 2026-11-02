@@ -1,13 +1,10 @@
 package com.oopsie.audio;
 
+import java.io.File;
+
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
-import java.io.File;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 
 public class AudioManager {
     private static MediaPlayer playingMusic;
@@ -126,4 +123,3 @@ public class AudioManager {
 
     }
 }
-

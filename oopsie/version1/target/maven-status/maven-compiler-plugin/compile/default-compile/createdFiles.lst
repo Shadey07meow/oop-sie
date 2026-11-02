@@ -12,6 +12,5 @@ com\oopsie\sceneManager.class
 com\oopsie\logic\supervisors\SupervisorManager.class
 com\oopsie\audio\AudioManager.class
 module-info.class
-com\oopsie\sceneControllers\uiController.class
 com\oopsie\logic\gameplayLoop.class
 com\oopsie\sceneControllers\gameWindowController.class
