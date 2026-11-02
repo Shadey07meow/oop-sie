@@ -32,6 +32,8 @@ public class supervisorChooser {
     @FXML ImageView superSlotImg2;
     @FXML ImageView superSlotImg3;
 
+    @FXML Button acceptButton;
+
     
 
     private final EventHandler<MouseEvent> blocker = MouseEvent::consume;
@@ -40,6 +42,7 @@ public class supervisorChooser {
     @FXML
     public void initialize()
     {
+        acceptButton.setVisible(false);
         ButtonAnimations.addHoverAnimation(superSlot1);
         ButtonAnimations.addHoverAnimation(superSlot2);
         ButtonAnimations.addHoverAnimation(superSlot3);
@@ -59,7 +62,8 @@ public class supervisorChooser {
         
 
         setSelected(0);
-        
+        activateButton();
+
     }
 
     
@@ -67,6 +71,7 @@ public class supervisorChooser {
     private void setSelect2() {
         gameplayLoop.getCurPlayerStats().setSupervisor(selectedSupervisors[1]);
         setSelected(1);
+        activateButton();
 
     }
 
@@ -75,12 +80,18 @@ public class supervisorChooser {
     private void setSelect3() {
         gameplayLoop.getCurPlayerStats().setSupervisor(selectedSupervisors[2]);
         setSelected(2);
-
+        activateButton();
     }
 
     @FXML
     private void switchToGame() throws IOException {
         Main.changeRoot("gameWindow");
+    }
+
+
+    private void activateButton()
+    {
+        acceptButton.setVisible(true);
     }
 
     private void setSelected(int v)
