@@ -17,7 +17,7 @@
       </ImageView>
       <AnchorPane layoutY="130.0" prefHeight="527.0" prefWidth="1190.0" style="-fx-background-color: transparent;">
          <children>
-            <TextArea blendMode="MULTIPLY" editable="false" layoutX="84.0" layoutY="-4.0" prefHeight="511.0" prefWidth="1106.0" promptText="sadasd" style="-fx-background-color: blue;" text="FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;&#10;&#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER " wrapText="true">
+            <TextArea blendMode="MULTIPLY" editable="false" layoutX="57.0" layoutY="-20.0" prefHeight="527.0" prefWidth="1155.0" promptText="sadasd" style="-fx-background-color: blue;" text="FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;&#10;&#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER FILLER &#10;&#10;&#10;FILLER FILLER FILLER FILLER FILLER FILLER " wrapText="true">
                <font>
                   <Font name="Rockwell Extra Bold" size="27.0" />
                </font>
@@ -27,13 +27,6 @@
             </TextArea>
          </children>
       </AnchorPane>
-      <Button fx:id="homeButton" layoutX="1096.0" layoutY="67.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="42.0" prefWidth="88.0" style="-fx-background-color: transparent;">
-         <graphic>
-            <ImageView fitHeight="70.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/buttons/smallExitButton.png" />
-               </image>
-            </ImageView>
-         </graphic></Button>
+      <Button fx:id="homeButton" layoutX="1175.0" layoutY="61.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="38.0" prefWidth="38.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>
