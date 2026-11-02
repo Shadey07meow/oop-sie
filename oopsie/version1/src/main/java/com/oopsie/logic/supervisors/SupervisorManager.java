@@ -35,41 +35,42 @@ public class SupervisorManager {
             "Bob",
             new String[]{"C", "Java"}, 
             0.1f,
-            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor1.png"))
+            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor1.png")),
+            "*Grumbling*"
         ));
         
         supervisorList.add(new Supervisor(
-            "Cecil",
+            "William",
             new String[]{"C", "Java"}, 
             0.1f,
-            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor2.png"))
-
-            
+            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor2.png")), 
+            "Uh…"
         ));
         
         
         supervisorList.add(new Supervisor(
-            "Jerome",
+            "Greg",
             new String[]{"C", "Java"}, 
             0.1f,
-            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor3.png"))
-
+            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor3.png")),
+            "What's happening now, recruit?"
         ));
         
         supervisorList.add(new Supervisor(
-            "Friday",
+            "Craig",
             new String[]{"C", "Java"}, 
             0.1f,
-            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor4.png"))
+            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor4.png")),
+            "Let’s see here…"
 
         ));
 
         supervisorList.add(new Supervisor(
-            "Ultron",
+            "Jarvis",
             new String[]{"C", "Java"}, 
             0.1f,
-            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor5.png"))
-
+            new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor5.png")),
+            "No worries, recruit! I’ve got your back."
         ));
     }
 

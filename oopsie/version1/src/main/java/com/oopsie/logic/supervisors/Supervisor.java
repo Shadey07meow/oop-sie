@@ -7,13 +7,15 @@ public class Supervisor {
     private String[] proficientTopics;
     private float baseCorrectChance = 0.25f;
     private Image image;
+    private String pickedLine = "";
     
-    public Supervisor(String name, String[] proficientTopics, float baseCorrectChance, Image image)
+    public Supervisor(String name, String[] proficientTopics, float baseCorrectChance, Image image, String pickedLine)
     {
         this.name = name;
         this.proficientTopics = proficientTopics;
         this.baseCorrectChance = baseCorrectChance;
         this.image = image;
+        this.pickedLine = pickedLine;
     }
 
     public float getCorrectChance(String topic)

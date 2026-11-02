@@ -34,6 +34,7 @@ public class gameWindowController {
     
 
     private ArrayList<Button> presentButtons = new ArrayList<>();
+    private ActionEvent selectedQuestion = null;
 
 
 
@@ -41,13 +42,20 @@ public class gameWindowController {
     private Dimension2D oopSize = new Dimension2D(128 * scaleMultiplier, 128 * scaleMultiplier);
     private double oopShowDurationTime = 1f;
 
+    private boolean hasLost = false;
+    private static int corrrectAnswer;
+
     // Images of OOP
     public enum OOPState
     {
         Happy("OOP/OOP Happy.png"),
-        QuestionMark("OOP/OOP Question.png"),
+        QuestionMark("OOP/OOP Question Mark.png"),
         Sad("OOP/OOP Sad.png"),
-        Loading("OOP/OOP Loading.gif");
+        Loading("OOP/OOP Loading.gif"),
+        A("OOP/A.png"),
+        B("OOP/B.png"),
+        C("OOP/C.png"),
+        D("OOP/D.png");
 
         private String imageLocation;
         OOPState(String imageLocation)
@@ -131,7 +139,11 @@ public class gameWindowController {
 
             ButtonAnimations.addSoundToButton(newButton);
             newButton.setOnAction(e -> 
-                showSelectedQuestion(e)
+                {
+                    selectedQuestion = e;
+                    showSelectedQuestion(selectedQuestion);
+                }
+
             );        
             // presentButtons.add(newButton);
             terminalVBox.getChildren().add(newButton);
@@ -153,6 +165,8 @@ public class gameWindowController {
         questionTextArea.setText(selectedQuestion.getQuestionString());
         terminalVBox.getChildren().add(new Label("\n========================================="));
         terminalVBox.getChildren().add(new Label("Choices:"));
+        corrrectAnswer = selectedQuestion.getCorrectAnswer();
+
 
         // Creates 4 new buttons
         for(int j= 0; j < 4; j++)
@@ -193,8 +207,6 @@ public class gameWindowController {
 
     public void choseRight()
     {
-
-
         // Chose the correct answer
         questionTextArea.setText("Correct answer Yippe");
         gameplayLoop.wonLevel();
@@ -234,7 +246,7 @@ public class gameWindowController {
 
         // Check if there are lifelines left
         System.out.println("You chose wrong");
-
+        hasLost = true;
 
 
 
@@ -250,13 +262,14 @@ public class gameWindowController {
         {
             terminalButtonsToLabels();
             Random rand = new Random();
-            if (rand.nextBoolean())
-            {
+            boolean val = rand.nextBoolean();
+
+            if(val)
                 showOOP(OOPState.Sad);
-            } else
-            {
+            else
                 showOOP(OOPState.QuestionMark);
-            }
+            // showOOP(OOPState.QuestionMark);
+
             PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
             pause.setOnFinished(y -> 
                 {
@@ -295,22 +308,66 @@ public class gameWindowController {
     @FXML 
     public void doExceptionHandler()
     {
-        // Should Display OOP on the Bottom Right Console
-        showOOP(OOPState.Loading);
+        if(gameplayLoop.getCurPlayerStats().getHasExceptionHandler() && hasLost)
+        {
+            // Should Display OOP on the Bottom Right Console
+            showOOP(OOPState.Loading);
 
-        // OOP Will Say the answer in his little console
-        PauseTransition pause = new PauseTransition(new Duration(oopShowDurationTime));
-        
-        
+            PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
+            pause.setOnFinished(e -> {
+                showSelectedQuestion(selectedQuestion);
+                // OOP Will Say the answer in his little console
+                
+                switch(corrrectAnswer)
+                {
+                    case 0:
+                        showOOP(OOPState.A);
+                        break;
+                    case 1:
+                        showOOP(OOPState.B);
+                        break;
+                    case 2:
+                        showOOP(OOPState.C);
+                        break;
+                        
+                    case 3:
+                        showOOP(OOPState.D);
+                        break;
+                }
 
-        gameplayLoop.getCurPlayerStats().setHasExceptionHandler(false);
-        System.out.println(Boolean.toString(gameplayLoop.getCurPlayerStats().getHasExceptionHandler()));
+                
+            }
+            );
+            pause.play();
+            gameplayLoop.getCurPlayerStats().setHasExceptionHandler(false);
+            System.out.println(Boolean.toString(gameplayLoop.getCurPlayerStats().getHasExceptionHandler()));
+            hasLost = false;
+        }
     }
     
     @FXML 
     public void doRecompile()
     {
-        gameplayLoop.getCurPlayerStats().setHasRecompile(false);
+
+        
+        if(gameplayLoop.getCurPlayerStats().getHasRecompile() && hasLost)
+        {
+            // Should Display OOP on the Bottom Right Console
+            showOOP(OOPState.Loading);
+
+            PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
+            pause.setOnFinished(e -> {
+                showSelectedQuestion(selectedQuestion);
+                // OOP Will Say the answer in his little console
+                toggleOOP(false);
+            }
+            );
+            pause.play();
+            gameplayLoop.getCurPlayerStats().setHasRecompile(false);
+            hasLost = false;
+        }
+
+        
     }
 
     @FXML 

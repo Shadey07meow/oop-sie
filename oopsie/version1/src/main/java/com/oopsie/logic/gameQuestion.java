@@ -61,4 +61,9 @@ public class gameQuestion {
     {
         return this.topicString;
     }
+
+    public int getCorrectAnswer()
+    {
+        return this.correctAnswer;
+    }
 }

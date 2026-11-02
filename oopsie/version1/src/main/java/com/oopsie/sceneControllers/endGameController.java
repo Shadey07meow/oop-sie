@@ -7,7 +7,7 @@ import com.oopsie.Main;
 
 import javafx.fxml.FXML;
 
-public class uiController {
+public class endGameController {
 
     @FXML
     private void switchToMain() throws IOException {
