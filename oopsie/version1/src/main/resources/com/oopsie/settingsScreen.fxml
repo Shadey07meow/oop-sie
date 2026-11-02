@@ -8,9 +8,11 @@
 
 <VBox fx:id="settingsPanel"
       alignment="CENTER"
-      spacing="20"
+      spacing="22"
       prefWidth="480"
       prefHeight="430"
+      maxWidth="480"
+      maxHeight="430"
       style="-fx-background-color: #FFF8E7;
              -fx-background-radius: 20;
              -fx-border-color: #9C7653;
@@ -24,27 +26,80 @@
         <Insets top="20" bottom="25" left="35" right="35"/>
     </padding>
 
-    <HBox fx:id="titleBar" alignment="CENTER">
+    <!-- TITLE BAR -->
+    <HBox fx:id="titleBar"
+          alignment="CENTER"
+          prefHeight="55"
+          style="-fx-background-color: #E8D2AC;
+                 -fx-background-radius: 12;">
+
         <Label text="GAME SETTINGS"
-               style="-fx-font-size: 25px; -fx-font-weight: bold;"/>
+               style="-fx-font-size: 25px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #65452D;"/>
     </HBox>
 
-    <VBox spacing="10">
-        <Label text="Music Volume"/>
-        <Slider fx:id="musicSlider" min="0" max="100" value="70"/>
+    <!-- MUSIC VOLUME -->
+    <VBox spacing="10" alignment="CENTER_LEFT">
+
+        <Label text="Music Volume"
+               style="-fx-font-size: 17px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #65452D;"/>
+
+        <Slider fx:id="musicSlider"
+                min="0"
+                max="100"
+                value="70"
+                prefWidth="380"/>
+
     </VBox>
 
-    <VBox spacing="10">
-        <Label text="Sound Effects Volume"/>
-        <Slider fx:id="soundSlider" min="0" max="100" value="70"/>
+    <!-- SOUND EFFECTS VOLUME -->
+    <VBox spacing="10" alignment="CENTER_LEFT">
+
+        <Label text="Sound Effects Volume"
+               style="-fx-font-size: 17px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #65452D;"/>
+
+        <Slider fx:id="soundSlider"
+                min="0"
+                max="100"
+                value="70"
+                prefWidth="380"/>
+
     </VBox>
 
-    <Button text="RETURN TO MAIN MENU"
-            onAction="#quitToMenu"/>
+    <!-- BUTTONS -->
+    <VBox spacing="12" alignment="CENTER">
 
-    <Button text="CLOSE SETTINGS"
-            onAction="#closeSettings"/>
+        <Button text="RETURN TO MAIN MENU"
+                onAction="#quitToMenu"
+                prefWidth="280"
+                prefHeight="42"
+                style="-fx-background-color: #A87850;
+                       -fx-background-radius: 10;
+                       -fx-text-fill: white;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: bold;
+                       -fx-cursor: hand;"/>
 
-    <Label text="Press ESC to close settings"/>
+        <Button text="CLOSE SETTINGS"
+                onAction="#closeSettings"
+                prefWidth="280"
+                prefHeight="42"
+                style="-fx-background-color: #D6B98C;
+                       -fx-background-radius: 10;
+                       -fx-text-fill: #65452D;
+                       -fx-font-size: 14px;
+                       -fx-font-weight: bold;
+                       -fx-cursor: hand;"/>
+
+    </VBox>
+
+    <Label text="Press ESC to close settings"
+           style="-fx-font-size: 12px;
+                  -fx-text-fill: #92785F;"/>
 
 </VBox>

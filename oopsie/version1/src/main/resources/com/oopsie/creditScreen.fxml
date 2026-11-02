@@ -14,9 +14,9 @@
             <Image url="@images/Credits.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="599.0" fitWidth="370.0" layoutX="120.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
+      <ImageView fitHeight="599.0" fitWidth="370.0" layoutX="116.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
          <image>
-            <Image url="@images/pfps/shadeypfp.png" />
+            <Image url="@images/pfps/calpfp.png" />
          </image>
       </ImageView>
        <Button fx:id="quitButton" layoutX="897.0" layoutY="613.0" mnemonicParsing="false" onAction="#switchToTitle" prefHeight="86.0" prefWidth="390.0" style="-fx-background-color: transparent;">
@@ -27,27 +27,27 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <ImageView fitHeight="599.0" fitWidth="370.0" layoutX="595.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
+      <ImageView fitHeight="599.0" fitWidth="370.0" layoutX="590.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
          <image>
             <Image url="@images/pfps/shadeypfp.png" />
          </image>
       </ImageView>
-      <Text layoutX="253.0" layoutY="636.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="LINDSAY" textAlignment="CENTER" wrappingWidth="242.93670272827148">
+      <Text fill="#5b0d0d" layoutX="253.0" layoutY="636.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="LINDSAY" textAlignment="CENTER" wrappingWidth="242.93670272827148">
          <font>
             <Font name="Consolas" size="36.0" />
          </font>
       </Text>
-      <Text layoutX="722.0" layoutY="511.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="shadey" textAlignment="CENTER" wrappingWidth="242.93670272827148">
+      <Text fill="#5b0d0d" layoutX="721.0" layoutY="500.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="shadey" textAlignment="CENTER" wrappingWidth="242.93670272827148">
          <font>
             <Font name="Consolas" size="36.0" />
          </font>
       </Text>
-      <Text layoutX="249.0" layoutY="652.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="ASSETS AND PROGRAMMING" textAlignment="CENTER" wrappingWidth="310.23025131225586">
+      <Text fill="#590d0d97" layoutX="249.0" layoutY="652.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="ASSETS AND PROGRAMMING" textAlignment="CENTER" wrappingWidth="310.23025131225586">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
       </Text>
-      <Text layoutX="741.0" layoutY="539.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="HEAD PROGRAMMER" textAlignment="CENTER" wrappingWidth="242.93670272827148">
+      <Text fill="#590d0d9a" layoutX="740.0" layoutY="527.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="HEAD PROGRAMMER" textAlignment="CENTER" wrappingWidth="242.93670272827148">
          <font>
             <Font name="Consolas" size="23.0" />
          </font>

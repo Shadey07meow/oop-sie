@@ -1,3 +1,4 @@
+
 package com.oopsie.audio;
 
 import java.io.File;
@@ -7,14 +8,14 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 public class AudioManager {
+
     private static MediaPlayer playingMusic;
-    private static float musicVolume = 1.0f;
 
-    
+    private static double musicVolume = 1.0;
+    private static double soundVolume = 1.0;
 
+    public enum Music {
 
-    public enum Music{
-        // Contains all the music files for the game starting from the classes path
         MainMenuMusic("music/LongingForAIR.mp3", 0),
         GameOverMusic("null", 0),
         GameWinMusic("null", 0);
@@ -22,25 +23,22 @@ public class AudioManager {
         private String path;
         private double volumeOffset;
 
-        Music(String path, double volOffset)
-        {
+        Music(String path, double volOffset) {
             this.path = path;
             this.volumeOffset = volOffset;
         }
 
-        public String getPath()
-        {
+        public String getPath() {
             return this.path;
         }
 
-        public double getVolumeOffset()
-        {
+        public double getVolumeOffset() {
             return this.volumeOffset;
         }
     }
 
-    public enum Effect{
-        // Contains all the music files for the game starting from the classes path
+    public enum Effect {
+
         HoverButton("effects/mouse_hover.wav", 0),
         SelectButton("null", 0),
         CorrectChoice("null", 0);
@@ -48,78 +46,136 @@ public class AudioManager {
         private String path;
         private double volumeOffset;
 
-
-        Effect(String path, double volOffset)
-        {
+        Effect(String path, double volOffset) {
             this.path = path;
             this.volumeOffset = volOffset;
         }
 
-        public String getPath()
-        {
+        public String getPath() {
             return this.path;
         }
 
-        public double getVolumeOffset()
-        {
+        public double getVolumeOffset() {
             return this.volumeOffset;
         }
     }
 
+    // PLAY MUSIC
+    public static void playMusic(Music music) {
 
-    // Actual Sound Functions
-    public static void playMusic(Music music)
-    {
         stopMusic();
 
         File file = new File(relativeToAbsolutePath(music.getPath()));
 
-        if(!file.exists())
-        {
+        if (!file.exists()) {
             System.out.println("File: " + file.getPath() + " does not exist");
             return;
         }
 
-        playingMusic = new MediaPlayer(new Media(file.toURI().toString()));
-        playingMusic.setCycleCount(MediaPlayer.INDEFINITE);       // loop forever
-        playingMusic.setVolume(musicVolume + music.getVolumeOffset());
-        playingMusic.setOnError(() -> System.err.println("Music error: " + playingMusic.getError()));
+        playingMusic = new MediaPlayer(
+            new Media(file.toURI().toString())
+        );
+
+        playingMusic.setCycleCount(MediaPlayer.INDEFINITE);
+
+        updateMusicVolume(music);
+
+        playingMusic.setOnError(() ->
+            System.err.println("Music error: " + playingMusic.getError())
+        );
+
         playingMusic.play();
     }
 
-    public static void stopMusic()
-    {
+    // UPDATE MUSIC VOLUME
+    private static void updateMusicVolume(Music music) {
+
         if (playingMusic != null) {
-            playingMusic.stop();
-            playingMusic.dispose();                               
-            playingMusic= null;
+            double volume = musicVolume + music.getVolumeOffset();
+
+            volume = Math.max(0, Math.min(1, volume));
+
+            playingMusic.setVolume(volume);
         }
     }
 
-    public static void pauseMusic()  { if (playingMusic != null) playingMusic.pause(); }
-    public static void resumeMusic() { if (playingMusic != null) playingMusic.play(); }
+    // SET MUSIC VOLUME
+    public static void setMusicVolume(double volume) {
 
-    public static void playEffect(Effect fx)
-    {
+        musicVolume = Math.max(0, Math.min(1, volume));
+
+        if (playingMusic != null) {
+
+            // Update the currently playing music
+            playingMusic.setVolume(musicVolume);
+        }
+    }
+
+    // GET MUSIC VOLUME
+    public static double getMusicVolume() {
+        return musicVolume;
+    }
+
+    // SET SOUND EFFECT VOLUME
+    public static void setSoundVolume(double volume) {
+
+        soundVolume = Math.max(0, Math.min(1, volume));
+    }
+
+    // GET SOUND EFFECT VOLUME
+    public static double getSoundVolume() {
+        return soundVolume;
+    }
+
+    // STOP MUSIC
+    public static void stopMusic() {
+
+        if (playingMusic != null) {
+
+            playingMusic.stop();
+            playingMusic.dispose();
+
+            playingMusic = null;
+        }
+    }
+
+    public static void pauseMusic() {
+
+        if (playingMusic != null) {
+            playingMusic.pause();
+        }
+    }
+
+    public static void resumeMusic() {
+
+        if (playingMusic != null) {
+            playingMusic.play();
+        }
+    }
+
+    // PLAY SOUND EFFECT
+    public static void playEffect(Effect fx) {
+
         File file = new File(relativeToAbsolutePath(fx.getPath()));
-        // System.out.println("URI for JavaFX: " + file.toURI() + " File Exists: " + file.exists());
 
-        if(!file.exists())
-        {
-            System.out.println("File:  does not exist");
-
+        if (!file.exists()) {
+            System.out.println("Effect file does not exist: " + file.getPath());
             return;
         }
 
         AudioClip clip = new AudioClip(file.toURI().toString());
 
-        clip.setVolume(musicVolume + fx.getVolumeOffset());
+        double volume = soundVolume + fx.getVolumeOffset();
+
+        volume = Math.max(0, Math.min(1, volume));
+
+        clip.setVolume(volume);
         clip.play();
     }
 
-    private static String relativeToAbsolutePath(String string)
-    {
-        return "oopsie/version1/target/classes/com/oopsie/soundResources/" + string;
+    // FILE PATH
+    private static String relativeToAbsolutePath(String string) {
 
+        return "oopsie/version1/target/classes/com/oopsie/soundResources/" + string;
     }
 }
