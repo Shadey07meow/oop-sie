@@ -11,12 +11,19 @@ import javafx.fxml.FXML;
 public class endGameController {
 
     @FXML
-    private void switchToMain() throws IOException {
+    private void switchToMainWin() throws IOException {
         Main.changeRoot("mainMenu");
     }
 
+    
+    @FXML
+    private void switchToMainLoss() throws IOException {
+        Main.changeRoot("mainMenu");
+    }
+
+
         @FXML
-    private void retryGame() throws IOException {
+    private void retryGameLoss() throws IOException {
         gameplayLoop.setIsRunning(true);
         Main.changeRoot("nameScreen");
     }

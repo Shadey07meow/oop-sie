@@ -15,9 +15,9 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button layoutX="812.0" layoutY="574.0" mnemonicParsing="false" onAction="#retryGame" prefHeight="67.0" prefWidth="90.0" styleClass="invisible-button" text="yes button" />
-            <Button layoutX="1008.0" layoutY="566.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="67.0" prefWidth="90.0" styleClass="invisible-button" text="no button" />
-         </children>
+            <Button layoutX="812.0" layoutY="574.0" mnemonicParsing="false" onAction="#retryGameLoss" prefHeight="67.0" prefWidth="90.0" styleClass="invisible-button" text="yes" />
+            <Button layoutX="1008.0" layoutY="566.0" mnemonicParsing="false" onAction="#switchToMainLoss" prefHeight="67.0" prefWidth="90.0" styleClass="invisible-button" text="no button" />
+         </children> 
       </AnchorPane>
-   </children>
+   </children> 
 </StackPane>

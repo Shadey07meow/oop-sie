@@ -115,14 +115,14 @@
                                                                      <children>
                                                                         <VBox alignment="CENTER" prefHeight="120.0" prefWidth="394.0" styleClass="console-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                            <children>
-                                                                              <Button fx:id="exceptionButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doExceptionHandler" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
+                                                                              <Button fx:id="exceptionHandlerButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doExceptionHandler" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
                                                                               <Button fx:id="recompileButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doRecompile" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
                                                                               <Button fx:id="debugButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doDebug" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Debug" />
                                                                            </children>
                                                                         </VBox>
                                                                      </children>
                                                                   </AnchorPane>
-                                                                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                                  <AnchorPane prefHeight="200.0" prefWidth="200.0" visible="false">
                                                                      <children>
                                                                         <StackPane fx:id="OOPHolder" styleClass="console-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                                                      </children>
@@ -180,7 +180,7 @@
             </BorderPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="dialoguePane" prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane fx:id="dialoguePane" prefHeight="200.0" prefWidth="200.0" visible="false">
          <children>
             <Region prefHeight="200.0" prefWidth="200.0" styleClass="transparent-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Pane layoutX="10.399999618530273" AnchorPane.bottomAnchor="231.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="791.0" AnchorPane.topAnchor="20.0">

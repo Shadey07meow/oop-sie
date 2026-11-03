@@ -42,6 +42,11 @@ public class AudioManager {
     public enum Effect{
         // Contains all the music files for the game starting from the classes path
         HoverButton("effects/mouse_hover.wav", 0),
+        HoverButtonTerminal("effects/UI/buttonHover.mp3", 0),
+        PressedButtonTerminal("effects/UI/buttonClickTerminal.mp3", 0),
+        FailPressedButtonTerminal("effects/UI/failButtonClickTerminal.mp3", 0),
+        CorrectAnswer("effects/playerFeedback/correctAnswer.mp3", 0),
+        WrongAnswer("effects/playerFeedback/wrongAnswer.mp3", 0),
         SelectButton("null", 0),
         CorrectChoice("null", 0);
 
