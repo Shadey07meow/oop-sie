@@ -114,6 +114,11 @@
     -fx-text-fill: -orange-light-color;
 }
 
+.button:disabled{
+    -fx-background-color: -outer-pane-color;
+    -fx-text-fill: -inner-pane-color;
+}
+
 
 /*Custom Stuff*/
 .empty-screen{

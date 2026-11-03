@@ -395,9 +395,9 @@ public class gameWindowController {
             pause.play();
             gameplayLoop.getCurPlayerStats().setHasExceptionHandler(false);
             System.out.println(Boolean.toString(gameplayLoop.getCurPlayerStats().getHasExceptionHandler()));
+            exceptionHandlerButton.setDisable(true);
             hasLost = false;
-        } else
-        {
+
         }
     }
     
@@ -420,6 +420,7 @@ public class gameWindowController {
             );
             pause.play();
             gameplayLoop.getCurPlayerStats().setHasRecompile(false);
+            recompileButton.setDisable(true);
             
             hasLost = false;
         }
@@ -471,6 +472,8 @@ public class gameWindowController {
 
             gameplayLoop.getCurPlayerStats().setHasDebug(false);
             hasLost = false;
+            debugButton.setDisable(true);
+
         }
     }
 
