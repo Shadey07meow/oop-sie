@@ -35,7 +35,7 @@ public class runSaver {
     {
         Files.createDirectories(appLocation.getParent());
 
-        String content = stats.name + ";;;" + String.valueOf(stats.getPoints());
+        String content = stats.name + "-" + String.valueOf(stats.getPoints()) + System.lineSeparator();;
         // Accept a stats
         // Write the tshit in the text file
         try { 

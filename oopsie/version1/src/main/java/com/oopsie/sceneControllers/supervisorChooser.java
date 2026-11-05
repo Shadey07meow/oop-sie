@@ -8,6 +8,7 @@ import java.io.InputStream;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
+import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.supervisors.Supervisor;
 import com.oopsie.logic.supervisors.SupervisorManager;
@@ -96,6 +97,8 @@ public class supervisorChooser {
     private void activateButton()
     {
         acceptButton.setVisible(true);
+        AudioManager.playEffect(AudioManager.Effect.Talk);
+
     }
 
     private void setSelected(int v)

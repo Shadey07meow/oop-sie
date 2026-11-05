@@ -45,6 +45,9 @@ public class AudioManager {
         FailPressedButtonTerminal("effects/UI/failButtonClickTerminal.mp3", 0),
         CorrectAnswer("effects/playerFeedback/correctAnswer.mp3", 0),
         WrongAnswer("effects/playerFeedback/wrongAnswer.mp3", 0),
+        Crash("effects/BSOD.mp3", 0),
+        Win("effects/Startup.mp3", 0),
+        Talk("effects/DialoguePop.mp3", 0),
         SelectButton("null", 0),
         CorrectChoice("null", 0);
 

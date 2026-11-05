@@ -14,6 +14,8 @@ public class endGameController {
     private void switchToMainWin() throws IOException {
         Main.changeRoot("mainMenu");
         runSaver.saveRun(gameplayLoop.getCurPlayerStats());
+        
+        // AudioManager.playFX();
 
     }
 

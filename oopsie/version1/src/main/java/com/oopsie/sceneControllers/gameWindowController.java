@@ -316,7 +316,9 @@ public class gameWindowController {
         if (!gameplayLoop.getCurPlayerStats().hasLifelines())
         {
             try {
+                AudioManager.playEffect(AudioManager.Effect.Crash);
                 Main.changeRoot("gameLoss");
+
                 
             } catch (Exception e) {
                 System.out.println("The scene for game over is invalid");
@@ -340,9 +342,22 @@ public class gameWindowController {
                     terminalScrollbox.setVvalue(1.0);
                 });
                 
-                Label wrongAnswerLabel = new Label("=================\n> Wrong answer");
+                Label wrongAnswerLabel = new Label("=================");
+                Button continueButton = new Button("> Continue");
+                continueButton.setOnAction(event -> {
+                    try
+                    {
+                      AudioManager.playEffect(AudioManager.Effect.Crash);
+
+                        Main.changeRoot("gameLoss");
+                    } catch (Exception e)
+                    {
+
+                    }
+                });
                 Label chooseLabel = new Label("> Choose a Lifeline");
                 terminalVBox.getChildren().add(wrongAnswerLabel);
+                terminalVBox.getChildren().add(continueButton);
                 terminalVBox.getChildren().add(chooseLabel);
                 pause.play();
             }
@@ -471,7 +486,7 @@ public class gameWindowController {
     public void showSupervisorAnswer()
     {
         System.out.println(gameplayLoop.getCurPlayerStats().getSupervisor().getName());
-
+        AudioManager.playEffect(AudioManager.Effect.Talk);
         String resultString = "";
 
         // Integer to string converter

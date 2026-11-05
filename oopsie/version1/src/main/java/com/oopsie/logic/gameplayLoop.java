@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.oopsie.audio.AudioManager;
+
 public class gameplayLoop {
     private static boolean isRunning = false;
 
@@ -87,6 +89,8 @@ public class gameplayLoop {
         if(currentLevel > 40)
         {
             wonRun = true;
+            AudioManager.playEffect(AudioManager.Effect.Win);
+
         }
         checkDifficulty();
     }

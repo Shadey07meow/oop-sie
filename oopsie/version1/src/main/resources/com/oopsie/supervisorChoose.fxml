@@ -12,8 +12,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1251.0" stylesheets="@styles/prompt-screen-themes.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.supervisorChooser">
+<StackPane fx:id="superRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1251.0" stylesheets="@styles/prompt-screen-themes.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.supervisorChooser">
    <children>
       <Region prefHeight="200.0" prefWidth="200.0" styleClass="console-background" />
       <BorderPane>
@@ -33,102 +34,138 @@
                            <center>
                               <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <ImageView fx:id="superSlotImg1" fitHeight="241.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="superSlotImg1" fitHeight="241.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@images/supervisorScreen/Supervisor2.png" />
                                        </image>
+                                       <VBox.margin>
+                                          <Insets right="-10.0" />
+                                       </VBox.margin>
                                     </ImageView>
                                  </children>
                                  <padding>
-                                    <Insets top="50.0" />
+                                    <Insets right="-5.0" top="15.0" />
                                  </padding>
                               </VBox>
                            </center>
                            <bottom>
-                              <VBox alignment="BOTTOM_LEFT" prefHeight="130.0" prefWidth="290.0" spacing="40.0" BorderPane.alignment="CENTER">
-                                 <children>
-                                    <Label text="Name: " />
-                                    <Label text="Role: " />
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="30.0" left="20.0" />
-                                 </padding>
-                              </VBox>
+                              <Label alignment="TOP_LEFT" prefHeight="111.0" prefWidth="265.0" text="Name: " BorderPane.alignment="TOP_LEFT">
+                                 <font>
+                                    <Font name="Cascadia Mono Regular" size="32.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </BorderPane.margin>
+                              </Label>
                            </bottom>
                            <styleClass>
                               <String fx:value="thin-border" />
                               <String fx:value="select-slot" />
                            </styleClass>
+                           <top>
+                              <Label text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
+                                 <BorderPane.margin>
+                                    <Insets right="30.0" top="30.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font name="Cascadia Mono Regular" size="42.0" />
+                                 </font>
+                              </Label>
+                           </top>
                         </BorderPane>
                      </children>
                   </Group>
                   <Group fx:id="superSlot2" onMouseClicked="#setSelect2">
                      <children>
                         <BorderPane prefHeight="511.0" prefWidth="300.0">
-                           <bottom>
-                              <VBox alignment="BOTTOM_LEFT" prefHeight="130.0" prefWidth="290.0" spacing="40.0" BorderPane.alignment="CENTER">
+                           <center>
+                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label text="Name: " />
-                                    <Label text="Role: " />
+                                    <ImageView fx:id="superSlotImg2" fitHeight="241.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/supervisorScreen/Supervisor2.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets right="-10.0" />
+                                       </VBox.margin>
+                                    </ImageView>
                                  </children>
                                  <padding>
-                                    <Insets bottom="30.0" left="20.0" />
+                                    <Insets right="-5.0" top="15.0" />
                                  </padding>
                               </VBox>
+                           </center>
+                           <bottom>
+                              <Label alignment="TOP_LEFT" prefHeight="111.0" prefWidth="265.0" text="Name: " BorderPane.alignment="TOP_LEFT">
+                                 <font>
+                                    <Font name="Cascadia Mono Regular" size="32.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </BorderPane.margin>
+                              </Label>
                            </bottom>
                            <styleClass>
                               <String fx:value="thin-border" />
                               <String fx:value="select-slot" />
                            </styleClass>
-                           <center>
-                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                                 <padding>
-                                    <Insets top="50.0" />
-                                 </padding>
-                                 <children>
-                                    <ImageView fx:id="superSlotImg2" fitHeight="241.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/supervisorScreen/Supervisor2.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                           </center>
+                           <top>
+                              <Label text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
+                                 <BorderPane.margin>
+                                    <Insets right="30.0" top="30.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font name="Cascadia Mono Regular" size="42.0" />
+                                 </font>
+                              </Label>
+                           </top>
                         </BorderPane>
                      </children>
                   </Group>
                   <Group fx:id="superSlot3" onMouseClicked="#setSelect3">
                      <children>
                         <BorderPane prefHeight="511.0" prefWidth="300.0">
-                           <bottom>
-                              <VBox alignment="BOTTOM_LEFT" prefHeight="130.0" prefWidth="290.0" spacing="40.0" BorderPane.alignment="CENTER">
+                           <center>
+                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <Label text="Name: " />
-                                    <Label text="Role: " />
+                                    <ImageView fx:id="superSlotImg3" fitHeight="241.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/supervisorScreen/Supervisor2.png" />
+                                       </image>
+                                       <VBox.margin>
+                                          <Insets right="-10.0" />
+                                       </VBox.margin>
+                                    </ImageView>
                                  </children>
                                  <padding>
-                                    <Insets bottom="30.0" left="20.0" />
+                                    <Insets right="-5.0" top="15.0" />
                                  </padding>
                               </VBox>
+                           </center>
+                           <bottom>
+                              <Label alignment="TOP_LEFT" prefHeight="111.0" prefWidth="265.0" text="Name: " BorderPane.alignment="TOP_LEFT">
+                                 <font>
+                                    <Font name="Cascadia Mono Regular" size="32.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </BorderPane.margin>
+                              </Label>
                            </bottom>
                            <styleClass>
                               <String fx:value="thin-border" />
                               <String fx:value="select-slot" />
                            </styleClass>
-                           <center>
-                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                                 <padding>
-                                    <Insets top="50.0" />
-                                 </padding>
-                                 <children>
-                                    <ImageView fx:id="superSlotImg3" fitHeight="241.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/supervisorScreen/Supervisor2.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                           </center>
+                           <top>
+                              <Label text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
+                                 <BorderPane.margin>
+                                    <Insets right="30.0" top="30.0" />
+                                 </BorderPane.margin>
+                                 <font>
+                                    <Font name="Cascadia Mono Regular" size="42.0" />
+                                 </font>
+                              </Label>
+                           </top>
                         </BorderPane>
                      </children>
                   </Group>
