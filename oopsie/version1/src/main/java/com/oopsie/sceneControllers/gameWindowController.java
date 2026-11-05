@@ -46,6 +46,7 @@ public class gameWindowController {
 
     private boolean hasLost = false;
     private static int corrrectAnswer;
+    private Random randomizer = new Random();
 
     // Images of OOP
     public enum OOPState
@@ -176,59 +177,60 @@ public class gameWindowController {
         gameplayLoop.selectQuestions();
         questionNumber.setText("Q"+gameplayLoop.getCurrentLevel());
         diffLabel.setText(gameplayLoop.getDifficultyString());
-        questionTextArea.setText("Choose Topic");
-        
-        terminalVBox.getChildren().add(new Label("\n========================================="));
-        terminalVBox.getChildren().add(new Label("Choose a Topic:"));
+
+        // questionTextArea.setText("Choose Topic");
+        // terminalVBox.getChildren().add(new Label("\n========================================="));
+        // terminalVBox.getChildren().add(new Label("Choose a Topic:"));
         
         gameQuestion[] selectedQuestions = gameplayLoop.getSelectedQuestions();
+        int val = randomizer.nextInt(4);
         
-        for (int i = 0; i < 4; i++)
-        {
-            // Turn pre-existing buttons into labels
-            // Add buttons for the 
+        selectedQuestion = selectedQuestions[val];
 
-            Button newButton = new Button("> " + selectedQuestions[i].getTopic());
-            ButtonAnimations.addButtonSoundsTerminal(newButton);
-            newButton.setUserData(i);
-            newButton.setPrefWidth(100000);
-            newButton.setAlignment(Pos.CENTER_LEFT);
+        // Turn pre-existing buttons into labels
+        // Add buttons for the 
 
-            newButton.setOnAction(e -> 
-                {
-                    selectedQuesionActionEvent = e;
-                    showSelectedQuestion(selectedQuesionActionEvent);
-                }
+        // Button newButton = new Button("> " + selectedQuestions[i].getTopic());
+        // ButtonAnimations.addButtonSoundsTerminal(newButton);
+        // newButton.setUserData();
+        // newButton.setPrefWidth(100000);
+        // newButton.setAlignment(Pos.CENTER_LEFT);
 
-            );        
-            // presentButtons.add(newButton);
-            terminalVBox.getChildren().add(newButton);
-            Platform.runLater(() -> terminalScrollbox.setVvalue(1.0));
+        // newButton.setOnAction(e -> 
+        //     {
+        // selectedQuesionActionEvent = e;
+        showSelectedQuestion();
+        //     }
 
-        }
+        // );        
+        // presentButtons.add(newButton);
+        // terminalVBox.getChildren().add(newButton);
+        Platform.runLater(() -> terminalScrollbox.setVvalue(1.0));
+
+        
 
     }
 
-    public void showSelectedQuestion(ActionEvent e)
+    public void showSelectedQuestion()
     {
         // Selected the button
-        gameQuestion[] selectedQuestions = gameplayLoop.getSelectedQuestions();
+        // gameQuestion[] selectedQuestions = gameplayLoop.getSelectedQuestions();
 
         
-        Button choiceBtnSource = (Button)e.getSource();
-        terminalButtonsToLabels();
-        gameQuestion newQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
-        selectedQuestion = newQuestion;
-        questionTextArea.setText(newQuestion.getQuestionString());
+        // Button choiceBtnSource = (Button)e.getSource();
+        // terminalButtonsToLabels();
+        // gameQuestion newQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
+        // selectedQuestion = newQuestion;
+        questionTextArea.setText(selectedQuestion.getQuestionString());
         terminalVBox.getChildren().add(new Label("\n========================================="));
         terminalVBox.getChildren().add(new Label("Choices:"));
-        corrrectAnswer = newQuestion.getCorrectAnswer();
+        corrrectAnswer = selectedQuestion.getCorrectAnswer();
 
 
         // Creates 4 new buttons
         for(int j= 0; j < 4; j++)
         {
-            Button newButton2 = new Button("> " + newQuestion.getChoiceString(j));
+            Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
             ButtonAnimations.addButtonSoundsTerminal(newButton2);
 
             // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
@@ -237,7 +239,7 @@ public class gameWindowController {
             newButton2.setAlignment(Pos.CENTER_LEFT);
 
 
-            newButton2.setOnAction(z -> checkAnswer(z, newQuestion));
+            newButton2.setOnAction(z -> checkAnswer(z, selectedQuestion));
             terminalVBox.getChildren().add(newButton2);
             terminalScrollbox.setVvalue(1.0);
         }
@@ -413,7 +415,7 @@ public class gameWindowController {
 
             PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
             pause.setOnFinished(e -> {
-                showSelectedQuestion(selectedQuesionActionEvent);
+                showSelectedQuestion();
                 // OOP Will Say the answer in his little console
                 toggleOOP(false);
             }
