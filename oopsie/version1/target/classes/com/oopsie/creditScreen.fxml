@@ -32,7 +32,11 @@
             <Image url="@images/pfps/shadeypfp.png" />
          </image>
       </ImageView>
+<<<<<<< Updated upstream
       <Text fill="#5b0d0d" layoutX="253.0" layoutY="636.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="LINDSAY" textAlignment="CENTER" wrappingWidth="242.93670272827148">
+=======
+      <Text layoutX="260.0" layoutY="653.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="lindsay" textAlignment="CENTER" wrappingWidth="242.93670272827148">
+>>>>>>> Stashed changes
          <font>
             <Font name="Consolas" size="36.0" />
          </font>
@@ -42,7 +46,11 @@
             <Font name="Consolas" size="36.0" />
          </font>
       </Text>
+<<<<<<< Updated upstream
       <Text fill="#590d0d97" layoutX="249.0" layoutY="652.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="ASSETS AND PROGRAMMING" textAlignment="CENTER" wrappingWidth="310.23025131225586">
+=======
+      <Text layoutX="249.0" layoutY="669.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="ASSETS AND PROGRAMMING" textAlignment="CENTER" wrappingWidth="310.23025131225586">
+>>>>>>> Stashed changes
          <font>
             <Font name="Consolas" size="23.0" />
          </font>
