@@ -3,6 +3,7 @@ package com.oopsie;
 
 import java.io.IOException;
 
+import com.oopsie.animations.FadeHandler;
 import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameplayLoop;
 import com.oopsie.sceneControllers.gameWindowController;
@@ -20,6 +21,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.util.Duration;
 
 public class Main extends Application {
 
@@ -31,6 +33,7 @@ public class Main extends Application {
 
     private static double maxWindowWidth = 1280;
     private static double maxHeight = 720;
+    private static Stage curStage = null;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -145,8 +148,10 @@ public class Main extends Application {
         );
 
         stage.setTitle("OOP Terminal");
-
+        curStage = stage;
         AudioManager.playMusic(AudioManager.Music.MainMenuMusic);
+
+        FadeHandler.addFadeIn(1);
     }
 
     // Change the current screen without removing the overlay
@@ -201,6 +206,15 @@ public class Main extends Application {
     {
         rootContainer.getChildren().remove(node2);
     }
+
+    public static void  addNodeToRoot(Node node) throws IOException
+    {
+        rootContainer.getChildren().add(node);
+    }
     
+    public static Stage getStage()
+    {
+        return curStage;
+    }
   
 }

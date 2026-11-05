@@ -18,14 +18,14 @@
 
 
     -fx-font-family: "Cascadia Mono";
-    -fx-font-size: 18px;
+    -fx-font-size: 19px;
     -fx-font-style: italic;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
 
 .header-text{
-    -fx-font-size: 38px;
+    -fx-font-size: 42px;
     -fx-font-weight: bold;
 
 }
@@ -54,7 +54,9 @@
     -fx-border-style: solid;
 }
 
-
+.transparentFrame {
+    -fx-background-color: rgba(0, 0, 0, 0.5); 
+}
 /*Button Text*/
 .button {
     -fx-background-color: -text-background-color;

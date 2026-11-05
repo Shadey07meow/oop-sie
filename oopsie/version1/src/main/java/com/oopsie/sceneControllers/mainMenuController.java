@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
+import com.oopsie.animations.FadeHandler;
+import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameplayLoop;
 
 import javafx.application.Platform;
@@ -87,23 +89,53 @@ public class mainMenuController {
 
     @FXML
     private void switchToCredits() throws IOException {
-        Main.changeRoot("creditScreen");
+        AudioManager.playEffect(AudioManager.Effect.SelectButton);
+        FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("creditScreen");
+
+
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 
     @FXML
     private void switchToHelp() throws IOException {
-        Main.changeRoot("helpScreen");
+        AudioManager.playEffect(AudioManager.Effect.SelectButton);
+        FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("helpScreen");
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 
         @FXML
     private void switchToGame() throws IOException {
         gameplayLoop.setIsRunning(true);
-
-        Main.changeRoot("nameScreen");
+        AudioManager.playEffect(AudioManager.Effect.SelectButton);
+        FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("nameScreen");
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 
     @FXML
     private void switchToPrimary() throws IOException {
+        FadeHandler.addFadeIn(1);
+
         Main.changeRoot("mainMenu");
     }
 
@@ -114,7 +146,17 @@ public class mainMenuController {
 
     @FXML
     private void switchToLeaderboard(ActionEvent event) throws IOException {
-        Main.changeRoot("leaderboard");
+        AudioManager.playEffect(AudioManager.Effect.SelectButton);
+        FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("leaderboard");
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
+
     }
 
 

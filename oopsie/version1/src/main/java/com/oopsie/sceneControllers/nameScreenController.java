@@ -6,6 +6,8 @@ import java.io.InputStream;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
+import com.oopsie.animations.FadeHandler;
+import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameplayLoop;
 
 import javafx.animation.ScaleTransition;
@@ -50,6 +52,16 @@ public class nameScreenController {
     @FXML
     private void switchToChooseSupervisor() throws IOException {
         gameplayLoop.getCurPlayerStats().setName(playerName.getText().trim());
-        Main.changeRoot("gameWindow");
+
+        AudioManager.playEffect(AudioManager.Effect.SelectButton);
+        FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("gameWindow");
+                FadeHandler.addFadeIn(3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 }

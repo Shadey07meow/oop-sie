@@ -48,7 +48,7 @@ public class AudioManager {
         Crash("effects/BSOD.mp3", 0),
         Win("effects/Startup.mp3", 0),
         Talk("effects/DialoguePop.mp3", 0),
-        SelectButton("null", 0),
+        SelectButton("effects/confirmMenu.mp3", 0),
         CorrectChoice("null", 0);
 
         private String path;
