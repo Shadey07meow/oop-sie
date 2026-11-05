@@ -50,6 +50,6 @@ public class nameScreenController {
     @FXML
     private void switchToChooseSupervisor() throws IOException {
         gameplayLoop.getCurPlayerStats().setName(playerName.getText().trim());
-        Main.changeRoot("supervisorChoose");
+        Main.changeRoot("gameWindow");
     }
 }

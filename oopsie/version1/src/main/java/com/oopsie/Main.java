@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameplayLoop;
+import com.oopsie.sceneControllers.gameWindowController;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.scene.Node;
 
 public class Main extends Application {
 
@@ -106,6 +108,7 @@ public class Main extends Application {
 
         stage.setResizable(false);
 
+
         stage.xProperty().addListener((obs, oldX, newX) -> {
 
             double x = Math.max(
@@ -186,4 +189,18 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    public static Parent showOverlayLayer(String fxml) throws IOException
+    {
+        Parent node = loadFXML(fxml);
+        rootContainer.getChildren().add(node);
+        return node;
+    }
+
+    public static void hideOverlayLayer(Node node2) 
+    {
+        rootContainer.getChildren().remove(node2);
+    }
+    
+  
 }

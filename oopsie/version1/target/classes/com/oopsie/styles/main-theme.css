@@ -43,6 +43,11 @@
 
 }
 
+.terminal-bigger-text{
+-fx-font-size: 24px;
+
+}
+
 .split-pane{
     -fx-background-color: -inner-pane-color;
 }

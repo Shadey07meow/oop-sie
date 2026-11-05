@@ -2,6 +2,7 @@ package com.oopsie.sceneControllers;
 
 
 import javafx.event.EventHandler;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -12,6 +13,7 @@ import com.oopsie.logic.supervisors.Supervisor;
 import com.oopsie.logic.supervisors.SupervisorManager;
 
 import javafx.animation.ScaleTransition;
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
@@ -19,10 +21,12 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 public class supervisorChooser {
 
+    @FXML  StackPane superRoot;
 
     @FXML Group  superSlot1;
     @FXML Group  superSlot2;
@@ -72,7 +76,6 @@ public class supervisorChooser {
         gameplayLoop.getCurPlayerStats().setSupervisor(selectedSupervisors[1]);
         setSelected(1);
         activateButton();
-
     }
 
     
@@ -85,7 +88,8 @@ public class supervisorChooser {
 
     @FXML
     private void switchToGame() throws IOException {
-        Main.changeRoot("gameWindow");
+        Platform.runLater(() -> gameWindowController.get().showSupervisorAnswer());
+        Main.hideOverlayLayer(gameWindowController.get().getSuperVisorScreen());
     }
 
 

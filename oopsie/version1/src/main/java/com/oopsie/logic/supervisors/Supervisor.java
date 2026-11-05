@@ -79,4 +79,9 @@ public class Supervisor {
     {
         return this.pickedLine;
     }
+
+    public String getName()
+    {
+        return this.name;
+    }
 }

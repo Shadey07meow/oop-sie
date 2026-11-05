@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -36,6 +37,7 @@ public class gameWindowController {
     private ArrayList<Button> presentButtons = new ArrayList<>();
     private gameQuestion selectedQuestion = null;
     private ActionEvent selectedQuesionActionEvent = null;
+    private Node superVisorScreen = null;
     
 
 
@@ -96,6 +98,7 @@ public class gameWindowController {
     @FXML 
     public void initialize()
     {
+        System.out.println("Hello");
         instance = this;
 
         OOPImage = new ImageView();
@@ -438,47 +441,72 @@ public class gameWindowController {
         {
             // Show dialogue pane
 
+            // Select supervisor first
+            selectSupervisor();
    
 
             dialoguePane.setVisible(true);
 
 
-            String resultString = "";
-
-            // Integer to string converter
-            switch (gameplayLoop.getCurPlayerStats().getSupervisor().getAnswer(selectedQuestion))
-            {
-                case 0:
-                    resultString = "A";
-                    showOOP(OOPState.A);
-                    break;
-                case 1:
-                    resultString = "B";
-                    showOOP(OOPState.B);
-                    break;
-                case 2:
-                    resultString = "C";
-                    showOOP(OOPState.C);
-                    break;
-                case 3:
-                    resultString = "D";
-                    showOOP(OOPState.D);
-                    break;
-                default:
-                    break;
-            }
-
-
-            // Supervisor tells you the answer
-            supervisorLines.setText(gameplayLoop.getCurPlayerStats().getSupervisor().getLine() + " " + resultString);
-
-            gameplayLoop.getCurPlayerStats().setHasDebug(false);
-            hasLost = false;
-            debugButton.setDisable(true);
 
         }
     }
 
+    public void selectSupervisor()
+    {
+        try
+        {
+            this.superVisorScreen = Main.showOverlayLayer("supervisorChoose");
+        } catch (Exception e)
+        {
+
+        }
+    }
+
+    public Node getSuperVisorScreen()
+    {
+        return this.superVisorScreen;
+    }
+
+    public void showSupervisorAnswer()
+    {
+        System.out.println(gameplayLoop.getCurPlayerStats().getSupervisor().getName());
+
+        String resultString = "";
+
+        // Integer to string converter
+        switch (gameplayLoop.getCurPlayerStats().getSupervisor().getAnswer(selectedQuestion))
+        {
+            case 0:
+                resultString = "A";
+                showOOP(OOPState.A);
+                break;
+            case 1:
+                resultString = "B";
+                showOOP(OOPState.B);
+                break;
+            case 2:
+                resultString = "C";
+                showOOP(OOPState.C);
+                break;
+            case 3:
+                resultString = "D";
+                showOOP(OOPState.D);
+                break;
+            default:
+                break;
+        }
+
+
+        // Supervisor tells you the answer
+        System.out.println(gameplayLoop.getCurPlayerStats().getSupervisor().getLine());
+        supervisorLines.setText(gameplayLoop.getCurPlayerStats().getSupervisor().getLine() + " " + resultString);
+
+        gameplayLoop.getCurPlayerStats().setHasDebug(false);
+        hasLost = false;
+        debugButton.setDisable(true);
+
+    }
 
 
     public void toggleOOP()
@@ -509,6 +537,10 @@ public class gameWindowController {
         OOPImage.setImage(curImage);  
     }
 
+    public static gameWindowController get()
+    {
+        return instance;
+    }
 }    
 
 
