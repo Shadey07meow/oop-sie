@@ -8,10 +8,21 @@ public class playerStats {
     String name;
     Supervisor selectedDSupervisor = null;
 
-    int points;
+    private int points;
     boolean hasExceptionHandler = true;
     boolean hasRecompile = true;
     boolean hasDebug = true;
+
+
+    public void addPoints(int val)
+    {
+        this.points += val;
+    } 
+
+    public int getPoints()
+    {
+        return this.points;
+    }
 
     public void setHasExceptionHandler(boolean v)
     {
@@ -55,11 +66,13 @@ public class playerStats {
 
     public boolean hasLifelines()
     {
-        System.out.println(Boolean.toString(this.hasDebug));
-        System.out.println(Boolean.toString(this.hasExceptionHandler));
-        System.out.println(Boolean.toString(this.hasRecompile));
-        return (this.hasDebug || this.hasExceptionHandler || this.hasRecompile);
+        return (this.hasRecompile);
     }
     
+    public void setName(String name)
+    {
+        this.name = name;
+    } 
 
+    public String getName() {return this.name;}
 }

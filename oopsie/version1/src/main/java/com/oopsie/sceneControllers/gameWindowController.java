@@ -5,6 +5,7 @@ import java.util.Random;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
+import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameQuestion;
 import com.oopsie.logic.gameplayLoop;
 
@@ -33,7 +34,9 @@ public class gameWindowController {
     
 
     private ArrayList<Button> presentButtons = new ArrayList<>();
-    private ActionEvent selectedQuestion = null;
+    private gameQuestion selectedQuestion = null;
+    private ActionEvent selectedQuesionActionEvent = null;
+    
 
 
 
@@ -85,6 +88,9 @@ public class gameWindowController {
 
     // OOP Region
     ImageView OOPImage;
+    @FXML Button exceptionHandlerButton;
+    @FXML Button debugButton;
+    @FXML Button recompileButton;
     
     @FXML 
     public void initialize()
@@ -94,9 +100,56 @@ public class gameWindowController {
         OOPImage = new ImageView();
         OOPImage.setFitWidth(oopSize.getWidth());
         OOPImage.setFitHeight(oopSize.getHeight());
-
+        dialoguePane.setVisible(false);
         OOPImage.setPreserveRatio(true);
 
+        ButtonAnimations.addHoverSoundToTerminalButton(exceptionHandlerButton);
+        ButtonAnimations.addHoverSoundToTerminalButton(debugButton);
+        ButtonAnimations.addHoverSoundToTerminalButton(recompileButton);
+
+        exceptionHandlerButton.pressedProperty().addListener((obs, wasPressed, isPressed)  ->
+            {
+                if (!isPressed)
+                    return;
+                if(gameplayLoop.getCurPlayerStats().getHasExceptionHandler() && !hasLost && selectedQuestion != null)
+                {
+                    AudioManager.playEffect(AudioManager.Effect.PressedButtonTerminal);
+                } else
+                {
+                    AudioManager.playEffect(AudioManager.Effect.FailPressedButtonTerminal);
+                }
+            }
+        );
+
+        recompileButton.pressedProperty().addListener((obs, wasPressed, isPressed) ->
+            {
+                if (!isPressed)
+                    return;
+                    if(gameplayLoop.getCurPlayerStats().getHasRecompile() && hasLost)
+                    {
+                        AudioManager.playEffect(AudioManager.Effect.PressedButtonTerminal);
+                    } else
+                    {
+                        AudioManager.playEffect(AudioManager.Effect.FailPressedButtonTerminal);
+                    }
+                
+                    
+            }
+        );
+
+        debugButton.pressedProperty().addListener((obs, wasPressed, isPressed) ->
+            {
+                if (!isPressed)
+                    return;
+                if(gameplayLoop.getCurPlayerStats().getHasDebug() && !hasLost && selectedQuestion != null)
+                {
+                    AudioManager.playEffect(AudioManager.Effect.PressedButtonTerminal);
+                } else
+                {
+                    AudioManager.playEffect(AudioManager.Effect.FailPressedButtonTerminal);
+                }
+            }
+        );
         
 
         // Set OOP Image Here
@@ -116,7 +169,7 @@ public class gameWindowController {
         pointsLabel.setText("POINTS : " + gameplayLoop.getCurrentPoints());
         // If there are previous buttons in the scene, turn them into labels
         terminalButtonsToLabels();
-        
+        selectedQuestion = null;
     
         // Get 4 choices
         
@@ -136,15 +189,15 @@ public class gameWindowController {
             // Add buttons for the 
 
             Button newButton = new Button("> " + selectedQuestions[i].getTopic());
+            ButtonAnimations.addButtonSoundsTerminal(newButton);
             newButton.setUserData(i);
             newButton.setPrefWidth(100000);
             newButton.setAlignment(Pos.CENTER_LEFT);
 
-            ButtonAnimations.addSoundToButton(newButton);
             newButton.setOnAction(e -> 
                 {
-                    selectedQuestion = e;
-                    showSelectedQuestion(selectedQuestion);
+                    selectedQuesionActionEvent = e;
+                    showSelectedQuestion(selectedQuesionActionEvent);
                 }
 
             );        
@@ -164,18 +217,19 @@ public class gameWindowController {
         
         Button choiceBtnSource = (Button)e.getSource();
         terminalButtonsToLabels();
-        gameQuestion selectedQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
-        questionTextArea.setText(selectedQuestion.getQuestionString());
+        gameQuestion newQuestion = selectedQuestions[(int)choiceBtnSource.getUserData()];
+        selectedQuestion = newQuestion;
+        questionTextArea.setText(newQuestion.getQuestionString());
         terminalVBox.getChildren().add(new Label("\n========================================="));
         terminalVBox.getChildren().add(new Label("Choices:"));
-        corrrectAnswer = selectedQuestion.getCorrectAnswer();
+        corrrectAnswer = newQuestion.getCorrectAnswer();
 
 
         // Creates 4 new buttons
         for(int j= 0; j < 4; j++)
         {
-            Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
-            ButtonAnimations.addSoundToButton(newButton2);
+            Button newButton2 = new Button("> " + newQuestion.getChoiceString(j));
+            ButtonAnimations.addButtonSoundsTerminal(newButton2);
 
             // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
             newButton2.setUserData(j);
@@ -183,7 +237,7 @@ public class gameWindowController {
             newButton2.setAlignment(Pos.CENTER_LEFT);
 
 
-            newButton2.setOnAction(z -> checkAnswer(z, selectedQuestion));
+            newButton2.setOnAction(z -> checkAnswer(z, newQuestion));
             terminalVBox.getChildren().add(newButton2);
             terminalScrollbox.setVvalue(1.0);
         }
@@ -192,19 +246,20 @@ public class gameWindowController {
 
     }
 
-    public void checkAnswer(ActionEvent z, gameQuestion selectedQuestion)
+    public void checkAnswer(ActionEvent z, gameQuestion chosenQuestion)
     {
         Button btnSource = (Button)z.getSource();
         int index = (int)btnSource.getUserData();
-        boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, selectedQuestion);
+        boolean checkAnswer = gameplayLoop.checkIfCorrectAnswer(index, chosenQuestion);
         if (checkAnswer)
         {
+            AudioManager.playEffect(AudioManager.Effect.CorrectAnswer);
             choseRight();
         } else
         {
+            AudioManager.playEffect(AudioManager.Effect.WrongAnswer);
             choseWrong();
         }
-
     }
 
 
@@ -235,7 +290,7 @@ public class gameWindowController {
                 Main.changeRoot("gameWin");
                 
             } catch (Exception e) {
-                System.out.println("The scene for game over is invalid");
+                System.out.println("The scene for game win is invalid");
             }
     
         }
@@ -256,7 +311,7 @@ public class gameWindowController {
         if (!gameplayLoop.getCurPlayerStats().hasLifelines())
         {
             try {
-                Main.changeRoot("gameOver");
+                Main.changeRoot("gameLoss");
                 
             } catch (Exception e) {
                 System.out.println("The scene for game over is invalid");
@@ -280,17 +335,13 @@ public class gameWindowController {
                     terminalScrollbox.setVvalue(1.0);
                 });
                 
-                
                 Label wrongAnswerLabel = new Label("=================\n> Wrong answer");
                 Label chooseLabel = new Label("> Choose a Lifeline");
                 terminalVBox.getChildren().add(wrongAnswerLabel);
                 terminalVBox.getChildren().add(chooseLabel);
                 pause.play();
             }
-
         terminalScrollbox.setVvalue(1.0);
-
-
     }
 
     public void terminalButtonsToLabels()
@@ -311,14 +362,14 @@ public class gameWindowController {
     @FXML 
     public void doExceptionHandler()
     {
-        if(gameplayLoop.getCurPlayerStats().getHasExceptionHandler() && hasLost)
+        if(gameplayLoop.getCurPlayerStats().getHasExceptionHandler() && !hasLost && selectedQuestion != null)
         {
             // Should Display OOP on the Bottom Right Console
             showOOP(OOPState.Loading);
 
             PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
             pause.setOnFinished(e -> {
-                showSelectedQuestion(selectedQuestion);
+                // showSelectedQuestion(selectedQuesionActionEvent);
                 // OOP Will Say the answer in his little console
                 
                 switch(corrrectAnswer)
@@ -344,7 +395,9 @@ public class gameWindowController {
             pause.play();
             gameplayLoop.getCurPlayerStats().setHasExceptionHandler(false);
             System.out.println(Boolean.toString(gameplayLoop.getCurPlayerStats().getHasExceptionHandler()));
+            exceptionHandlerButton.setDisable(true);
             hasLost = false;
+
         }
     }
     
@@ -360,13 +413,15 @@ public class gameWindowController {
 
             PauseTransition pause = new PauseTransition(Duration.seconds(oopShowDurationTime));
             pause.setOnFinished(e -> {
-                showSelectedQuestion(selectedQuestion);
+                showSelectedQuestion(selectedQuesionActionEvent);
                 // OOP Will Say the answer in his little console
                 toggleOOP(false);
             }
             );
             pause.play();
             gameplayLoop.getCurPlayerStats().setHasRecompile(false);
+            recompileButton.setDisable(true);
+            
             hasLost = false;
         }
 
@@ -377,7 +432,49 @@ public class gameWindowController {
     public void doDebug()
     {
 
-        gameplayLoop.getCurPlayerStats().setHasDebug(false);
+        if(gameplayLoop.getCurPlayerStats().getHasDebug() && !hasLost && selectedQuestion != null)
+        {
+            // Show dialogue pane
+
+   
+
+            dialoguePane.setVisible(true);
+
+
+            String resultString = "";
+
+            // Integer to string converter
+            switch (gameplayLoop.getCurPlayerStats().getSupervisor().getAnswer(selectedQuestion))
+            {
+                case 0:
+                    resultString = "A";
+                    showOOP(OOPState.A);
+                    break;
+                case 1:
+                    resultString = "B";
+                    showOOP(OOPState.B);
+                    break;
+                case 2:
+                    resultString = "C";
+                    showOOP(OOPState.C);
+                    break;
+                case 3:
+                    resultString = "D";
+                    showOOP(OOPState.D);
+                    break;
+                default:
+                    break;
+            }
+
+
+            // Supervisor tells you the answer
+            supervisorLines.setText(gameplayLoop.getCurPlayerStats().getSupervisor().getLine() + " " + resultString);
+
+            gameplayLoop.getCurPlayerStats().setHasDebug(false);
+            hasLost = false;
+            debugButton.setDisable(true);
+
+        }
     }
 
 
@@ -395,6 +492,12 @@ public class gameWindowController {
         System.out.println(OOPHolderParent.isVisible());
         OOPHolder.setMouseTransparent(!value);
         OOPHolderParent.setMouseTransparent(!value);
+    }
+
+    @FXML 
+    public void toggleDialoguePane()
+    {
+        dialoguePane.setVisible(!dialoguePane.isVisible());
     }
 
     public void showOOP(OOPState state)

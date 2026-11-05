@@ -12,6 +12,35 @@ import javafx.scene.image.ImageView;
 
 public class ButtonAnimations {
 
+    public static void addButtonSoundsTerminal(Node button)
+    {
+        addHoverSoundToTerminalButton(button);
+        addSuccessfulPress(button);
+
+    }
+
+    public static void addHoverSoundToTerminalButton(Node button)
+    {
+        button.hoverProperty().addListener((observable, oldValue, isHovered) -> 
+            {
+                if (isHovered) {
+                    AudioManager.playEffect(AudioManager.Effect.HoverButtonTerminal);
+            } 
+            }
+        );
+    }
+
+    public static void addSuccessfulPress(Node button)
+    {
+        button.pressedProperty().addListener((listener) ->
+        {
+            AudioManager.playEffect(AudioManager.Effect.PressedButtonTerminal);
+
+        });
+    }
+
+
+
     public static void addHoverAnimation(Node curNode) {
         if (curNode == null) return;
 

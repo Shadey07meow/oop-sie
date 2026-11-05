@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@styles/prompt-screen-themes.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.nameScreenController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="theme-root" stylesheets="@styles/prompt-screen-themes.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.nameScreenController">
    <children>
       <ImageView fitHeight="726.0" fitWidth="2168.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -36,7 +36,7 @@
                                     <FlowPane prefHeight="38.0" prefWidth="434.0">
                                        <children>
                                           <Label text="Name :  " />
-                                          <TextField text="Hello there" />
+                                          <TextField fx:id="playerName" promptText="Enter Name" />
                                        </children>
                                     </FlowPane>
                                     <FlowPane prefHeight="0.0" prefWidth="1000.0">
@@ -58,7 +58,7 @@
             </AnchorPane>
          </center>
          <bottom>
-            <Button mnemonicParsing="false" onAction="#switchToChooseSupervisor" prefHeight="85.0" prefWidth="249.0" styleClass="thin-border" text="Confirm" BorderPane.alignment="BOTTOM_RIGHT">
+            <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#switchToChooseSupervisor" prefHeight="85.0" prefWidth="249.0" styleClass="thin-border" text="Confirm" BorderPane.alignment="BOTTOM_RIGHT">
                <padding>
                   <Insets right="20.0" />
                </padding>

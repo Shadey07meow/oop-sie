@@ -1,5 +1,5 @@
 /* ===== Palette (sampled from the README screen) ===== */
-.root {
+.root, .theme-root {
     /*UI Elements color*/
     -outer-pane-color: #403e44; 
     -inner-pane-color: #827d7d; 
@@ -114,6 +114,11 @@
     -fx-text-fill: -orange-light-color;
 }
 
+.button:disabled{
+    -fx-background-color: -outer-pane-color;
+    -fx-text-fill: -inner-pane-color;
+}
+
 
 /*Custom Stuff*/
 .empty-screen{
@@ -133,5 +138,5 @@
     -fx-background-image: url("../images/screens/DialougeBox.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    -fx-background-size: cover;
+    -fx-background-size: stretch;
 }

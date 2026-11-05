@@ -18,7 +18,7 @@
       <Region prefHeight="200.0" prefWidth="200.0" styleClass="console-background" />
       <BorderPane>
          <bottom>
-            <Button mnemonicParsing="false" onAction="#switchToGame" prefHeight="88.0" prefWidth="182.0" text="Button" BorderPane.alignment="BOTTOM_RIGHT">
+            <Button fx:id="acceptButton" mnemonicParsing="false" onAction="#switchToGame" prefHeight="88.0" prefWidth="182.0" text="Button" BorderPane.alignment="CENTER">
                <styleClass>
                   <String fx:value="button" />
                   <String fx:value="thick-border" />
