@@ -8,10 +8,21 @@ public class playerStats {
     String name;
     Supervisor selectedDSupervisor = null;
 
-    int points;
+    private int points;
     boolean hasExceptionHandler = true;
     boolean hasRecompile = true;
     boolean hasDebug = true;
+
+
+    public void addPoints(int val)
+    {
+        this.points += val;
+    } 
+
+    public int getPoints()
+    {
+        return this.points;
+    }
 
     public void setHasExceptionHandler(boolean v)
     {
