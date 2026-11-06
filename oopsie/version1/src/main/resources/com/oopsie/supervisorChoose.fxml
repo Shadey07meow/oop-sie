@@ -34,11 +34,7 @@
                            <center>
                               <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                                  <children>
-<<<<<<< HEAD
                                     <ImageView fx:id="superSlotImg1" fitHeight="241.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
-=======
-                                    <ImageView fx:id="superSlotImg1" fitHeight="324.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="15.0">
->>>>>>> cal
                                        <image>
                                           <Image url="@images/supervisorScreen/Supervisor2.png" />
                                        </image>
@@ -53,7 +49,6 @@
                               </VBox>
                            </center>
                            <bottom>
-<<<<<<< HEAD
                               <Label alignment="TOP_LEFT" prefHeight="111.0" prefWidth="265.0" text="Name: " BorderPane.alignment="TOP_LEFT">
                                  <font>
                                     <Font name="Cascadia Mono Regular" size="32.0" />
@@ -62,23 +57,6 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </BorderPane.margin>
                               </Label>
-=======
-                              <VBox alignment="BOTTOM_LEFT" prefHeight="145.0" prefWidth="300.0" spacing="5.0" BorderPane.alignment="CENTER">
-                                 <children>
-                                    <Label text="Name: ">
-                                       <font>
-                                          <Font name="Cascadia Mono Regular" size="20.0" />
-                                       </font></Label>
-                                    <Label prefHeight="54.0" prefWidth="130.0" text="Specialty:">
-                                       <font>
-                                          <Font name="Cascadia Mono Regular" size="20.0" />
-                                       </font></Label>
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="30.0" left="20.0" />
-                                 </padding>
-                              </VBox>
->>>>>>> cal
                            </bottom>
                            <styleClass>
                               <String fx:value="thin-border" />
@@ -100,7 +78,6 @@
                   <Group fx:id="superSlot2" onMouseClicked="#setSelect2">
                      <children>
                         <BorderPane prefHeight="511.0" prefWidth="300.0">
-<<<<<<< HEAD
                            <center>
                               <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                                  <children>
@@ -112,19 +89,6 @@
                                           <Insets right="-10.0" />
                                        </VBox.margin>
                                     </ImageView>
-=======
-                           <bottom>
-                              <VBox alignment="BOTTOM_LEFT" prefHeight="145.0" prefWidth="300.0" spacing="5.0" BorderPane.alignment="CENTER">
-                                 <children>
-                                    <Label prefHeight="29.0" prefWidth="82.0" text="Name: ">
-                                       <font>
-                                          <Font name="Cascadia Code Regular" size="20.0" />
-                                       </font></Label>
-                                    <Label prefHeight="56.0" prefWidth="130.0" text="Specialty:">
-                                       <font>
-                                          <Font name="Cascadia Mono Regular" size="20.0" />
-                                       </font></Label>
->>>>>>> cal
                                  </children>
                                  <padding>
                                     <Insets right="-5.0" top="15.0" />
@@ -145,7 +109,6 @@
                               <String fx:value="thin-border" />
                               <String fx:value="select-slot" />
                            </styleClass>
-<<<<<<< HEAD
                            <top>
                               <Label text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
                                  <BorderPane.margin>
@@ -156,29 +119,12 @@
                                  </font>
                               </Label>
                            </top>
-=======
-                           <center>
-                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                                 <padding>
-                                    <Insets top="50.0" />
-                                 </padding>
-                                 <children>
-                                    <ImageView fx:id="superSlotImg2" fitHeight="324.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="15.0">
-                                       <image>
-                                          <Image url="@images/supervisorScreen/Supervisor2.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                           </center>
->>>>>>> cal
                         </BorderPane>
                      </children>
                   </Group>
                   <Group fx:id="superSlot3" onMouseClicked="#setSelect3">
                      <children>
                         <BorderPane prefHeight="511.0" prefWidth="300.0">
-<<<<<<< HEAD
                            <center>
                               <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                                  <children>
@@ -190,19 +136,6 @@
                                           <Insets right="-10.0" />
                                        </VBox.margin>
                                     </ImageView>
-=======
-                           <bottom>
-                              <VBox alignment="BOTTOM_LEFT" prefHeight="130.0" prefWidth="290.0" BorderPane.alignment="CENTER">
-                                 <children>
-                                    <Label text="Name: ">
-                                       <font>
-                                          <Font name="Cascadia Mono Regular" size="20.0" />
-                                       </font></Label>
-                                    <Label prefHeight="63.0" prefWidth="106.0" text="Specialty">
-                                       <font>
-                                          <Font name="Cascadia Mono Regular" size="20.0" />
-                                       </font></Label>
->>>>>>> cal
                                  </children>
                                  <padding>
                                     <Insets right="-5.0" top="15.0" />
@@ -223,7 +156,6 @@
                               <String fx:value="thin-border" />
                               <String fx:value="select-slot" />
                            </styleClass>
-<<<<<<< HEAD
                            <top>
                               <Label text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
                                  <BorderPane.margin>
@@ -234,22 +166,6 @@
                                  </font>
                               </Label>
                            </top>
-=======
-                           <center>
-                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                                 <padding>
-                                    <Insets top="50.0" />
-                                 </padding>
-                                 <children>
-                                    <ImageView fx:id="superSlotImg3" fitHeight="324.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" translateX="20.0" translateY="15.0">
-                                       <image>
-                                          <Image url="@images/supervisorScreen/Supervisor2.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </VBox>
-                           </center>
->>>>>>> cal
                         </BorderPane>
                      </children>
                   </Group>

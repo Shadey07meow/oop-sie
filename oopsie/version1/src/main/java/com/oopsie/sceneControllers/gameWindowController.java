@@ -461,7 +461,7 @@ public class gameWindowController {
    
 
             dialoguePane.setVisible(true);
-
+            // gameplayLoop.getCurPlayerStats().setHasDebug(false);
 
 
         }
