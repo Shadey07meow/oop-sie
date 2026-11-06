@@ -44,7 +44,7 @@ public class Main extends Application {
         // Container for the current screen
         screenLayer = new StackPane();
 
-        screenLayer.getChildren().add(loadFXML("mainMenu"));
+        screenLayer.getChildren().add(loadFXML("splashScreen"));
 
         // Load settings FXML
         FXMLLoader loader = new FXMLLoader(
@@ -149,7 +149,6 @@ public class Main extends Application {
 
         stage.setTitle("OOP Terminal");
         curStage = stage;
-        AudioManager.playMusic(AudioManager.Music.MainMenuMusic);
 
         FadeHandler.addFadeIn(1);
     }

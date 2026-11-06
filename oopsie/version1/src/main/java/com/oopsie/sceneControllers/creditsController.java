@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
+import com.oopsie.animations.FadeHandler;
 import com.oopsie.logic.gameplayLoop;
 
 import javafx.application.Platform;
@@ -60,7 +61,15 @@ public class creditsController {
 
        @FXML
     private void switchToTitle() throws IOException {
-        Main.changeRoot("mainMenu");
+                FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("mainMenu");
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 
 

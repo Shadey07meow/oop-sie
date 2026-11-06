@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.oopsie.Main;
+import com.oopsie.animations.FadeHandler;
 
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
@@ -77,8 +78,16 @@ public class helpScreenController {
         });
     }
 
-    @FXML
+     @FXML
     private void switchToMain() throws IOException {
-        Main.changeRoot("mainMenu");
+                FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("mainMenu");
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 }

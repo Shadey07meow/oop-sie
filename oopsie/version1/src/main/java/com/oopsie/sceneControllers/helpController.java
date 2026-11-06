@@ -3,6 +3,7 @@ package com.oopsie.sceneControllers;
 import java.io.IOException;
 
 import com.oopsie.Main;
+import com.oopsie.animations.FadeHandler;
 
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
@@ -124,14 +125,22 @@ public class helpController {
         Main.changeRoot("gameWindow");
     }
 
-    @FXML
-    private void switchToPrimary() throws IOException {
-        Main.changeRoot("mainMenu");
-    }
+    // @FXML
+    // private void switchToPrimary() throws IOException {
+    //     Main.changeRoot("mainMenu");
+    // }
 
        @FXML
-    private void switchToTitle() throws IOException {
-        Main.changeRoot("mainMenu");
+    private void switchToPrimary() throws IOException {
+                FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("mainMenu");
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 
 
