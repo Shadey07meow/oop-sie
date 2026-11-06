@@ -3,9 +3,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="console-background" stylesheets="@styles/main-theme.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.splashScreenController">
    <children>
-      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="splashScreen" />
+      <Pane layoutX="227.0" layoutY="141.0" prefHeight="437.0" prefWidth="778.0" styleClass="splashScreen" AnchorPane.bottomAnchor="143.79999999999995" AnchorPane.leftAnchor="227.0" AnchorPane.rightAnchor="276.20000000000005" AnchorPane.topAnchor="141.0" />
    </children>
 </AnchorPane>

@@ -144,7 +144,7 @@ public class Main extends Application {
 
 
         stage.getIcons().add(
-              new Image(Main.class.getResourceAsStream("/com/oopsie/images/screens/Logo Screen.png"))
+              new Image(Main.class.getResourceAsStream("/com/oopsie/images/screens/LogoScreen.png"))
         );
 
         stage.setTitle("OOP Terminal");
