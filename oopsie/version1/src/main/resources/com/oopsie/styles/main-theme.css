@@ -146,3 +146,12 @@
     -fx-background-size: stretch;
 }
 
+.splashScreen{
+    -fx-background-image: url("../images/screens/Logo Screen.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+}
+
+
+
