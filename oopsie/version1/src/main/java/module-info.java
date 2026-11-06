@@ -8,5 +8,6 @@ module com.oopsie {
 
     opens com.oopsie to javafx.fxml;
     opens com.oopsie.sceneControllers to javafx.fxml;
+    opens com.oopsie.logic to javafx.base;
     exports com.oopsie;
 }

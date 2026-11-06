@@ -8,18 +8,18 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.creditsController">
-  <children>
-      <ImageView fitHeight="738.0" fitWidth="1296.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-3.37518310546875" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-16.0" AnchorPane.topAnchor="-4.0">
-         <image>
-            <Image url="@images/Credits.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="599.0" fitWidth="370.0" layoutX="116.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
-         <image>
-            <Image url="@images/pfps/calpfp.png" />
-         </image>
-      </ImageView>
-       <Button fx:id="quitButton" layoutX="897.0" layoutY="613.0" mnemonicParsing="false" onAction="#switchToTitle" prefHeight="86.0" prefWidth="390.0" style="-fx-background-color: transparent;">
+ <children>
+     <ImageView fitHeight="738.0" fitWidth="1296.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-3.37518310546875" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-16.0" AnchorPane.topAnchor="-4.0">
+        <image>
+           <Image url="@images/Credits.png" />
+        </image>
+     </ImageView>
+     <ImageView fitHeight="331.0" fitWidth="324.0" layoutX="134.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
+        <image>
+           <Image url="@images/pfps/calpfp.png" />
+        </image>
+     </ImageView>
+      <Button fx:id="quitButton" layoutX="897.0" layoutY="613.0" mnemonicParsing="false" onAction="#switchToTitle" prefHeight="86.0" prefWidth="390.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="125.0" fitWidth="336.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,38 +27,30 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <ImageView fitHeight="599.0" fitWidth="370.0" layoutX="590.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
-         <image>
-            <Image url="@images/pfps/shadeypfp.png" />
-         </image>
-      </ImageView>
-<<<<<<< Updated upstream
-      <Text fill="#5b0d0d" layoutX="253.0" layoutY="636.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="LINDSAY" textAlignment="CENTER" wrappingWidth="242.93670272827148">
-=======
-      <Text layoutX="260.0" layoutY="653.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="lindsay" textAlignment="CENTER" wrappingWidth="242.93670272827148">
->>>>>>> Stashed changes
+     <ImageView fitHeight="333.0" fitWidth="344.0" layoutX="595.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
+        <image>
+           <Image url="@images/pfps/shadeypfp.png" />
+        </image>
+     </ImageView>
+     <Text layoutX="243.0" layoutY="611.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="lindsay" textAlignment="CENTER" wrappingWidth="242.93670272827148">
+        <font>
+           <Font name="Monospaced Bold" size="36.0" />
+        </font>
+     </Text>
+     <Text fill="#590d0d97" layoutX="226.0" layoutY="643.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="ASSETS AND PROGRAMMING" textAlignment="CENTER" wrappingWidth="310.23025131225586">
+        <font>
+           <Font name="Cascadia Mono Regular" size="23.0" />
+        </font>
+     </Text>
+      <Text layoutX="721.0" layoutY="468.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="shadey" textAlignment="CENTER" wrappingWidth="242.93670272827148">
          <font>
-            <Font name="Consolas" size="36.0" />
+            <Font name="Monospaced Bold" size="36.0" />
          </font>
       </Text>
-      <Text fill="#5b0d0d" layoutX="721.0" layoutY="500.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="shadey" textAlignment="CENTER" wrappingWidth="242.93670272827148">
+      <Text fill="#590d0d97" layoutX="701.0" layoutY="499.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="HEAD PROGRAMMER" textAlignment="CENTER" wrappingWidth="310.23025131225586">
          <font>
-            <Font name="Consolas" size="36.0" />
+            <Font name="Cascadia Mono Regular" size="23.0" />
          </font>
       </Text>
-<<<<<<< Updated upstream
-      <Text fill="#590d0d97" layoutX="249.0" layoutY="652.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="ASSETS AND PROGRAMMING" textAlignment="CENTER" wrappingWidth="310.23025131225586">
-=======
-      <Text layoutX="249.0" layoutY="669.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="ASSETS AND PROGRAMMING" textAlignment="CENTER" wrappingWidth="310.23025131225586">
->>>>>>> Stashed changes
-         <font>
-            <Font name="Consolas" size="23.0" />
-         </font>
-      </Text>
-      <Text fill="#590d0d9a" layoutX="740.0" layoutY="527.0" rotate="-18.4" strokeType="OUTSIDE" strokeWidth="0.0" text="HEAD PROGRAMMER" textAlignment="CENTER" wrappingWidth="242.93670272827148">
-         <font>
-            <Font name="Consolas" size="23.0" />
-         </font>
-      </Text>
-  </children>
+ </children>
 </AnchorPane>

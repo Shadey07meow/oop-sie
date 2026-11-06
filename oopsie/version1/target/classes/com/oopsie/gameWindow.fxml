@@ -48,15 +48,22 @@
                                              <center>
                                                 <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                                    <children>
-                                                      <TextArea fx:id="questionTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="asdf" styleClass="console-background" text="What occurs when two methods in the same Java class share the exact same method name but have different parameter lists (number or types of arguments)?&#10;" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <TextArea fx:id="questionTextArea" editable="false" layoutX="8.8" layoutY="4.8" prefHeight="296.0" prefWidth="1100.0" promptText="asdf" styleClass="console-background" text="What occurs when two methods in the same Java class share the exact same method name but have different parameter lists (number or types of arguments)?&#10;" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                                          <font>
+<<<<<<< HEAD
                                                             <Font name="Cascadia Mono Regular" size="21.0" />
+=======
+                                                            <Font name="Cascadia Mono Regular" size="18.0" />
+>>>>>>> cal
                                                          </font>
                                                          <padding>
                                                             <Insets left="30.0" top="70.0" />
                                                          </padding>
                                                       </TextArea>
-                                                      <Label fx:id="questionNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="-20.0" layoutY="-40.0" prefHeight="86.0" prefWidth="210.0" styleClass="question-number" text="Q1" textAlignment="CENTER" />
+                                                      <Label fx:id="questionNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="-20.0" layoutY="-40.0" prefHeight="66.0" prefWidth="146.0" styleClass="question-number" text="Q1" textAlignment="CENTER">
+                                                         <font>
+                                                            <Font name="Cascadia Mono Regular" size="19.0" />
+                                                         </font></Label>
                                                    </children>
                                                    <styleClass>
                                                       <String fx:value="console-background" />
@@ -98,7 +105,10 @@
                                                          <top>
                                                             <AnchorPane BorderPane.alignment="CENTER">
                                                                <children>
-                                                                  <Label styleClass="header-bar-label" text="Console" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                                                  <Label styleClass="header-bar-label" text=" Console" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                                     <font>
+                                                                        <Font name="Cascadia Mono Regular" size="17.0" />
+                                                                     </font></Label>
                                                                </children>
                                                             </AnchorPane>
                                                          </top>
@@ -115,9 +125,18 @@
                                                                      <children>
                                                                         <VBox alignment="CENTER" prefHeight="120.0" prefWidth="394.0" styleClass="console-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                            <children>
-                                                                              <Button fx:id="exceptionHandlerButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doExceptionHandler" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Exception Handler" />
-                                                                              <Button fx:id="recompileButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doRecompile" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Recompile" />
-                                                                              <Button fx:id="debugButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doDebug" prefHeight="1000.0" prefWidth="1000.0" text="&gt; Debug" />
+                                                                              <Button fx:id="exceptionHandlerButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doExceptionHandler" prefHeight="1000.0" prefWidth="373.0" text="&gt; Exception Handler">
+                                                                                 <font>
+                                                                                    <Font name="Cascadia Mono Regular" size="12.0" />
+                                                                                 </font></Button>
+                                                                              <Button fx:id="recompileButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doRecompile" prefHeight="1000.0" prefWidth="372.0" text="&gt; Recompile">
+                                                                                 <font>
+                                                                                    <Font name="Cascadia Mono Regular" size="12.0" />
+                                                                                 </font></Button>
+                                                                              <Button fx:id="debugButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#doDebug" prefHeight="1000.0" prefWidth="374.0" text="&gt; Debug">
+                                                                                 <font>
+                                                                                    <Font name="Cascadia Mono Regular" size="12.0" />
+                                                                                 </font></Button>
                                                                            </children>
                                                                         </VBox>
                                                                      </children>
@@ -136,7 +155,10 @@
                                                          <top>
                                                             <AnchorPane>
                                                                <children>
-                                                                  <Label styleClass="header-bar-label" text="Label" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                                                  <Label prefHeight="18.0" prefWidth="390.0" styleClass="header-bar-label" text=" Need some help?" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                                                     <font>
+                                                                        <Font name="Cascadia Mono Regular" size="14.0" />
+                                                                     </font></Label>
                                                                </children>
                                                             </AnchorPane>
                                                          </top>
@@ -162,7 +184,7 @@
                      <bottom>
                         <Label fx:id="pointsLabel" alignment="BASELINE_RIGHT" prefHeight="46.0" prefWidth="20000.0" styleClass="border-pane" text="POINTS : 99999">
                            <font>
-                              <Font name="Consolas" size="24.0" />
+                              <Font name="Cascadia Mono Regular" size="24.0" />
                            </font>
                            <padding>
                               <Insets bottom="5.0" right="50.0" top="5.0" />

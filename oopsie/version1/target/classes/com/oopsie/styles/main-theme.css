@@ -69,14 +69,18 @@
 }
 
 
-.question-number{
+.question-number {
     -fx-text-fill: -brown-main-color;
     -fx-background-color: -orange-main-color;
-    -fx-border-color: -brown-main-color;
-    -fx-font-size: 64px;
+
+    -fx-font-size: 32px;
     -fx-font-weight: bold;
-    -fx-border-width: 10;
+
+    -fx-border-color: -brown-main-color;
+    -fx-border-width: 3px;
     -fx-border-style: solid;
+
+    -fx-padding: 6 14 6 14;
 }
 
 .console-background{
