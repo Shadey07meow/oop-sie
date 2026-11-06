@@ -1,0 +1,97 @@
+
+
+.leaderboard-table {
+    -fx-background-color: #e6ceb2;
+    -fx-background-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+    -fx-border-radius: 8px;
+
+    -fx-padding: 0px;
+
+    -fx-control-inner-background: #f2ddc2;
+    -fx-control-inner-background-alt: #e9c9a8;
+
+    -fx-table-cell-border-color: #d5b18f;
+    -fx-table-header-border-color: transparent;
+
+    -fx-font-family: "Cascadia Mono";
+    -fx-font-size: 15px;
+}
+
+
+.leaderboard-table .column-header-background {
+    -fx-background-color: #754638;
+    -fx-background-radius: 10px 10px 0px 0px;
+    -fx-background-insets: 0;
+}
+
+.leaderboard-table .column-header {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10px 10px 0px 0px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px;
+    -fx-size: 42px;
+}
+
+.leaderboard-table .column-header .label {
+    -fx-text-fill: #fff0d9;
+    -fx-font-family: "Cascadia Mono";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+
+.leaderboard-table .table-row-cell {
+    -fx-background-color: #f2ddc2;
+    -fx-cell-size: 48px;
+}
+
+.leaderboard-table .table-row-cell:odd {
+
+}
+
+.leaderboard-table .table-row-cell:hover {
+    -fx-background-color: #e7ab72;
+}
+
+.leaderboard-table .table-row-cell:selected {
+
+}
+
+.leaderboard-table .table-row-cell:selected .text {
+    -fx-fill: #fff0d9;
+}
+
+
+.leaderboard-table .table-cell {
+    -fx-text-fill: #493027;
+    -fx-font-family: "Cascadia Mono";
+    -fx-font-size: 15px;
+    -fx-alignment: CENTER;
+    -fx-border-color: transparent;
+}
+
+
+.leaderboard-table .empty-label {
+    -fx-text-fill: #805c49;
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
+}
+
+
+.leaderboard-table .scroll-bar:vertical,
+.leaderboard-table .scroll-bar:horizontal {
+    -fx-background-color: #e9c9a8;
+}
+
+.leaderboard-table .scroll-bar .thumb {
+    -fx-background-color: #9c684d;
+    -fx-background-radius: 5px;
+}
+
+.leaderboard-table .corner {
+    -fx-background-color: #e6ceb2;
+}
+
+

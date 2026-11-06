@@ -1,78 +1,68 @@
+
 package com.oopsie.logic;
 
 import com.oopsie.logic.supervisors.Supervisor;
 
-
-
 public class playerStats {
-    String name;
-    Supervisor selectedDSupervisor = null;
+
+    private String name;
+    private Supervisor selectedDSupervisor = null;
 
     private int points;
-    boolean hasExceptionHandler = true;
-    boolean hasRecompile = true;
-    boolean hasDebug = true;
 
+    private boolean hasExceptionHandler = true;
+    private boolean hasRecompile = true;
+    private boolean hasDebug = true;
 
-    public void addPoints(int val)
-    {
+    public void addPoints(int val) {
         this.points += val;
-    } 
+    }
 
-    public int getPoints()
-    {
+    public int getPoints() {
         return this.points;
     }
 
-    public void setHasExceptionHandler(boolean v)
-    {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setHasExceptionHandler(boolean v) {
         this.hasExceptionHandler = v;
     }
 
-    public void setHasRecompile(boolean v)
-    {
+    public void setHasRecompile(boolean v) {
         this.hasRecompile = v;
     }
-    
-    public void setHasDebug(boolean v)
-    {
+
+    public void setHasDebug(boolean v) {
         this.hasDebug = v;
     }
-    
-    public void setSupervisor(Supervisor v)
-    {   
+
+    public void setSupervisor(Supervisor v) {
         this.selectedDSupervisor = v;
     }
 
-    public Supervisor getSupervisor()
-    {   
+    public Supervisor getSupervisor() {
         return this.selectedDSupervisor;
     }
-    
-    public boolean getHasExceptionHandler()
-    {
+
+    public boolean getHasExceptionHandler() {
         return this.hasExceptionHandler;
     }
 
-    public boolean getHasRecompile()
-    {
+    public boolean getHasRecompile() {
         return this.hasRecompile;
     }
-    
-    public boolean getHasDebug()
-    {
+
+    public boolean getHasDebug() {
         return this.hasDebug;
     }
 
-    public boolean hasLifelines()
-    {
-        return (this.hasRecompile);
+    public boolean hasLifelines() {
+        return this.hasRecompile;
     }
-    
-    public void setName(String name)
-    {
-        this.name = name;
-    } 
-
-    public String getName() {return this.name;}
 }
