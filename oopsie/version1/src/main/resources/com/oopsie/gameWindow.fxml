@@ -50,11 +50,7 @@
                                                    <children>
                                                       <TextArea fx:id="questionTextArea" editable="false" layoutX="8.8" layoutY="4.8" prefHeight="296.0" prefWidth="1100.0" promptText="asdf" styleClass="console-background" text="What occurs when two methods in the same Java class share the exact same method name but have different parameter lists (number or types of arguments)?&#10;" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                                                          <font>
-<<<<<<< HEAD
                                                             <Font name="Cascadia Mono Regular" size="21.0" />
-=======
-                                                            <Font name="Cascadia Mono Regular" size="18.0" />
->>>>>>> cal
                                                          </font>
                                                          <padding>
                                                             <Insets left="30.0" top="70.0" />

@@ -34,8 +34,7 @@ public class runSaver {
 
         Files.createDirectories(appLocation.getParent());
 
-<<<<<<< HEAD
-        String content = stats.name + "-" + String.valueOf(stats.getPoints()) + System.lineSeparator();;
+        String content = stats.getName() + "-" + String.valueOf(stats.getPoints()) + System.lineSeparator();;
         // Accept a stats
         // Write the tshit in the text file
         try { 
@@ -49,20 +48,6 @@ public class runSaver {
         } catch (Exception e) {
             // TODO: handle exception
         }
-=======
-        String name = stats.getName().replace(";;;", "");
-        
-        String content = name + ";;;" + stats.getPoints()
-                + System.lineSeparator();
-
-        Files.writeString(
-            appLocation,
-            content,
-            StandardCharsets.UTF_8,
-            StandardOpenOption.CREATE,
-            StandardOpenOption.APPEND
-        );
->>>>>>> cal
     }
 
     public static List<playerStats> getAllScores() throws IOException {
