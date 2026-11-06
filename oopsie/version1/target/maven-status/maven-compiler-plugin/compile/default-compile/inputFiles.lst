@@ -1,5 +1,6 @@
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\nameScreenController.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\module-info.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\runSaver.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\settingsOverlayManager.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\settingsScreenController.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\supervisorChooser.java
@@ -13,7 +14,9 @@ c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsi
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\gameQuestion.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\endGameController.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\helpController.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\animations\FadeHandler.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\Main.java
+c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\sceneControllers\splashScreenController.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\animations\ButtonAnimations.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\supervisors\Supervisor.java
 c:\Users\Shadey\Documents\GitHub\oop-sie\oopsie\version1\src\main\java\com\oopsie\logic\playerStats.java
