@@ -1,0 +1,40 @@
+/* ===== Palette (sampled from the README screen) ===== */
+.root, .theme-root {
+    /*UI Elements color*/
+    -outer-pane-color: #403e44; 
+    -inner-pane-color: #827d7d; 
+    -orange-main-color: #e7ab72; 
+    -orange-light-color: #e1ac7a; 
+    -brown-main-color: #663426; 
+    -brown-light-color: #b68169; 
+
+
+    /*UI Text Color*/
+    -text-color: #9d4d36;
+    -text-color-hovered: #9d4d36;
+
+    -text-background-color:#e5cdb1;
+    -text-background-hovered-color:#663326;
+
+
+    -fx-font-family: "Cascadia Mono";
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+
+.officeBG{
+    -fx-background-image: url("../images/screens/OfficeSetting.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+}
+
+.oopFace{
+    -fx-background-image: url("../images/OOP/OOPCutscene.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: stretch;
+}

@@ -9,14 +9,16 @@ import javafx.scene.image.Image;
 
 public class Supervisor {
     private String name;
+    private String role;
     private String[] proficientTopics;
     private float baseCorrectChance = 0.25f;
     private Image image;
     private String pickedLine = "";
     
-    public Supervisor(String name, String[] proficientTopics, float baseCorrectChance, Image image, String pickedLine)
+    public Supervisor(String name, String role, String[] proficientTopics, float baseCorrectChance, Image image, String pickedLine)
     {
         this.name = name;
+        this.role = role;
         this.proficientTopics = proficientTopics;
         this.baseCorrectChance = baseCorrectChance;
         this.image = image;
@@ -83,5 +85,10 @@ public class Supervisor {
     public String getName()
     {
         return this.name;
+    }
+
+    public String getRole()
+    {
+        return this.role;
     }
 }

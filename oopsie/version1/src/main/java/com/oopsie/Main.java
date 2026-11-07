@@ -44,7 +44,9 @@ public class Main extends Application {
         // Container for the current screen
         screenLayer = new StackPane();
 
+        // Dev
         screenLayer.getChildren().add(loadFXML("splashScreen"));
+        // screenLayer.getChildren().add(loadFXML("cutscene"));
 
         // Load settings FXML
         FXMLLoader loader = new FXMLLoader(
