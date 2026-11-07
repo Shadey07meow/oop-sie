@@ -39,11 +39,11 @@
                            </rowConstraints>
                            <children>
                               <TextField fx:id="playerName" prefHeight="34.0" prefWidth="234.0" promptText="Enter Name" styleClass="empty-textbox" GridPane.columnIndex="1" />
-                              <Label text="Name :  " />
-                              <Label prefHeight="71.0" prefWidth="153.0" text="Clearance:" wrapText="true" GridPane.rowIndex="1" />
-                              <Label text="Address :  " GridPane.rowIndex="2" />
-                              <Label text="Maintenance Level" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="1267, Ohio Street" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Name :  " textFill="WHITE" />
+                              <Label prefHeight="71.0" prefWidth="153.0" text="Clearance:" textFill="WHITE" wrapText="true" GridPane.rowIndex="1" />
+                              <Label text="Address :  " textFill="WHITE" GridPane.rowIndex="2" />
+                              <Label text="Maintenance Level" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="1267, Ohio Street" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                            <padding>
                               <Insets bottom="-50.0" left="300.0" top="10.0" />
@@ -54,7 +54,7 @@
                         </GridPane>
                      </center>
                      <top>
-                        <Label styleClass="header-text" text="Employee Card" underline="true" BorderPane.alignment="BOTTOM_RIGHT">
+                        <Label styleClass="header-text" text="Employee Card" textFill="WHITE" underline="true" BorderPane.alignment="BOTTOM_RIGHT">
                            <font>
                               <Font size="8.0" />
                            </font>

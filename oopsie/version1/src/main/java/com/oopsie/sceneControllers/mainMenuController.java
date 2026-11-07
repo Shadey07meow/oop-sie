@@ -125,10 +125,8 @@ public class mainMenuController {
         FadeHandler.addFadeOut((0.3), () -> {
             try {
                 Main.changeRoot("cutscene");
-        // screenLayer.getChildren().add(loadFXML("cutscene"));
-
+                // screenLayer.getChildren().add(loadFXML("cutscene"));
                 FadeHandler.addFadeIn(0.3);
-                
             } catch (Exception e) {
                 // TODO: handle exception
             }
@@ -138,14 +136,11 @@ public class mainMenuController {
     @FXML
     private void switchToPrimary() throws IOException {
         FadeHandler.addFadeIn(1);
-
         Main.changeRoot("mainMenu");
     }
 
        @FXML
-    private void switchToTitle() throws IOException {
-        Main.changeRoot("mainMenu");
-    }
+    private void switchToTitle() throws IOException {Main.changeRoot("mainMenu");}
 
     @FXML
     private void switchToLeaderboard(ActionEvent event) throws IOException {

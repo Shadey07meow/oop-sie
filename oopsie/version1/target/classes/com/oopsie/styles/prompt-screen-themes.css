@@ -78,10 +78,13 @@
 }
 
 .empty-textbox{
-    -fx-background-color: -brown-main-color;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #d9c3b0;             /* text color */
+    -fx-control-inner-background: -brown-main-color;
     -fx-border-color: transparent;
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-background-radius: 0;
     -fx-border-radius: 0;
 }
+

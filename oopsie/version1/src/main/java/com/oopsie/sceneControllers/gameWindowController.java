@@ -8,6 +8,7 @@ import com.oopsie.animations.ButtonAnimations;
 import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameQuestion;
 import com.oopsie.logic.gameplayLoop;
+import com.oopsie.logic.playerStats;
 
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
@@ -492,31 +493,31 @@ public class gameWindowController {
     {
         System.out.println(gameplayLoop.getCurPlayerStats().getSupervisor().getName());
         AudioManager.playEffect(AudioManager.Effect.Talk);
-        String resultString = "";
+        String resultString = "The answer is ";
 
         // Integer to string converter
         switch (gameplayLoop.getCurPlayerStats().getSupervisor().getAnswer(selectedQuestion))
         {
             case 0:
-                resultString = "A";
+                resultString += "A";
                 showOOP(OOPState.A);
                 break;
             case 1:
-                resultString = "B";
+                resultString += "B";
                 showOOP(OOPState.B);
                 break;
             case 2:
-                resultString = "C";
+                resultString += "C";
                 showOOP(OOPState.C);
                 break;
             case 3:
-                resultString = "D";
+                resultString += "D";
                 showOOP(OOPState.D);
                 break;
             default:
                 break;
         }
-
+        supervisorDisplay.setImage(gameplayLoop.getCurPlayerStats().getSupervisor().getImage());
 
         // Supervisor tells you the answer
         System.out.println(gameplayLoop.getCurPlayerStats().getSupervisor().getLine());
