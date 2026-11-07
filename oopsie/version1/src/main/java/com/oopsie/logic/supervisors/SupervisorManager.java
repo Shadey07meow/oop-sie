@@ -33,16 +33,18 @@ public class SupervisorManager {
     {
         supervisorList.add(new Supervisor(
             "Bob",
+            "Head Programmer",
             new String[]{"C", "Java"}, 
-            0.1f,
+            0.2f,
             new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor1.png")),
             "*Grumbling*"
         ));
         
         supervisorList.add(new Supervisor(
             "William",
-            new String[]{"C", "Java"}, 
-            0.1f,
+            "Theory Technician",
+            new String[]{"Module 1 - Introduction to Paradigms"}, 
+            0.5f,
             new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor2.png")), 
             "Uh…"
         ));
@@ -50,7 +52,8 @@ public class SupervisorManager {
         
         supervisorList.add(new Supervisor(
             "Greg",
-            new String[]{"C", "Java"}, 
+            "Junior Programmer",
+            new String[]{"Module 2 - Procedural Programming", "Module 3 - Functional Programming"}, 
             0.1f,
             new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor3.png")),
             "What's happening now, recruit?"
@@ -58,7 +61,8 @@ public class SupervisorManager {
         
         supervisorList.add(new Supervisor(
             "Craig",
-            new String[]{"C", "Java"}, 
+            "Honorary Game Developer",
+            new String[]{"Module 4 - OOP Programming", "Module 5 - Imperative vs Declarative Programming", "Module 6 - Event-driven Programming"}, 
             0.1f,
             new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor4.png")),
             "Let’s see here…"
@@ -67,7 +71,8 @@ public class SupervisorManager {
 
         supervisorList.add(new Supervisor(
             "Jarvis",
-            new String[]{"C", "Java"}, 
+            "Lead Senior API Developer",
+            new String[]{"Module 2 - Procedural Programming", "Module 3 - Functional Programming", "Module 4 - OOP Programming", "Module 5 - Imperative vs Declarative Programming", "Module 6 - Event-driven Programming"},
             0.1f,
             new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor5.png")),
             "No worries, recruit! I’ve got your back."
