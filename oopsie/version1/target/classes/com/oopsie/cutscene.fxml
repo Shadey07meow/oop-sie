@@ -14,7 +14,7 @@
          <children>
             <AnchorPane prefHeight="722.0" prefWidth="1283.0" styleClass="dialogue-pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <TextArea fx:id="dialoguePane" layoutX="40.0" layoutY="494.0" prefHeight="181.0" prefWidth="1210.0" text="Dialogue area">
+                  <TextArea fx:id="dialoguePane" layoutX="40.0" layoutY="494.0" prefHeight="181.0" prefWidth="1210.0" text="Dialogue area" wrapText="true">
                      <font>
                         <Font name="Cascadia Mono Regular" size="31.0" />
                      </font>
