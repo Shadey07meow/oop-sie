@@ -76,3 +76,12 @@
     -fx-background-position: center;
     -fx-background-size: cover;
 }
+
+.empty-textbox{
+    -fx-background-color: -brown-main-color;
+    -fx-border-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
