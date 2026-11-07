@@ -69,15 +69,15 @@ public class supervisorChooser {
         
         superSlotImg1.setImage(selectedSupervisors[0].getImage());
         s1_name.setText("Name: " + selectedSupervisors[0].getName());
-        s1_role.setText("Role: " + selectedSupervisors[0].getRole());
+        s1_role.setText(selectedSupervisors[0].getRole());
 
         superSlotImg2.setImage(selectedSupervisors[1].getImage());
         s2_name.setText("Name: " + selectedSupervisors[1].getName());
-        s2_role.setText("Role: " +selectedSupervisors[1].getRole());
+        s2_role.setText(selectedSupervisors[1].getRole());
         
         superSlotImg3.setImage(selectedSupervisors[2].getImage());
         s3_name.setText("Name: " + selectedSupervisors[2].getName());
-        s3_role.setText("Role: " + selectedSupervisors[2].getRole());
+        s3_role.setText(selectedSupervisors[2].getRole());
         
     }
 

@@ -61,7 +61,7 @@ public class SupervisorManager {
         
         supervisorList.add(new Supervisor(
             "Craig",
-            "Honorary Game Developer",
+            "Honorary Game Dev",
             new String[]{"Module 4 - OOP Programming", "Module 5 - Imperative vs Declarative Programming", "Module 6 - Event-driven Programming"}, 
             0.1f,
             new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor4.png")),
@@ -71,7 +71,7 @@ public class SupervisorManager {
 
         supervisorList.add(new Supervisor(
             "Jarvis",
-            "Lead Senior API Developer",
+            "Lead Senior Dev",
             new String[]{"Module 2 - Procedural Programming", "Module 3 - Functional Programming", "Module 4 - OOP Programming", "Module 5 - Imperative vs Declarative Programming", "Module 6 - Event-driven Programming"},
             0.1f,
             new Image(getClass().getResourceAsStream("/com/oopsie/images/supervisorScreen/Supervisor5.png")),

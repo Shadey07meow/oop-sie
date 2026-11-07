@@ -63,12 +63,12 @@
                               <String fx:value="select-slot" />
                            </styleClass>
                            <top>
-                              <Label fx:id="s1_role" text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
+                              <Label fx:id="s1_role" text="Role" textAlignment="CENTER" underline="true" wrapText="true" BorderPane.alignment="CENTER_RIGHT">
                                  <BorderPane.margin>
-                                    <Insets right="30.0" top="30.0" />
+                                    <Insets left="100.0" right="30.0" top="30.0" />
                                  </BorderPane.margin>
                                  <font>
-                                    <Font name="Cascadia Mono Regular" size="42.0" />
+                                    <Font name="Cascadia Mono Regular" size="25.0" />
                                  </font>
                               </Label>
                            </top>
@@ -110,12 +110,12 @@
                               <String fx:value="select-slot" />
                            </styleClass>
                            <top>
-                              <Label fx:id="s2_role" text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
+                              <Label fx:id="s2_role" text="Role" textAlignment="CENTER" underline="true" wrapText="true" BorderPane.alignment="CENTER_RIGHT">
                                  <BorderPane.margin>
-                                    <Insets right="30.0" top="30.0" />
+                                    <Insets left="100.0" right="30.0" top="30.0" />
                                  </BorderPane.margin>
                                  <font>
-                                    <Font name="Cascadia Mono Regular" size="42.0" />
+                                    <Font name="Cascadia Mono Regular" size="25.0" />
                                  </font>
                               </Label>
                            </top>
@@ -157,12 +157,12 @@
                               <String fx:value="select-slot" />
                            </styleClass>
                            <top>
-                              <Label fx:id="s3_role" text="Role" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
+                              <Label fx:id="s3_role" text="Role" textAlignment="CENTER" underline="true" wrapText="true" BorderPane.alignment="CENTER_RIGHT">
                                  <BorderPane.margin>
-                                    <Insets right="30.0" top="30.0" />
+                                    <Insets left="100.0" right="30.0" top="30.0" />
                                  </BorderPane.margin>
                                  <font>
-                                    <Font name="Cascadia Mono Regular" size="42.0" />
+                                    <Font name="Cascadia Mono Regular" size="25.0" />
                                  </font>
                               </Label>
                            </top>
