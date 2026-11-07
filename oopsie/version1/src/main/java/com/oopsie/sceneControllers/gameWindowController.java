@@ -100,6 +100,7 @@ public class gameWindowController {
     {
         System.out.println("Hello");
         instance = this;
+        
 
         OOPImage = new ImageView();
         OOPImage.setFitWidth(oopSize.getWidth());
@@ -233,7 +234,8 @@ public class gameWindowController {
         // Creates 4 new buttons
         for(int j= 0; j < 4; j++)
         {
-            Button newButton2 = new Button("> " + selectedQuestion.getChoiceString(j));
+            char choice = (char)(65 + (int)j);
+            Button newButton2 = new Button("> " + String.valueOf(choice) + ". " + selectedQuestion.getChoiceString(j));
             ButtonAnimations.addButtonSoundsTerminal(newButton2);
 
             // Attach a method to each of the buttons that assigns it a value, then goes to the game loop and chekcs if its the correct answer
@@ -271,9 +273,9 @@ public class gameWindowController {
     public void choseRight()
     {
         // Chose the correct answer
-        questionTextArea.setText("Correct answer Yippe");
+        questionTextArea.setText("CORRECT ANSWER");
         gameplayLoop.wonLevel();
-        Label victoryLabel = new Label("> Correct Answer");
+        Label victoryLabel = new Label("> CORRECT ANSWER");
         Label newLineLabel = new Label(" ");
 
         showOOP(OOPState.Happy);
@@ -344,10 +346,13 @@ public class gameWindowController {
                 
                 Label wrongAnswerLabel = new Label("=================");
                 Button continueButton = new Button("> Continue");
+                continueButton.setPrefWidth(10000);
+                continueButton.setAlignment(Pos.CENTER_LEFT);
+
                 continueButton.setOnAction(event -> {
                     try
                     {
-                      AudioManager.playEffect(AudioManager.Effect.Crash);
+                        AudioManager.playEffect(AudioManager.Effect.Crash);
 
                         Main.changeRoot("gameLoss");
                     } catch (Exception e)

@@ -19,7 +19,7 @@
       <Region opacity="0.0" prefHeight="200.0" prefWidth="200.0" styleClass="console-background" />
       <BorderPane>
          <bottom>
-            <Button fx:id="acceptButton" mnemonicParsing="false" onAction="#switchToGame" prefHeight="88.0" prefWidth="182.0" text="Button" BorderPane.alignment="CENTER">
+            <Button fx:id="acceptButton" mnemonicParsing="false" onAction="#switchToGame" prefHeight="54.0" prefWidth="173.0" text="Confirm" BorderPane.alignment="CENTER">
                <styleClass>
                   <String fx:value="button" />
                   <String fx:value="thick-border" />
@@ -185,6 +185,9 @@
                </font>
             </Label>
          </top>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
       </BorderPane>
    </children>
 </StackPane>

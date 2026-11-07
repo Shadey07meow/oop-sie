@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
 import com.oopsie.animations.FadeHandler;
+import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameplayLoop;
 
 import javafx.application.Platform;
@@ -61,7 +62,9 @@ public class creditsController {
 
        @FXML
     private void switchToTitle() throws IOException {
-                FadeHandler.addFadeOut((0.3), () -> {
+        
+        AudioManager.playEffect(AudioManager.Effect.SelectButton2);
+        FadeHandler.addFadeOut((0.3), () -> {
             try {
                 Main.changeRoot("mainMenu");
                 FadeHandler.addFadeIn(0.3);

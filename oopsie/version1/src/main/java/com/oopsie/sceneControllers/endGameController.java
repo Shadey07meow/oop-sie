@@ -7,8 +7,31 @@ import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.runSaver;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class endGameController {
+
+    @FXML 
+    private TextArea lifelinesUsedLabel;
+
+    @FXML 
+    private Label percentTextWin;
+
+
+    @FXML 
+    private Label pointsLabel;
+
+    @FXML
+    private  void initialize()
+    {
+        percentTextWin.setText(gameplayLoop.getCurPlayerStats().getCompletionPercentage() + "% Completed");
+
+        pointsLabel.setText("Points: " + gameplayLoop.getCurPlayerStats().getPoints());
+        lifelinesUsedLabel.setText(gameplayLoop.getCurPlayerStats().getUsedLifelines());
+    }
 
     @FXML
     private void switchToMainWin() throws IOException {

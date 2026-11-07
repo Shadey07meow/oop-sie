@@ -5,6 +5,7 @@ import java.io.InputStream;
 
 import com.oopsie.Main;
 import com.oopsie.animations.FadeHandler;
+import com.oopsie.audio.AudioManager;
 
 import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
@@ -80,7 +81,9 @@ public class helpScreenController {
 
      @FXML
     private void switchToMain() throws IOException {
-                FadeHandler.addFadeOut((0.3), () -> {
+        AudioManager.playEffect(AudioManager.Effect.SelectButton2);
+
+        FadeHandler.addFadeOut((0.3), () -> {
             try {
                 Main.changeRoot("mainMenu");
                 FadeHandler.addFadeIn(0.3);

@@ -62,6 +62,7 @@ public class gameplayLoop {
     private static void startGame()
     {
         currentPoints = 0;
+        curPlayer = new playerStats();
         currentLevel = 1;
         
         checkDifficulty();
