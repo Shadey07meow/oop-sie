@@ -352,7 +352,7 @@ public class gameWindowController {
                 continueButton.setOnAction(event -> {
                     try
                     {
-                      AudioManager.playEffect(AudioManager.Effect.Crash);
+                        AudioManager.playEffect(AudioManager.Effect.Crash);
 
                         Main.changeRoot("gameLoss");
                     } catch (Exception e)

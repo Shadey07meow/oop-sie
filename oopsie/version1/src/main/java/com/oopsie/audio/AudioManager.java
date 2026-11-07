@@ -50,6 +50,7 @@ public class AudioManager {
         Win("effects/Startup.mp3", 0),
         Talk("effects/DialoguePop.mp3", 0),
         SelectButton("effects/confirmMenu.mp3", 0),
+        SelectButton2("effects/UI/buttonClickLesser.mp3", 0),
         CorrectChoice("null", 0);
 
         private String path;

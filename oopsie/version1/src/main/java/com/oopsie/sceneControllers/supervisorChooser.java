@@ -130,8 +130,8 @@ public class supervisorChooser {
             if(i == v)
             {
                 ScaleTransition smoothScaler = new ScaleTransition(Duration.millis(200), groups[i]);
-                smoothScaler.setToX(1.15);
-                smoothScaler.setToY(1.15);
+                smoothScaler.setToX(1.05);
+                smoothScaler.setToY(1.05);
                 groups[i].addEventFilter(MouseEvent.MOUSE_ENTERED, blocker);
                 groups[i].addEventFilter(MouseEvent.MOUSE_EXITED, blocker);
                 smoothScaler.play();

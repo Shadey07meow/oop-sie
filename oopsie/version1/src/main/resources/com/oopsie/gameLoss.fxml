@@ -23,12 +23,12 @@
                   <Font name="Bell MT" size="12.0" />
                </font></Button>
             <Button alignment="CENTER" layoutX="988.0" layoutY="576.0" mnemonicParsing="false" onAction="#switchToMainLoss" prefHeight="80.0" prefWidth="0.0" styleClass="blu-screen-button" text="&gt; N" textAlignment="CENTER" />
-            <Label layoutX="178.0" layoutY="375.0" prefHeight="46.0" prefWidth="387.0" text="__% Complete">
+            <Label fx:id="percentTextWin" layoutX="178.0" layoutY="375.0" prefHeight="46.0" prefWidth="387.0" text="__% Complete">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label layoutX="284.0" layoutY="509.0" prefHeight="46.0" prefWidth="387.0" styleClass="smaller-text" text="Points: ">
+            <Label fx:id="pointsLabel" layoutX="284.0" layoutY="509.0" prefHeight="46.0" prefWidth="387.0" styleClass="smaller-text" text="Points: ">
                <font>
                   <Font size="30.0" />
                </font>
@@ -38,7 +38,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <TextArea editable="false" layoutX="501.0" layoutY="556.0" prefHeight="38.0" prefWidth="200.0" promptText="hello there" styleClass="text-area" />
+            <TextArea fx:id="lifelinesUsedLabel" editable="false" layoutX="501.0" layoutY="556.0" prefHeight="179.0" prefWidth="383.0" styleClass="text-area" wrapText="true" />
          </children> 
       </AnchorPane>
    </children> 

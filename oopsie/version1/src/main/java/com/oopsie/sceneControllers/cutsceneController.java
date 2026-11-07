@@ -28,6 +28,7 @@ public class cutsceneController {
     {
         oop.setOpacity(0);
         currentDialogue = 0;
+        doDialogue();
         rootNode.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
             doDialogue();
         });
@@ -37,7 +38,6 @@ public class cutsceneController {
 
     public void doDialogue()
     {
-        currentDialogue += 1;
         System.out.println("Hello there");
         switch (currentDialogue) {
             case 0:
@@ -82,6 +82,8 @@ public class cutsceneController {
                  break;
                 
         }
+        currentDialogue += 1;
+
     }
 }
 

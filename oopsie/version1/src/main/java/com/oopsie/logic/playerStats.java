@@ -65,4 +65,25 @@ public class playerStats {
     public boolean hasLifelines() {
         return this.hasRecompile;
     }
+
+    public String getUsedLifelines()
+    {
+        String used = "";
+
+        if (!hasDebug)
+            used = used.concat("> Debug \n");
+    
+        if (!hasRecompile)
+            used = used.concat("> Recompile \n");
+        
+        if (!hasExceptionHandler)
+            used = used.concat("> Execution Handler \n");
+        
+        return used;
+    }
+
+    public double getCompletionPercentage()
+    {
+        return Math.round((points/10) / 40);
+    }
 }

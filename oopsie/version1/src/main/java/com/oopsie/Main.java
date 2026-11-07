@@ -156,9 +156,13 @@ public class Main extends Application {
     }
 
     // Change the current screen without removing the overlay
-    public static void changeRoot(String fxml) throws IOException {
-
-        screenLayer.getChildren().setAll(loadFXML(fxml));
+    public static void changeRoot(String fxml) 
+    {
+        try {
+            screenLayer.getChildren().setAll(loadFXML(fxml));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     // Open or close settings

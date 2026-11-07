@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.endGameController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="theme-root" stylesheets="@styles/game-end-themes.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopsie.sceneControllers.endGameController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -15,7 +18,27 @@
       </ImageView>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button layoutX="824.0" layoutY="581.0" mnemonicParsing="false" onAction="#switchToMainWin" prefHeight="50.0" prefWidth="94.0" text="Button" />
+            <Button layoutX="813.0" layoutY="514.0" mnemonicParsing="false" onAction="#switchToMainWin" opacity="0.0" prefHeight="79.0" prefWidth="334.0" text="Button" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="percentTextWin" layoutX="290.0" layoutY="379.0" prefHeight="46.0" prefWidth="387.0" text="__% Complete" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="pointsLabel" layoutX="284.0" layoutY="509.0" prefHeight="46.0" prefWidth="387.0" styleClass="smaller-text" text="Points: ">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="284.0" layoutY="553.0" prefHeight="46.0" prefWidth="387.0" styleClass="smaller-text" text="Lifelines Used:">
+               <font>
+                  <Font size="57.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="lifelinesUsedLabel" editable="false" layoutX="501.0" layoutY="556.0" prefHeight="179.0" prefWidth="383.0" styleClass="text-area" wrapText="true" />
          </children>
       </AnchorPane>
    </children>
