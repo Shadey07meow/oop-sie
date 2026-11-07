@@ -1,15 +1,71 @@
-.invisible-button {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-text-fill: transparent;
-    -fx-effect: null;
+
+.root {
+    -bg-blue: #3c4bf0; 
+    -text-white: #eceaea; 
+    -fx-font-family: "Cascadia Mono";
+
 }
 
-.invisible-button:hover,
-.invisible-button:pressed,
-.invisible-button:focused {
+.label{
     -fx-background-color: transparent;
     -fx-border-color: transparent;
-    -fx-text-fill: transparent;
+    -fx-text-fill: -text-white;
+    
+    /* -fx-font-weight: bold; */
+    -fx-effect: null;
+    -fx-font-size: 32;
+    -fx-background-radius: 0;
+}
+
+.smaller-text{
+    -fx-font-size: 24;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+
+}
+
+.text-area {
+    -fx-text-fill: -text-white;
+    -fx-background-color: transparent;
+    -fx-font-size: 24;
+
+    -fx-text-fill: -text-white;
+
+    
+
+
+}
+
+.text-area .scroll-pane,
+.text-area .scroll-pane .viewport,
+.text-area .content {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-white;
+
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-white;
+
+
+}
+
+.blu-screen-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -text-white;
+    
+    /* -fx-font-weight: bold; */
+    -fx-effect: null;
+    -fx-font-size:42px;
+    -fx-background-radius: 0; 
+}
+
+.blu-screen-button:hover {
+    -fx-background-color: -text-white;
+    -fx-border-color: transparent;
+    -fx-text-fill: -bg-blue;
 }
 

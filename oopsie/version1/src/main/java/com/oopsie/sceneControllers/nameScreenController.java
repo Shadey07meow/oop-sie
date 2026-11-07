@@ -56,7 +56,7 @@ public class nameScreenController {
         AudioManager.playEffect(AudioManager.Effect.SelectButton);
         FadeHandler.addFadeOut((0.3), () -> {
             try {
-                Main.changeRoot("gameWindow");
+                Main.changeRoot("gameWindow");  
                 FadeHandler.addFadeIn(3);
                 
             } catch (Exception e) {

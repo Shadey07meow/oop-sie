@@ -38,7 +38,7 @@
                               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <TextField fx:id="playerName" prefHeight="34.0" prefWidth="234.0" promptText="Enter Name" GridPane.columnIndex="1" />
+                              <TextField fx:id="playerName" prefHeight="34.0" prefWidth="234.0" promptText="Enter Name" styleClass="empty-textbox" GridPane.columnIndex="1" />
                               <Label text="Name :  " />
                               <Label prefHeight="71.0" prefWidth="153.0" text="Clearance:" wrapText="true" GridPane.rowIndex="1" />
                               <Label text="Address :  " GridPane.rowIndex="2" />
