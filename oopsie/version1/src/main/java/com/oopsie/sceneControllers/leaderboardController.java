@@ -77,7 +77,10 @@ public class leaderboardController {
             leaderboardTable.setItems(scores);
 
         } catch (IOException e) {
+
+            System.err.println("Failed to load leaderboard!");
             e.printStackTrace();
+
         }
     }
 

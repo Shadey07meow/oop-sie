@@ -34,20 +34,17 @@ public class runSaver {
 
         Files.createDirectories(appLocation.getParent());
 
-        String content = stats.getName() + "-" + String.valueOf(stats.getPoints()) + System.lineSeparator();;
-        // Accept a stats
-        // Write the tshit in the text file
-        try { 
-            Files.writeString(
-                appLocation, 
-                content, 
-                StandardCharsets.UTF_8, 
-                StandardOpenOption.CREATE, StandardOpenOption.APPEND
-            );
-            
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+        String content = stats.getName() + ";;;" +
+                         stats.getPoints() +
+                         System.lineSeparator();
+
+        Files.writeString(
+            appLocation,
+            content,
+            StandardCharsets.UTF_8,
+            StandardOpenOption.CREATE,
+            StandardOpenOption.APPEND
+        );
     }
 
     public static List<playerStats> getAllScores() throws IOException {
@@ -68,7 +65,17 @@ public class runSaver {
             String[] data = line.split(";;;", 2);
 
             if (data.length != 2) {
-                continue;
+
+                int separator = line.lastIndexOf("-");
+
+                if (separator == -1) {
+                    continue;
+                }
+
+                data = new String[] {
+                    line.substring(0, separator),
+                    line.substring(separator + 1)
+                };
             }
 
             try {
@@ -76,7 +83,7 @@ public class runSaver {
                 playerStats stats = new playerStats();
 
                 stats.setName(data[0]);
-                stats.addPoints(Integer.parseInt(data[1]));
+                stats.addPoints(Integer.parseInt(data[1].trim()));
 
                 scores.add(stats);
 
