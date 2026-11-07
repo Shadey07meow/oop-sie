@@ -3,6 +3,8 @@ package com.oopsie.sceneControllers;
 
 import com.oopsie.Main;
 import com.oopsie.animations.FadeHandler;
+import com.oopsie.audio.AudioManager;
+import com.oopsie.audio.AudioManager;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -38,6 +40,9 @@ public class cutsceneController {
 
     public void doDialogue()
     {
+        AudioManager.playEffect(AudioManager.Effect.Talk);
+
+
         System.out.println("Hello there");
         switch (currentDialogue) {
             case 0:

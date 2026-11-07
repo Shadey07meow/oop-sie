@@ -92,7 +92,7 @@ public class settingsScreenController {
 
     @FXML
     private void closeSettings() {
-
+        AudioManager.playEffect(AudioManager.Effect.SelectButton2);
         Main.closeSettings();
 
     }
@@ -100,6 +100,7 @@ public class settingsScreenController {
     @FXML
     private void quitToMenu() throws IOException {
 
+        AudioManager.playEffect(AudioManager.Effect.SelectButton2);
         Main.changeRoot("mainMenu");
 
         Main.closeSettings();
