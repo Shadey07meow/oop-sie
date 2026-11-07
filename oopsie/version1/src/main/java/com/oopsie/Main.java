@@ -161,7 +161,7 @@ public class Main extends Application {
         try {
             screenLayer.getChildren().setAll(loadFXML(fxml));
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 

@@ -56,20 +56,20 @@ public class mainMenuController {
     {
         AudioManager.playMusic(AudioManager.Music.MainMenuMusic);
 
-        startNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/StartButton.png"));
-        startPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/StartButtonPressed.png"));
+        startNormal = loadImage("/com/oopsie/images/buttons/StartButton.png");
+        startPressed = loadImage("/com/oopsie/images/buttons/StartButtonPressed.png");
 
-        creditsNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/CreditsButton.png"));
-        creditsPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/CreditsButtonPressed.png"));
+        creditsNormal = loadImage("/com/oopsie/images/buttons/CreditsButton.png");
+        creditsPressed = loadImage("/com/oopsie/images/buttons/CreditsButtonPressed.png");
 
-        helpNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/HelpButton.png"));
-        helpPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/HelpButtonPressed.png"));
+        helpNormal = loadImage("/com/oopsie/images/buttons/HelpButton.png");
+        helpPressed = loadImage("/com/oopsie/images/buttons/HelpButtonPressed.png");
 
-        exitNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButton.png"));
-        exitPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/ExitButtonPressed.png"));
+        exitNormal = loadImage("/com/oopsie/images/buttons/ExitButton.png");
+        exitPressed = loadImage("/com/oopsie/images/buttons/ExitButtonPressed.png");
 
-        leadButtonNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/LeaderboardButton.png"));
-        leadButtonPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/LeaderboardButtonPressed.png"));
+        leadButtonNormal = loadImage("/com/oopsie/images/buttons/leaderboardButton.png");
+        leadButtonPressed = loadImage("/com/oopsie/images/buttons/leaderboardButtonPressed.png");
 
 
         ButtonAnimations.addHoverImage(creditsButton, creditsNormal, creditsPressed);
@@ -157,7 +157,13 @@ public class mainMenuController {
 
     }
 
-
+    private Image loadImage(String path) {
+        var url = getClass().getResource(path);
+        if (url == null) {
+            throw new IllegalStateException("Image not found in jar: " + path);
+        }
+        return new Image(url.toExternalForm());
+    }
     
 
     @FXML 

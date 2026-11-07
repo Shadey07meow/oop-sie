@@ -27,6 +27,12 @@ public class endGameController {
     @FXML
     private  void initialize()
     {
+        try {
+            runSaver.saveRun(gameplayLoop.getCurPlayerStats());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         percentTextWin.setText(gameplayLoop.getCurPlayerStats().getCompletionPercentage() + "% Completed");
 
         pointsLabel.setText("Points: " + gameplayLoop.getCurPlayerStats().getPoints());
@@ -36,7 +42,6 @@ public class endGameController {
     @FXML
     private void switchToMainWin() throws IOException {
         Main.changeRoot("mainMenu");
-        runSaver.saveRun(gameplayLoop.getCurPlayerStats());
         
         // AudioManager.playFX();
 
@@ -46,14 +51,12 @@ public class endGameController {
     @FXML
     private void switchToMainLoss() throws IOException {
         Main.changeRoot("mainMenu");
-        runSaver.saveRun(gameplayLoop.getCurPlayerStats());
     }
 
 
         @FXML
     private void retryGameLoss() throws IOException {
         gameplayLoop.setIsRunning(true);
-        runSaver.saveRun(gameplayLoop.getCurPlayerStats());
         Main.changeRoot("nameScreen");
     }
 }

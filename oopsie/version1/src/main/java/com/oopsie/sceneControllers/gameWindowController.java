@@ -9,6 +9,7 @@ import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameQuestion;
 import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.playerStats;
+import com.oopsie.logic.runSaver;
 
 import javafx.animation.PauseTransition;
 import javafx.application.Platform;
@@ -320,6 +321,7 @@ public class gameWindowController {
         {
             try {
                 AudioManager.playEffect(AudioManager.Effect.Crash);
+                // runSaver.saveRun(gameplayLoop.getCurPlayerStats());
                 Main.changeRoot("gameLoss");
 
                 

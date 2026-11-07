@@ -1,7 +1,9 @@
 package com.oopsie.logic;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -71,6 +73,7 @@ public class gameplayLoop {
 
     private static void endgame()
     {
+        
         currentPoints = 0;
         currentLevel = -1;
     }
@@ -85,6 +88,7 @@ public class gameplayLoop {
     public static void wonLevel()
     {
         currentPoints += pointIncrease;
+        curPlayer.addPoints(pointIncrease);
         currentLevel++;
 
         if(currentLevel > 40)
@@ -126,47 +130,72 @@ public class gameplayLoop {
     public static void readFile()
     {
         String separator = ";;;";
-        System.out.println("I am being called");
         boolean readFirst = false;
 
-        try (BufferedReader br = new BufferedReader(new FileReader("oopsie/version1/src/main/java/com/oopsie/gameQuestions.csv")))
+        easyQuestions.clear();
+        mediumQuestions.clear();
+        hardQuestions.clear();
+        difficultQuestions.clear();
+
+        try (InputStream in = gameplayLoop.class.getResourceAsStream("/com/oopsie/gameQuestions.csv"))
         {
-            
-            String line;
-            
-            while((line = br.readLine()) != null)
+            if (in == null)
             {
-                if (!readFirst) {
-                    readFirst = true;
-                    continue;
-                }
-
-                String[] lineSeparated = line.split(separator);
-                lineSeparated[0] = lineSeparated[0].replace("\\n", "\n  ");
-                lineSeparated[1] = lineSeparated[1].replace("\\n", "\n  ");
-                lineSeparated[2] = lineSeparated[2].replace("\\n", "\n  ");
-                lineSeparated[3] = lineSeparated[3].replace("\\n", "\n  ");
-                lineSeparated[4] = lineSeparated[4].replace("\\n", "\n  ");
-                //easyQuestions.add(new gameQuestion(lineSeparated[0].replace("\\n", "\n"), lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]), lineSeparated[6], lineSeparated[7]));
-                if(lineSeparated[7].equals("Easy"))
-                {
-                    easyQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));
-                } else if (lineSeparated[7].equals("Medium"))
-                {
-                    mediumQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));                    
-                } else if (lineSeparated[7].equals("Hard"))
-                {
-                    hardQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));                    
-                } else if (lineSeparated[7].equals("Difficult"))
-                {
-                    difficultQuestions.add(new gameQuestion(lineSeparated[0], lineSeparated[1], lineSeparated[2], lineSeparated[3], lineSeparated[4], Integer.parseInt(lineSeparated[5]) - 1, lineSeparated[6], lineSeparated[7]));                    
-                }     
+                throw new IllegalStateException("gameQuestions.csv not found on classpath");
             }
-        } catch (Exception exception)
-        {
 
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8)))
+            {
+                String line;
+
+                while ((line = br.readLine()) != null)
+                {
+                    if (!readFirst)
+                    {
+                        readFirst = true;
+                        continue;
+                    }
+
+                    if (line.trim().isEmpty())
+                    {
+                        continue;
+                    }
+
+                    String[] parts = line.split(separator);
+
+                    if (parts.length < 8)
+                    {
+                        System.err.println("Skipping malformed question line: " + line);
+                        continue;
+                    }
+
+                    for (int i = 0; i <= 4; i++)
+                    {
+                        parts[i] = parts[i].replace("\\n", "\n  ");
+                    }
+
+                    gameQuestion q = new gameQuestion(
+                        parts[0], parts[1], parts[2], parts[3], parts[4],
+                        Integer.parseInt(parts[5].trim()) - 1,
+                        parts[6], parts[7]
+                    );
+
+                    switch (parts[7].trim())
+                    {
+                        case "Easy":      easyQuestions.add(q);      break;
+                        case "Medium":    mediumQuestions.add(q);    break;
+                        case "Hard":      hardQuestions.add(q);      break;
+                        case "Difficult": difficultQuestions.add(q); break;
+                        default:
+                            System.err.println("Unknown difficulty: " + parts[7]);
+                    }
+                }
+            }
         }
-    
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public static void addToCompletedIndexes(int val)
@@ -188,10 +217,10 @@ public class gameplayLoop {
 
     public static void selectQuestions()
     {
+        Random rand = new Random();
 
         for(int i = 0; i < 4; i++)
         {   
-            Random rand = new Random();
             switch (currentDifficulty) {
                 case EASY:{
                     int val = rand.nextInt(easyQuestions.size());

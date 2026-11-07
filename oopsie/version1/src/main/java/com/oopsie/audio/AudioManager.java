@@ -1,7 +1,6 @@
-
 package com.oopsie.audio;
 
-import java.io.File;
+import java.net.URL;
 
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
@@ -75,16 +74,17 @@ public class AudioManager {
 
         stopMusic();
 
-        File file = new File(relativeToAbsolutePath(music.getPath()));
-
-        if (!file.exists()) {
-            System.out.println("File: " + file.getPath() + " does not exist");
+        String uri = resourceUri(music.getPath());
+        if (uri == null) {
             return;
         }
 
-        playingMusic = new MediaPlayer(
-            new Media(file.toURI().toString())
-        );
+        try {
+            playingMusic = new MediaPlayer(new Media(uri));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
 
         playingMusic.setCycleCount(MediaPlayer.INDEFINITE);
 
@@ -166,26 +166,40 @@ public class AudioManager {
     // PLAY SOUND EFFECT
     public static void playEffect(Effect fx) {
 
-        File file = new File(relativeToAbsolutePath(fx.getPath()));
-
-        if (!file.exists()) {
-            System.out.println("Effect file does not exist: " + file.getPath());
+        String uri = resourceUri(fx.getPath());
+        if (uri == null) {
             return;
         }
 
-        AudioClip clip = new AudioClip(file.toURI().toString());
+        try {
+            AudioClip clip = new AudioClip(uri);
 
-        double volume = soundVolume + fx.getVolumeOffset();
+            double volume = soundVolume + fx.getVolumeOffset();
+            volume = Math.max(0, Math.min(1, volume));
 
-        volume = Math.max(0, Math.min(1, volume));
-
-        clip.setVolume(volume);
-        clip.play();
+            clip.setVolume(volume);
+            clip.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    // FILE PATH
-    private static String relativeToAbsolutePath(String string) {
+    // RESOURCE LOOKUP (works from source, jar, and exe)
+    private static String resourceUri(String relativePath) {
 
-        return "oopsie/version1/target/classes/com/oopsie/soundResources/" + string;
+        if (relativePath == null || relativePath.equals("null")) {
+            return null;
+        }
+
+        URL url = AudioManager.class.getResource(
+            "/com/oopsie/soundResources/" + relativePath
+        );
+
+        if (url == null) {
+            System.err.println("Audio resource not found: " + relativePath);
+            return null;
+        }
+
+        return url.toExternalForm();
     }
 }
