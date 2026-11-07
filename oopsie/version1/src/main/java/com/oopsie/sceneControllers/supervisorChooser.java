@@ -19,6 +19,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -39,6 +40,14 @@ public class supervisorChooser {
 
     @FXML Button acceptButton;
 
+    @FXML Label s1_name;
+    @FXML Label s1_role;
+    
+    @FXML Label s2_name;
+    @FXML Label s2_role;
+
+    @FXML Label s3_name;
+    @FXML Label s3_role;
     
 
     private final EventHandler<MouseEvent> blocker = MouseEvent::consume;
@@ -53,12 +62,23 @@ public class supervisorChooser {
         ButtonAnimations.addHoverAnimation(superSlot3);
 
         selectedSupervisors[0] = SupervisorManager.get().randSelectSupervisors()[0];
+        
+        
         selectedSupervisors[1] = SupervisorManager.get().randSelectSupervisors()[1];
         selectedSupervisors[2] = SupervisorManager.get().randSelectSupervisors()[2];
-
+        
         superSlotImg1.setImage(selectedSupervisors[0].getImage());
+        s1_name.setText("Name: " + selectedSupervisors[0].getName());
+        s1_role.setText(selectedSupervisors[0].getRole());
+
         superSlotImg2.setImage(selectedSupervisors[1].getImage());
+        s2_name.setText("Name: " + selectedSupervisors[1].getName());
+        s2_role.setText(selectedSupervisors[1].getRole());
+        
         superSlotImg3.setImage(selectedSupervisors[2].getImage());
+        s3_name.setText("Name: " + selectedSupervisors[2].getName());
+        s3_role.setText(selectedSupervisors[2].getRole());
+        
     }
 
     @FXML 

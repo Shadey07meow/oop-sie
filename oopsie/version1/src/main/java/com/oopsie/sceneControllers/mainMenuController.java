@@ -124,7 +124,9 @@ public class mainMenuController {
         AudioManager.playEffect(AudioManager.Effect.SelectButton);
         FadeHandler.addFadeOut((0.3), () -> {
             try {
-                Main.changeRoot("nameScreen");
+                Main.changeRoot("cutscene");
+        // screenLayer.getChildren().add(loadFXML("cutscene"));
+
                 FadeHandler.addFadeIn(0.3);
                 
             } catch (Exception e) {
