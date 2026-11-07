@@ -25,7 +25,8 @@ public class splashScreenController {
                     
                 } catch (Exception e) {
                     // TODO: handle exception
-                }});
+                }
+            });
             }
         );
 

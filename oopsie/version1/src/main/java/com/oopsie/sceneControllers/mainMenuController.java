@@ -125,6 +125,8 @@ public class mainMenuController {
         FadeHandler.addFadeOut((0.3), () -> {
             try {
                 Main.changeRoot("cutscene");
+        // screenLayer.getChildren().add(loadFXML("cutscene"));
+
                 FadeHandler.addFadeIn(0.3);
                 
             } catch (Exception e) {
