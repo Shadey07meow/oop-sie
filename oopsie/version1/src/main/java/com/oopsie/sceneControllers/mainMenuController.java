@@ -54,6 +54,7 @@ public class mainMenuController {
     @FXML
     public void initialize()
     {
+        AudioManager.playMusic(AudioManager.Music.MainMenuMusic);
 
         startNormal = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/StartButton.png"));
         startPressed = new Image(getClass().getResourceAsStream("/com/oopsie/images/buttons/StartButtonPressed.png"));

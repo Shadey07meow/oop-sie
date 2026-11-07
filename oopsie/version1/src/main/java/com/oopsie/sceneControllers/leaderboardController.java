@@ -5,6 +5,8 @@ import java.io.IOException;
 
 import com.oopsie.Main;
 import com.oopsie.animations.ButtonAnimations;
+import com.oopsie.animations.FadeHandler;
+import com.oopsie.audio.AudioManager;
 import com.oopsie.logic.gameplayLoop;
 import com.oopsie.logic.playerStats;
 import com.oopsie.logic.runSaver;
@@ -38,6 +40,8 @@ public class leaderboardController {
 
     @FXML
     public void initialize() {
+
+        AudioManager.playMusic(AudioManager.Music.Leaderboard);
 
         exitNormal = new Image(getClass().getResourceAsStream(
             "/com/oopsie/images/buttons/ExitButton.png"
@@ -100,7 +104,15 @@ public class leaderboardController {
 
     @FXML
     private void switchToTitle() throws IOException {
-        Main.changeRoot("mainMenu");
+                FadeHandler.addFadeOut((0.3), () -> {
+            try {
+                Main.changeRoot("mainMenu");
+                FadeHandler.addFadeIn(0.3);
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
+        });
     }
 
     @FXML

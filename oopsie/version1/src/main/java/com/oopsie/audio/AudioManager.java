@@ -17,6 +17,7 @@ public class AudioManager {
     public enum Music {
 
         MainMenuMusic("music/LongingForAIR.mp3", 0),
+        Leaderboard("music/Leaderboard.mp3", 0),
         GameOverMusic("null", 0),
         GameWinMusic("null", 0);
 
