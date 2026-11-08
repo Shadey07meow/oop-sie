@@ -147,7 +147,7 @@ public class mainMenuController {
         AudioManager.playEffect(AudioManager.Effect.SelectButton);
         FadeHandler.addFadeOut((0.3), () -> {
             try {
-                Main.changeRoot("leaderboard");
+                Main.changeRoot("leaderBoard");
                 FadeHandler.addFadeIn(0.3);
                 
             } catch (Exception e) {
