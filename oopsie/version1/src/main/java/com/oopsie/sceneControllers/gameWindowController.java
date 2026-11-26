@@ -1,6 +1,8 @@
 package com.oopsie.sceneControllers;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import com.oopsie.Main;
@@ -234,6 +236,7 @@ public class gameWindowController {
 
 
         // Creates 4 new buttons
+        List<Button> answerButtons = new ArrayList<>();
         for(int j= 0; j < 4; j++)
         {
             char choice = (char)(65 + (int)j);
@@ -247,8 +250,19 @@ public class gameWindowController {
 
 
             newButton2.setOnAction(z -> checkAnswer(z, selectedQuestion));
-            terminalVBox.getChildren().add(newButton2);
+
             terminalScrollbox.setVvalue(1.0);
+
+            answerButtons.add(newButton2);
+        }
+
+        Collections.shuffle(answerButtons);
+
+        for (int position = 0; position < answerButtons.size(); position++) {
+            Button b = answerButtons.get(position);
+            char letter = (char) ('A' + position);
+            b.setText("> " + letter + ". " + selectedQuestion.getChoiceString((int) b.getUserData()));
+            terminalVBox.getChildren().add(b);
         }
 
         terminalScrollbox.setVvalue(1.0);
